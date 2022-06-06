@@ -1,6 +1,6 @@
 # React UI Components
 
-> 🚧 In active development - breaking changes may happen without warning.
+> 🚧 In active development. Breaking changes will happen without warning.
 
 Opinionated set of reusable components. Expect to be used in an environment with
 Font Awesome icons and TailwindCSS utility classes.
@@ -9,15 +9,15 @@ Font Awesome icons and TailwindCSS utility classes.
 
 Install the JavaScript module:
 ```shell
-npm i github:FullStackAppCo/react-ui.git:#0.1.0
+npm i @fsac/react-ui
 ```
 
-Configure the Tailwind preset:
+Add the TailwindCSS preset to your project:
 ```javascript
 // tailwind.config.js
 module.exports = {
   presets: [
-    require('@fsac/react-ui/tailwind-preset.js')
+    require('@fsac/react-ui/tailwind-preset')
   ]
 }
 ```

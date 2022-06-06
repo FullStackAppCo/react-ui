@@ -1,3 +1,5 @@
+import React from 'react'
+
 export function Container({ children, className, tag }) {
   const Tag = tag;
   return (

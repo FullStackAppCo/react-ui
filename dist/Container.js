@@ -1,3 +1,4 @@
+import React from "react";
 export function Container(param) {
     var children = param.children, className = param.className, tag = param.tag;
     var Tag = tag;

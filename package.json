@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Reusable React UI components",
   "files": [
-    "dist"
+    "dist",
+    "tailwind-preset.js"
   ],
   "module": "dist/index.esm.js",
   "scripts": {

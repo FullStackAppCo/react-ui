@@ -1,0 +1,28 @@
+{
+  "name": "@fsac/react-ui",
+  "version": "0.1.0",
+  "description": "Reusable React UI components",
+  "files": [
+    "dist"
+  ],
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "bin/build.sh",
+    "watch": "npx nodemon --watch ./src --exec bash --ext js ./bin/build.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/FullStackAppCo/react-ui.git"
+  },
+  "author": "Joby Harding",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.197",
+    "nodemon": "^2.0.16",
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0"
+  }
+}

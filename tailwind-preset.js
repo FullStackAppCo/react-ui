@@ -2,11 +2,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
-    container: {
-      center: true,
-    },
     rotate: {
       '360': '360deg',
     },

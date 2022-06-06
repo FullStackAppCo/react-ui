@@ -12,7 +12,7 @@ Install the JavaScript module:
 npm i github:FullStackAppCo/react-ui.git:#0.1.0
 ```
 
-Configure the Tailwind presets:
+Configure the Tailwind preset:
 ```javascript
 // tailwind.config.js
 module.exports = {

@@ -1,7 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {HTMLProps} from 'react'
 
-export function FooterLegal({ className }) {
+export function FooterLegal({ className = '' }): HTMLProps<Element> {
   const smallClasses = 'leading-loose';
 
   return (
@@ -10,12 +9,4 @@ export function FooterLegal({ className }) {
       <small className={`block ${smallClasses}`}>Full Stack App Company Ltd is a company registered in England and Wales. Registered office: Ground Floor, 13 Cable Court Pittman Way, Fulwood, Preston. PR2 9YW Company registration number: 09391612</small>
     </div>
   )
-}
-
-FooterLegal.propTypes = {
-  className: PropTypes.string,
-}
-
-FooterLegal.defaultProps = {
-  className: '',
 }

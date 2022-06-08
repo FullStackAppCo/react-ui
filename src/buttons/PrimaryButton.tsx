@@ -1,7 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {ElementType, HTMLAttributes, ReactNode} from 'react'
 
-export function PrimaryButton({ children, className, disabled, tag, onClick, size }) {
+type buttonSize = 'base' | 'lg'
+
+interface PrimaryButtonProps extends HTMLAttributes<HTMLButtonElement>{
+  children: ReactNode,
+  className: string,
+  disabled: boolean,
+  onClick: (event: React.MouseEvent<HTMLElement>) => any
+  tag: ElementType,
+  size: buttonSize,
+}
+
+export function PrimaryButton({ children, className = '', disabled = false, tag = 'button', onClick = () => null, size = 'base' }: PrimaryButtonProps) {
   className = [
     sizeClasses(size),
     'text-black cursor-pointer',
@@ -14,26 +24,10 @@ export function PrimaryButton({ children, className, disabled, tag, onClick, siz
   ].join(' ')
   const Tag = tag
 
-  function sizeClasses(size) {
+  function sizeClasses(size: buttonSize) {
     if (size === 'lg') return 'px-8 py-3 text-xl';
     return 'px-4 py-2 text-lg';
   }
 
   return <Tag className={className} onClick={onClick} disabled={disabled}>{ children }</Tag>
-}
-
-PrimaryButton.propTypes = {
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  size: PropTypes.oneOf(['lg']),
-  tag: PropTypes.string,
-}
-
-PrimaryButton.defaultProps = {
-  className: '',
-  disabled: false,
-  onClick: () => null,
-  size: 'base',
-  tag: 'button',
 }

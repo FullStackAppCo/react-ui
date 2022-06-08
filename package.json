@@ -6,10 +6,10 @@
     "dist",
     "tailwind-preset.js"
   ],
-  "module": "dist/index.esm.js",
+  "module": "dist/react-ui.esm.js",
   "scripts": {
     "build": "bin/build.sh",
-    "watch": "npx nodemon --watch ./src --exec bash --ext js ./bin/build.sh",
+    "watch": "npx nodemon --watch ./src --exec bash --ext ts,tsx ./bin/build.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,12 +19,22 @@
   "author": "Joby Harding",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.197",
+    "@types/react-fontawesome": "^1.6.5",
+    "esbuild": "^0.14.42",
     "nodemon": "^2.0.16",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
-    "tailwindcss": "^3.0.24"
+    "swc": "^1.0.11",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.40",
+    "@types/react": "^18.0.12",
+    "fathom-client": "^3.4.1"
   }
 }

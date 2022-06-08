@@ -1,7 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {ReactNode} from 'react'
 
-export function ExternalLink({ className, children, href }) {
+interface ExternalLinkProps {
+  children: ReactNode,
+  className: string,
+  href: string,
+}
+
+export function ExternalLink({ children, className = '', href }: ExternalLinkProps) {
   className = [
     'p-0.5',
     'font-medium text-primary-500 dark:text-primary-300 underline',
@@ -12,13 +17,4 @@ export function ExternalLink({ className, children, href }) {
   return (
     <a href={href} className={className}>{ children }</a>
   )
-}
-
-ExternalLink.propTypes = {
-  className: PropTypes.string,
-  href: PropTypes.string.isRequired,
-}
-
-ExternalLink.defaultProps = {
-  className: '',
 }

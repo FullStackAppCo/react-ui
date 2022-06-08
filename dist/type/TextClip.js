@@ -1,10 +1,1 @@
-import React from "react";
-export function TextClip(param) {
-    var children = param.children, className = param.className;
-    return /*#__PURE__*/ React.createElement("span", {
-        className: "bg-clip-text text-transparent ".concat(className)
-    }, children);
-}
-TextClip.defaultProps = {
-    className: ""
-};
+import r from"react";function n({children:e,className:t=""}){return r.createElement("span",{className:`bg-clip-text text-transparent ${t}`},e)}export{n as TextClip};

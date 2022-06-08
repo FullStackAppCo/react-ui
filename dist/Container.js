@@ -1,12 +1,1 @@
-import React from "react";
-export function Container(param) {
-    var children = param.children, className = param.className, tag = param.tag;
-    var Tag = tag;
-    return /*#__PURE__*/ React.createElement(Tag, {
-        className: "px-6 container mx-auto max-w-4xl ".concat(className)
-    }, children);
-}
-Container.defaultProps = {
-    className: "",
-    tag: "div"
-};
+import t from"react";function m({children:e,className:a,tag:n="div"}){return t.createElement(n,{className:`px-6 container mx-auto max-w-4xl ${a}`},e)}export{m as Container};

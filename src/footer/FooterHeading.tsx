@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {HTMLProps} from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {IconProp} from "@fortawesome/fontawesome-svg-core";
 
-export function FooterHeading({ children, icon }) {
+interface FooterHeadingProps extends HTMLProps<Element> {
+  icon: IconProp,
+}
+
+export function FooterHeading({ children, icon }: FooterHeadingProps) {
   return (
     <div className="flex items-center space-x-2">
       <FontAwesomeIcon icon={icon} className="w-4 h-4 text-gray-400 dark:text-gray-500" />

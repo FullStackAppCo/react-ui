@@ -16,6 +16,13 @@ export function FathomAnalytics({ domains, siteId, enabled, addListener, removeL
   }
 
   useEffect(() => {
+    // Expose fathom as a global so we can use utilities like:
+    // fathom.blockTrackingForMe()
+    // fathom.enableTrackingForMe()
+    window.fathom = Fathom
+  })
+
+  useEffect(() => {
     if (enabled() === false) return
 
     Fathom.load(siteId, {includedDomains: domains})

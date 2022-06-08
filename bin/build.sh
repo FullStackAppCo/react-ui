@@ -26,26 +26,32 @@ NODE_ENV=production npx esbuild $FILES \
   --outdir='./dist' \
   --outbase='./src' \
   --minify \
-  --bundle \
   --pure:React.createElement \
-  --external:react \
-  --external:react-dom \
-  --external:@fortawesome/react-fontawesome \
-  --external:@fortawesome/react-svg-core \
-  ${SHARED_OPTIONS[@]} &
+  --platform=browser \
+  --target=es2019 &
 
 NODE_ENV=production npx esbuild index.ts \
   --format=esm \
   --outfile='./dist/react-ui.esm.js' \
   --outbase='./src' \
   --minify \
-  --bundle \
   --pure:React.createElement \
+  --platform=browser \
+  --target=es2019 &
+
+NODE_ENV=production npx esbuild index.ts \
+  --format=cjs \
   --external:react \
   --external:react-dom \
   --external:@fortawesome/react-fontawesome \
-  --external:@fortawesome/react-svg-core \
-  ${SHARED_OPTIONS[@]} &
+  --external:@fortawesome/fontawesome-svg-core \
+  --outfile='./dist/index.cjs' \
+  --outbase='./src' \
+  --minify \
+  --bundle \
+  --pure:React.createElement \
+  --platform=browser \
+  --target=es2019 &
 
   # Generate types
   npx tsc --emitDeclarationOnly --outDir ./dist &

@@ -1,1 +1,1 @@
-import{useEffect as o}from"react";function e(){return o(()=>{console.log("boopers")}),null}export{e as FathomAnalytics};
+import{useEffect as d}from"react";import*as n from"fathom-client";function l({domains:o,siteId:t,enabled:r,addListener:a,removeListener:i}){function e(){n.trackPageview()}return d(()=>{if(r()!==!1)return n.load(t,{includedDomains:o}),a(e),()=>{i(e)}},[]),null}export{l as FathomAnalytics};

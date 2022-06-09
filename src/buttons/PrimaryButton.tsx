@@ -9,12 +9,14 @@ interface PrimaryButtonProps extends HTMLAttributes<HTMLButtonElement>{
   onClick: (event: React.MouseEvent<HTMLElement>) => any
   tag: ElementType,
   size: buttonSize,
+  href: string,
+  target: string,
 }
 
-export function PrimaryButton({ children, className = '', disabled = false, tag = 'button', onClick = () => null, size = 'base' }: PrimaryButtonProps) {
+export function PrimaryButton({ children, className = '', disabled = false, tag = 'button', onClick = () => null, size = 'base', href = '#', target = '_self'}: PrimaryButtonProps) {
   className = [
     sizeClasses(size),
-    'text-black cursor-pointer',
+    'inline-block text-center text-black cursor-pointer',
     'bg-primary-500 text-black font-bold bg-gradient-to-br from-violet-500 to-fuchsia-500',
     'rounded-lg',
     'active:scale-95',
@@ -29,5 +31,10 @@ export function PrimaryButton({ children, className = '', disabled = false, tag 
     return 'px-4 py-2 text-lg';
   }
 
-  return <Tag className={className} onClick={onClick} disabled={disabled}>{ children }</Tag>
+  return <Tag
+    className={className}
+    onClick={onClick}
+    disabled={disabled}
+    {...(tag === 'a' ? {href, target} : {}) }
+  >{ children }</Tag>
 }

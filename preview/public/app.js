@@ -3,8 +3,22 @@
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -24835,10 +24849,10 @@
 
   // src/buttons/PrimaryButton.tsx
   var import_react3 = __toESM(require_react());
-  function PrimaryButton({ children, className = "", disabled: disabled2 = false, tag = "button", onClick = () => null, size = "base" }) {
+  function PrimaryButton({ children, className = "", disabled: disabled2 = false, tag = "button", onClick = () => null, size = "base", href = "#", target = "_self" }) {
     className = [
       sizeClasses(size),
-      "text-black cursor-pointer",
+      "inline-block text-center text-black cursor-pointer",
       "bg-primary-500 text-black font-bold bg-gradient-to-br from-violet-500 to-fuchsia-500",
       "rounded-lg",
       "active:scale-95",
@@ -24852,11 +24866,11 @@
         return "px-8 py-3 text-xl";
       return "px-4 py-2 text-lg";
     }
-    return /* @__PURE__ */ import_react3.default.createElement(Tag, {
+    return /* @__PURE__ */ import_react3.default.createElement(Tag, __spreadValues({
       className,
       onClick,
       disabled: disabled2
-    }, children);
+    }, tag === "a" ? { href, target } : {}), children);
   }
 
   // src/type/TextClip.tsx
@@ -27580,10 +27594,10 @@
     }, /* @__PURE__ */ React9.createElement("h2", {
       className: "text-lg flex items-center space-x-2"
     }, /* @__PURE__ */ React9.createElement("span", null, title), state && /* @__PURE__ */ React9.createElement("span", {
-      className: "translate-y-[1px] bg-primary-500 text-white text-xs rounded-sm px-1 py-0.5"
-    }, state)), /* @__PURE__ */ React9.createElement("pre", {
-      className: "bg-gray-100 dark:bg-gray-800 text-gray-500 rounded px-2 py-1 border-gray-200 dark:border-gray-700 border text-sm"
-    }, /* @__PURE__ */ React9.createElement("code", null, code)), /* @__PURE__ */ React9.createElement("div", null, example));
+      className: "translate-y-[1px] bg-primary-500 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
+    }, state)), /* @__PURE__ */ React9.createElement("div", null, example), /* @__PURE__ */ React9.createElement("pre", {
+      className: "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded px-2 py-1 border-gray-200 dark:border-gray-700 border text-sm"
+    }, /* @__PURE__ */ React9.createElement("code", null, code)));
   }
 
   // preview/src/pages/Buttons.tsx
@@ -27602,6 +27616,20 @@
         disabled: true
       }, "Submit")
     }), /* @__PURE__ */ import_react11.default.createElement(Example, {
+      title: "Link as Button",
+      code: `<PrimaryButton
+  tag="a"
+  href="https://example.com"
+  target="_blank"
+>
+  Press
+</PrimaryButton>`,
+      example: /* @__PURE__ */ import_react11.default.createElement(PrimaryButton, {
+        tag: "a",
+        href: "https://example.com",
+        target: "_blank"
+      }, "Press")
+    }), /* @__PURE__ */ import_react11.default.createElement(Example, {
       title: "Large Primary Button",
       code: `<PrimaryButton size="lg">Submit</PrimaryButton>`,
       example: /* @__PURE__ */ import_react11.default.createElement(PrimaryButton, {
@@ -27613,7 +27641,9 @@
   // preview/src/pages/Links.tsx
   var import_react12 = __toESM(require_react());
   function Links() {
-    return /* @__PURE__ */ import_react12.default.createElement("div", null, "Links Page");
+    return /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "grid grid-cols-2 gap-10"
+    });
   }
 
   // preview/src/pages/Type.tsx

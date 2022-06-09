@@ -16,6 +16,15 @@ export default function Buttons() {
         code={`<PrimaryButton disabled>Submit</PrimaryButton>`}
         example={<PrimaryButton disabled>Submit</PrimaryButton>}
       />
+      <Example title="Link as Button" code={`<PrimaryButton
+  tag="a"
+  href="https://example.com"
+  target="_blank"
+>
+  Press
+</PrimaryButton>`}
+        example={<PrimaryButton tag="a" href="https://example.com" target="_blank">Press</PrimaryButton>}
+      />
       <Example
         title="Large Primary Button"
         code={`<PrimaryButton size="lg">Submit</PrimaryButton>`}

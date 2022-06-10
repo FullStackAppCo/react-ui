@@ -27536,7 +27536,7 @@
     }, /* @__PURE__ */ import_react13.default.createElement("h2", {
       className: "font-bold text-lg flex items-center space-x-2"
     }, /* @__PURE__ */ import_react13.default.createElement("span", null, title), variant && /* @__PURE__ */ import_react13.default.createElement("span", {
-      className: "translate-y-[1px] bg-primary-500 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
+      className: "translate-y-[1px] bg-primary-500 dark:bg-primary-800 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
     }, variant)), /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "border-gray-200 dark:border-gray-600 border p-6 rounded"
     }, example), /* @__PURE__ */ import_react13.default.createElement(ExampleCode, null, code));
@@ -27666,17 +27666,81 @@
 
   // preview/components/LayoutIndicator.tsx
   var import_react18 = __toESM(require_react());
-  function LayoutIndicator() {
+
+  // node_modules/@fortawesome/free-solid-svg-icons/index.es.js
+  var faComputer = {
+    prefix: "fas",
+    iconName: "computer",
+    icon: [640, 512, [], "e4e5", "M400 32C426.5 32 448 53.49 448 80V336C448 362.5 426.5 384 400 384H266.7L277.3 416H352C369.7 416 384 430.3 384 448C384 465.7 369.7 480 352 480H96C78.33 480 64 465.7 64 448C64 430.3 78.33 416 96 416H170.7L181.3 384H48C21.49 384 0 362.5 0 336V80C0 53.49 21.49 32 48 32H400zM64 96V320H384V96H64zM592 32C618.5 32 640 53.49 640 80V432C640 458.5 618.5 480 592 480H528C501.5 480 480 458.5 480 432V80C480 53.49 501.5 32 528 32H592zM544 96C535.2 96 528 103.2 528 112C528 120.8 535.2 128 544 128H576C584.8 128 592 120.8 592 112C592 103.2 584.8 96 576 96H544zM544 192H576C584.8 192 592 184.8 592 176C592 167.2 584.8 160 576 160H544C535.2 160 528 167.2 528 176C528 184.8 535.2 192 544 192zM560 400C577.7 400 592 385.7 592 368C592 350.3 577.7 336 560 336C542.3 336 528 350.3 528 368C528 385.7 542.3 400 560 400z"]
+  };
+  var faDisplay = {
+    prefix: "fas",
+    iconName: "display",
+    icon: [576, 512, [], "e163", "M528 0h-480C21.5 0 0 21.5 0 48v320C0 394.5 21.5 416 48 416h192L224 464H152C138.8 464 128 474.8 128 488S138.8 512 152 512h272c13.25 0 24-10.75 24-24s-10.75-24-24-24H352L336 416h192c26.5 0 48-21.5 48-48v-320C576 21.5 554.5 0 528 0zM512 352H64V64h448V352z"]
+  };
+  var faInfinity = {
+    prefix: "fas",
+    iconName: "infinity",
+    icon: [640, 512, [9854, 8734], "f534", "M494.9 96.01c-38.78 0-75.22 15.09-102.6 42.5L320 210.8L247.8 138.5c-27.41-27.41-63.84-42.5-102.6-42.5C65.11 96.01 0 161.1 0 241.1v29.75c0 80.03 65.11 145.1 145.1 145.1c38.78 0 75.22-15.09 102.6-42.5L320 301.3l72.23 72.25c27.41 27.41 63.84 42.5 102.6 42.5C574.9 416 640 350.9 640 270.9v-29.75C640 161.1 574.9 96.01 494.9 96.01zM202.5 328.3c-15.31 15.31-35.69 23.75-57.38 23.75C100.4 352 64 315.6 64 270.9v-29.75c0-44.72 36.41-81.13 81.14-81.13c21.69 0 42.06 8.438 57.38 23.75l72.23 72.25L202.5 328.3zM576 270.9c0 44.72-36.41 81.13-81.14 81.13c-21.69 0-42.06-8.438-57.38-23.75l-72.23-72.25l72.23-72.25c15.31-15.31 35.69-23.75 57.38-23.75C539.6 160 576 196.4 576 241.1V270.9z"]
+  };
+  var faMobileScreenButton = {
+    prefix: "fas",
+    iconName: "mobile-screen-button",
+    icon: [384, 512, ["mobile-alt"], "f3cd", "M304 0h-224c-35.35 0-64 28.65-64 64v384c0 35.35 28.65 64 64 64h224c35.35 0 64-28.65 64-64V64C368 28.65 339.3 0 304 0zM192 480c-17.75 0-32-14.25-32-32s14.25-32 32-32s32 14.25 32 32S209.8 480 192 480zM304 64v320h-224V64H304z"]
+  };
+  var faTabletScreenButton = {
+    prefix: "fas",
+    iconName: "tablet-screen-button",
+    icon: [448, 512, ["tablet-alt"], "f3fa", "M384 .0001H64c-35.35 0-64 28.65-64 64v384c0 35.35 28.65 63.1 64 63.1h320c35.35 0 64-28.65 64-63.1v-384C448 28.65 419.3 .0001 384 .0001zM224 480c-17.75 0-32-14.25-32-32s14.25-32 32-32s32 14.25 32 32S241.8 480 224 480zM384 384H64v-320h320V384z"]
+  };
+
+  // preview/components/LayoutIndicator.tsx
+  function LayoutIndicator({ layoutMap }) {
+    layoutMap = layoutMap ? layoutMap : {
+      "all": {
+        icon: faInfinity,
+        classes: ["block", "sm:hidden"]
+      },
+      "sm": {
+        icon: faMobileScreenButton,
+        classes: ["hidden", "sm:block", "md:hidden"]
+      },
+      "md": {
+        icon: faTabletScreenButton,
+        classes: ["hidden", "md:block", "lg:hidden"]
+      },
+      "lg": {
+        icon: faComputer,
+        classes: ["hidden", "lg:block", "xl:hidden"]
+      },
+      "xl": {
+        icon: faDisplay,
+        classes: ["hidden", "xl:block", "2xl:hidden"]
+      }
+    };
     return /* @__PURE__ */ import_react18.default.createElement("div", {
-      className: "fixed top-0 left-0 py-1 bg-green-500 h-10"
-    }, "Layout:");
+      "aria-hidden": "true",
+      className: "w-screen flex justify-center items-center py-1 bg-primary-500 dark:bg-primary-900 h-10 uppercase text-xs tracking-wider font-semibold text-white"
+    }, Object.entries(layoutMap).map((entries) => {
+      const [layout, data] = entries;
+      return /* @__PURE__ */ import_react18.default.createElement("div", {
+        key: layout,
+        className: `space-x-1.5 ${data.classes.join(" ")}`
+      }, /* @__PURE__ */ import_react18.default.createElement(FontAwesomeIcon, {
+        icon: data.icon
+      }), /* @__PURE__ */ import_react18.default.createElement("span", null, "screen ", layout));
+    }));
   }
 
   // preview/components/Library.tsx
   function Library2() {
     return /* @__PURE__ */ import_react19.default.createElement("div", {
-      className: "fixed w-screen h-screen overflow-hidden flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
-    }, /* @__PURE__ */ import_react19.default.createElement(LayoutIndicator, null), /* @__PURE__ */ import_react19.default.createElement("header", {
+      className: "fixed w-screen h-screen flex flex-col"
+    }, /* @__PURE__ */ import_react19.default.createElement(LayoutIndicator, {
+      className: "flex-grow-0"
+    }), /* @__PURE__ */ import_react19.default.createElement("div", {
+      className: "overflow-hidden flex-grow flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
+    }, /* @__PURE__ */ import_react19.default.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
     }, /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "flex-grow"
@@ -27687,9 +27751,10 @@
       className: "mx-4 py-3 lg:py-6"
     }, /* @__PURE__ */ import_react19.default.createElement(Nav, {
       pages: ["buttons", "links", "type"]
-    })))), /* @__PURE__ */ import_react19.default.createElement("main", {
-      id: "content",
+    })))), /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "flex flex-col flex-grow py-6 overflow-scroll"
+    }, /* @__PURE__ */ import_react19.default.createElement("main", {
+      id: "content"
     }, /* @__PURE__ */ import_react19.default.createElement(Routes, null, /* @__PURE__ */ import_react19.default.createElement(Route, {
       path: "/",
       element: /* @__PURE__ */ import_react19.default.createElement(Buttons, null)
@@ -27702,7 +27767,7 @@
     }), /* @__PURE__ */ import_react19.default.createElement(Route, {
       path: "/type",
       element: /* @__PURE__ */ import_react19.default.createElement(Type, null)
-    })), /* @__PURE__ */ import_react19.default.createElement("footer", {
+    }))), /* @__PURE__ */ import_react19.default.createElement("footer", {
       className: "flex-grow-0"
     }, /* @__PURE__ */ import_react19.default.createElement(Legal, {
       className: "px-10 pt-16 pb-6 text-center"
@@ -27712,7 +27777,7 @@
       href: "https://fullstackapp.co"
     }, "Full Stack App Co."), /* @__PURE__ */ import_react19.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react19.default.createElement(ExternalLink, {
       href: "https://opensource.org/licenses/MIT"
-    }, "MIT License"))))));
+    }, "MIT License")))))));
   }
 
   // preview/app.tsx

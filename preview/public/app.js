@@ -27776,7 +27776,7 @@
       return /* @__PURE__ */ React14.createElement(Buttons, null);
     }
     return /* @__PURE__ */ React14.createElement("div", {
-      className: "fixed w-screen h-screen overflow-hidden flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-x"
+      className: "fixed w-screen h-screen overflow-hidden flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
     }, /* @__PURE__ */ React14.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
     }, /* @__PURE__ */ React14.createElement("div", {

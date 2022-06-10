@@ -4,7 +4,7 @@ import Example from "../components/Example";
 
 export default function Buttons() {
   return (
-    <div className="grid lg:grid-cols-2 gap-10">
+    <div className="space-y-10">
       <Example
         title="Primary Button"
         code={`<PrimaryButton>Submit</PrimaryButton>`}
@@ -12,7 +12,7 @@ export default function Buttons() {
       />
       <Example
         title="Primary Button"
-        state="disabled"
+        variant="disabled"
         code={`<PrimaryButton disabled>Submit</PrimaryButton>`}
         example={<PrimaryButton disabled>Submit</PrimaryButton>}
       />
@@ -20,9 +20,7 @@ export default function Buttons() {
   tag="a"
   href="https://example.com"
   target="_blank"
->
-  Press
-</PrimaryButton>`}
+>Press</PrimaryButton>`}
         example={<PrimaryButton tag="a" href="https://example.com" target="_blank">Press</PrimaryButton>}
       />
       <Example

@@ -5,6 +5,11 @@
 Opinionated set of reusable components. Expect to be used in an environment with
 Font Awesome icons and TailwindCSS utility classes.
 
+## Requirements
+- TailwindCSS ^3
+- Font Awesome React
+- A Font Awesome fam if you want to use icons. We don't use the babel macros.
+
 ## Installation
 
 Install the JavaScript module:

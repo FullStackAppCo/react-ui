@@ -7,6 +7,8 @@ interface PrimaryButtonProps extends HTMLAttributes<HTMLButtonElement> {
     onClick: (event: React.MouseEvent<HTMLElement>) => any;
     tag: ElementType;
     size: buttonSize;
+    href: string;
+    target: string;
 }
-export declare function PrimaryButton({ children, className, disabled, tag, onClick, size }: PrimaryButtonProps): JSX.Element;
+export declare function PrimaryButton({ children, className, disabled, tag, onClick, size, href, target }: PrimaryButtonProps): JSX.Element;
 export {};

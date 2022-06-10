@@ -1,6 +1,7 @@
 {
   "include": ["src", "types"],
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "module": "esnext",
     "lib": ["dom", "esnext", "dom.iterable"],
     "importHelpers": true,

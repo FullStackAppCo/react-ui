@@ -37,6 +37,7 @@
     "tailwindcss": "^3"
   },
   "devDependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^17.0.40",
     "@types/react": "^18.0.12",

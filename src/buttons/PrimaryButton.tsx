@@ -13,7 +13,7 @@ interface PrimaryButtonProps extends HTMLAttributes<HTMLButtonElement>{
   target: string,
 }
 
-export function PrimaryButton({ children, className = '', disabled = false, tag = 'button', onClick = () => null, size = 'base', href = '#', target = '_self'}: PrimaryButtonProps) {
+export function PrimaryButton({children, className = '', disabled = false, tag = 'button', onClick = () => null, size = 'base', href = '#', target = '_self'}: PrimaryButtonProps) {
   className = [
     sizeClasses(size),
     'inline-block text-center text-black cursor-pointer',

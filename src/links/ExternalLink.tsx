@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react'
 
 interface ExternalLinkProps {
   children: ReactNode,
-  className: string,
+  className?: string,
   href: string,
 }
 

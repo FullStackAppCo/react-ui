@@ -2304,9 +2304,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React16 = require_react();
+          var React18 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React16.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React18.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3707,7 +3707,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React16.Children.forEach(props.children, function(child) {
+                  React18.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11279,7 +11279,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React16.Component().refs;
+          var emptyRefsObject = new React18.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23325,9 +23325,15 @@
     }
   });
 
-  // preview/src/app.tsx
-  var import_react18 = __toESM(require_react());
+  // preview/app.tsx
+  var import_react20 = __toESM(require_react());
   var import_client = __toESM(require_client());
+
+  // preview/components/Library.tsx
+  var import_react19 = __toESM(require_react());
+
+  // preview/components/Nav.tsx
+  var import_react3 = __toESM(require_react());
 
   // node_modules/react-router-dom/index.js
   var import_react2 = __toESM(require_react());
@@ -23939,13 +23945,6 @@
     }, [basename, navigator2, routePathnamesJson, locationPathname]);
     return navigate;
   }
-  function useParams() {
-    let {
-      matches
-    } = (0, import_react.useContext)(RouteContext);
-    let routeMatch = matches[matches.length - 1];
-    return routeMatch ? routeMatch.params : {};
-  }
   function useResolvedPath(to) {
     let {
       matches
@@ -24280,12 +24279,6 @@
     }, [location, navigate, path, replaceProp, state, target, to]);
   }
 
-  // preview/src/components/Preview.tsx
-  var import_react17 = __toESM(require_react());
-
-  // preview/src/components/Nav.tsx
-  var import_react3 = __toESM(require_react());
-
   // node_modules/lodash-es/_freeGlobal.js
   var freeGlobal = typeof global == "object" && global && global.Object === Object && global;
   var freeGlobal_default = freeGlobal;
@@ -24394,102 +24387,6 @@
     return value == null ? "" : baseToString_default(value);
   }
   var toString_default = toString;
-
-  // node_modules/lodash-es/_baseSlice.js
-  function baseSlice(array, start, end3) {
-    var index = -1, length = array.length;
-    if (start < 0) {
-      start = -start > length ? 0 : length + start;
-    }
-    end3 = end3 > length ? length : end3;
-    if (end3 < 0) {
-      end3 += length;
-    }
-    length = start > end3 ? 0 : end3 - start >>> 0;
-    start >>>= 0;
-    var result = Array(length);
-    while (++index < length) {
-      result[index] = array[index + start];
-    }
-    return result;
-  }
-  var baseSlice_default = baseSlice;
-
-  // node_modules/lodash-es/_castSlice.js
-  function castSlice(array, start, end3) {
-    var length = array.length;
-    end3 = end3 === void 0 ? length : end3;
-    return !start && end3 >= length ? array : baseSlice_default(array, start, end3);
-  }
-  var castSlice_default = castSlice;
-
-  // node_modules/lodash-es/_hasUnicode.js
-  var rsAstralRange = "\\ud800-\\udfff";
-  var rsComboMarksRange = "\\u0300-\\u036f";
-  var reComboHalfMarksRange = "\\ufe20-\\ufe2f";
-  var rsComboSymbolsRange = "\\u20d0-\\u20ff";
-  var rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange;
-  var rsVarRange = "\\ufe0e\\ufe0f";
-  var rsZWJ = "\\u200d";
-  var reHasUnicode = RegExp("[" + rsZWJ + rsAstralRange + rsComboRange + rsVarRange + "]");
-  function hasUnicode(string) {
-    return reHasUnicode.test(string);
-  }
-  var hasUnicode_default = hasUnicode;
-
-  // node_modules/lodash-es/_asciiToArray.js
-  function asciiToArray(string) {
-    return string.split("");
-  }
-  var asciiToArray_default = asciiToArray;
-
-  // node_modules/lodash-es/_unicodeToArray.js
-  var rsAstralRange2 = "\\ud800-\\udfff";
-  var rsComboMarksRange2 = "\\u0300-\\u036f";
-  var reComboHalfMarksRange2 = "\\ufe20-\\ufe2f";
-  var rsComboSymbolsRange2 = "\\u20d0-\\u20ff";
-  var rsComboRange2 = rsComboMarksRange2 + reComboHalfMarksRange2 + rsComboSymbolsRange2;
-  var rsVarRange2 = "\\ufe0e\\ufe0f";
-  var rsAstral = "[" + rsAstralRange2 + "]";
-  var rsCombo = "[" + rsComboRange2 + "]";
-  var rsFitz = "\\ud83c[\\udffb-\\udfff]";
-  var rsModifier = "(?:" + rsCombo + "|" + rsFitz + ")";
-  var rsNonAstral = "[^" + rsAstralRange2 + "]";
-  var rsRegional = "(?:\\ud83c[\\udde6-\\uddff]){2}";
-  var rsSurrPair = "[\\ud800-\\udbff][\\udc00-\\udfff]";
-  var rsZWJ2 = "\\u200d";
-  var reOptMod = rsModifier + "?";
-  var rsOptVar = "[" + rsVarRange2 + "]?";
-  var rsOptJoin = "(?:" + rsZWJ2 + "(?:" + [rsNonAstral, rsRegional, rsSurrPair].join("|") + ")" + rsOptVar + reOptMod + ")*";
-  var rsSeq = rsOptVar + reOptMod + rsOptJoin;
-  var rsSymbol = "(?:" + [rsNonAstral + rsCombo + "?", rsCombo, rsRegional, rsSurrPair, rsAstral].join("|") + ")";
-  var reUnicode = RegExp(rsFitz + "(?=" + rsFitz + ")|" + rsSymbol + rsSeq, "g");
-  function unicodeToArray(string) {
-    return string.match(reUnicode) || [];
-  }
-  var unicodeToArray_default = unicodeToArray;
-
-  // node_modules/lodash-es/_stringToArray.js
-  function stringToArray(string) {
-    return hasUnicode_default(string) ? unicodeToArray_default(string) : asciiToArray_default(string);
-  }
-  var stringToArray_default = stringToArray;
-
-  // node_modules/lodash-es/_createCaseFirst.js
-  function createCaseFirst(methodName) {
-    return function(string) {
-      string = toString_default(string);
-      var strSymbols = hasUnicode_default(string) ? stringToArray_default(string) : void 0;
-      var chr = strSymbols ? strSymbols[0] : string.charAt(0);
-      var trailing = strSymbols ? castSlice_default(strSymbols, 1).join("") : string.slice(1);
-      return chr[methodName]() + trailing;
-    };
-  }
-  var createCaseFirst_default = createCaseFirst;
-
-  // node_modules/lodash-es/upperFirst.js
-  var upperFirst = createCaseFirst_default("toUpperCase");
-  var upperFirst_default = upperFirst;
 
   // node_modules/lodash-es/_arrayReduce.js
   function arrayReduce(array, iteratee, accumulator, initAccum) {
@@ -24710,12 +24607,12 @@
 
   // node_modules/lodash-es/deburr.js
   var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
-  var rsComboMarksRange3 = "\\u0300-\\u036f";
-  var reComboHalfMarksRange3 = "\\ufe20-\\ufe2f";
-  var rsComboSymbolsRange3 = "\\u20d0-\\u20ff";
-  var rsComboRange3 = rsComboMarksRange3 + reComboHalfMarksRange3 + rsComboSymbolsRange3;
-  var rsCombo2 = "[" + rsComboRange3 + "]";
-  var reComboMark = RegExp(rsCombo2, "g");
+  var rsComboMarksRange = "\\u0300-\\u036f";
+  var reComboHalfMarksRange = "\\ufe20-\\ufe2f";
+  var rsComboSymbolsRange = "\\u20d0-\\u20ff";
+  var rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange;
+  var rsCombo = "[" + rsComboRange + "]";
+  var reComboMark = RegExp(rsCombo, "g");
   function deburr(string) {
     string = toString_default(string);
     return string && string.replace(reLatin, deburrLetter_default).replace(reComboMark, "");
@@ -24737,11 +24634,11 @@
   var hasUnicodeWord_default = hasUnicodeWord;
 
   // node_modules/lodash-es/_unicodeWords.js
-  var rsAstralRange3 = "\\ud800-\\udfff";
-  var rsComboMarksRange4 = "\\u0300-\\u036f";
-  var reComboHalfMarksRange4 = "\\ufe20-\\ufe2f";
-  var rsComboSymbolsRange4 = "\\u20d0-\\u20ff";
-  var rsComboRange4 = rsComboMarksRange4 + reComboHalfMarksRange4 + rsComboSymbolsRange4;
+  var rsAstralRange = "\\ud800-\\udfff";
+  var rsComboMarksRange2 = "\\u0300-\\u036f";
+  var reComboHalfMarksRange2 = "\\ufe20-\\ufe2f";
+  var rsComboSymbolsRange2 = "\\u20d0-\\u20ff";
+  var rsComboRange2 = rsComboMarksRange2 + reComboHalfMarksRange2 + rsComboSymbolsRange2;
   var rsDingbatRange = "\\u2700-\\u27bf";
   var rsLowerRange = "a-z\\xdf-\\xf6\\xf8-\\xff";
   var rsMathOpRange = "\\xac\\xb1\\xd7\\xf7";
@@ -24749,33 +24646,33 @@
   var rsPunctuationRange = "\\u2000-\\u206f";
   var rsSpaceRange = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000";
   var rsUpperRange = "A-Z\\xc0-\\xd6\\xd8-\\xde";
-  var rsVarRange3 = "\\ufe0e\\ufe0f";
+  var rsVarRange = "\\ufe0e\\ufe0f";
   var rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
   var rsApos = "['\u2019]";
   var rsBreak = "[" + rsBreakRange + "]";
-  var rsCombo3 = "[" + rsComboRange4 + "]";
+  var rsCombo2 = "[" + rsComboRange2 + "]";
   var rsDigits = "\\d+";
   var rsDingbat = "[" + rsDingbatRange + "]";
   var rsLower = "[" + rsLowerRange + "]";
-  var rsMisc = "[^" + rsAstralRange3 + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + "]";
-  var rsFitz2 = "\\ud83c[\\udffb-\\udfff]";
-  var rsModifier2 = "(?:" + rsCombo3 + "|" + rsFitz2 + ")";
-  var rsNonAstral2 = "[^" + rsAstralRange3 + "]";
-  var rsRegional2 = "(?:\\ud83c[\\udde6-\\uddff]){2}";
-  var rsSurrPair2 = "[\\ud800-\\udbff][\\udc00-\\udfff]";
+  var rsMisc = "[^" + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + "]";
+  var rsFitz = "\\ud83c[\\udffb-\\udfff]";
+  var rsModifier = "(?:" + rsCombo2 + "|" + rsFitz + ")";
+  var rsNonAstral = "[^" + rsAstralRange + "]";
+  var rsRegional = "(?:\\ud83c[\\udde6-\\uddff]){2}";
+  var rsSurrPair = "[\\ud800-\\udbff][\\udc00-\\udfff]";
   var rsUpper = "[" + rsUpperRange + "]";
-  var rsZWJ3 = "\\u200d";
+  var rsZWJ = "\\u200d";
   var rsMiscLower = "(?:" + rsLower + "|" + rsMisc + ")";
   var rsMiscUpper = "(?:" + rsUpper + "|" + rsMisc + ")";
   var rsOptContrLower = "(?:" + rsApos + "(?:d|ll|m|re|s|t|ve))?";
   var rsOptContrUpper = "(?:" + rsApos + "(?:D|LL|M|RE|S|T|VE))?";
-  var reOptMod2 = rsModifier2 + "?";
-  var rsOptVar2 = "[" + rsVarRange3 + "]?";
-  var rsOptJoin2 = "(?:" + rsZWJ3 + "(?:" + [rsNonAstral2, rsRegional2, rsSurrPair2].join("|") + ")" + rsOptVar2 + reOptMod2 + ")*";
+  var reOptMod = rsModifier + "?";
+  var rsOptVar = "[" + rsVarRange + "]?";
+  var rsOptJoin = "(?:" + rsZWJ + "(?:" + [rsNonAstral, rsRegional, rsSurrPair].join("|") + ")" + rsOptVar + reOptMod + ")*";
   var rsOrdLower = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])";
   var rsOrdUpper = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])";
-  var rsSeq2 = rsOptVar2 + reOptMod2 + rsOptJoin2;
-  var rsEmoji = "(?:" + [rsDingbat, rsRegional2, rsSurrPair2].join("|") + ")" + rsSeq2;
+  var rsSeq = rsOptVar + reOptMod + rsOptJoin;
+  var rsEmoji = "(?:" + [rsDingbat, rsRegional, rsSurrPair].join("|") + ")" + rsSeq;
   var reUnicodeWord = RegExp([
     rsUpper + "?" + rsLower + "+" + rsOptContrLower + "(?=" + [rsBreak, rsUpper, "$"].join("|") + ")",
     rsMiscUpper + "+" + rsOptContrUpper + "(?=" + [rsBreak, rsUpper + rsMiscLower, "$"].join("|") + ")",
@@ -24818,13 +24715,7 @@
   });
   var kebabCase_default = kebabCase;
 
-  // node_modules/lodash-es/startCase.js
-  var startCase = createCompounder_default(function(result, word, index) {
-    return result + (index ? " " : "") + upperFirst_default(word);
-  });
-  var startCase_default = startCase;
-
-  // preview/src/components/Nav.tsx
+  // preview/components/Nav.tsx
   function Nav({ className = "", pages }) {
     function itemClasses({ isActive }) {
       return [
@@ -24844,8 +24735,8 @@
     }, page)))));
   }
 
-  // preview/src/pages/Buttons.tsx
-  var import_react14 = __toESM(require_react());
+  // preview/pages/Buttons.tsx
+  var import_react15 = __toESM(require_react());
 
   // src/buttons/PrimaryButton.tsx
   var import_react4 = __toESM(require_react());
@@ -25665,11 +25556,11 @@
     return canonical;
   }
   var Library = /* @__PURE__ */ function() {
-    function Library2() {
-      _classCallCheck(this, Library2);
+    function Library3() {
+      _classCallCheck(this, Library3);
       this.definitions = {};
     }
-    _createClass(Library2, [{
+    _createClass(Library3, [{
       key: "add",
       value: function add() {
         var _this = this;
@@ -25714,7 +25605,7 @@
         return additions;
       }
     }]);
-    return Library2;
+    return Library3;
   }();
   var _plugins = [];
   var _hooks = {};
@@ -27620,10 +27511,10 @@
   // src/Container.tsx
   var import_react11 = __toESM(require_react());
 
-  // preview/src/components/Example.tsx
+  // preview/components/Example.tsx
   var import_react13 = __toESM(require_react());
 
-  // preview/src/components/ExampleCode.tsx
+  // preview/components/ExampleCode.tsx
   var import_react12 = __toESM(require_react());
   function ExampleCode({ children }) {
     const borderColor = "border-gray-200 dark:border-gray-700";
@@ -27638,7 +27529,7 @@
     }, /* @__PURE__ */ import_react12.default.createElement("code", null, children)));
   }
 
-  // preview/src/components/Example.tsx
+  // preview/components/Example.tsx
   function Example({ code, example, variant, title }) {
     return /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "space-y-4"
@@ -27651,58 +27542,72 @@
     }, example), /* @__PURE__ */ import_react13.default.createElement(ExampleCode, null, code));
   }
 
-  // preview/src/pages/Buttons.tsx
-  function Buttons() {
+  // preview/pages/ExamplePage.tsx
+  var import_react14 = __toESM(require_react());
+  function ExamplePage({ title, className = "", children }) {
     return /* @__PURE__ */ import_react14.default.createElement("div", {
+      className: "flex-grow px-10 space-y-4"
+    }, /* @__PURE__ */ import_react14.default.createElement("h1", {
+      className: "font-bold text-3xl"
+    }, title), /* @__PURE__ */ import_react14.default.createElement("div", {
+      className
+    }, children));
+  }
+
+  // preview/pages/Buttons.tsx
+  function Buttons() {
+    return /* @__PURE__ */ import_react15.default.createElement(ExamplePage, {
+      title: "Buttons",
       className: "space-y-10"
-    }, /* @__PURE__ */ import_react14.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react15.default.createElement(Example, {
       title: "Primary Button",
       code: `<PrimaryButton>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, null, "Submit")
-    }), /* @__PURE__ */ import_react14.default.createElement(Example, {
+      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, null, "Submit")
+    }), /* @__PURE__ */ import_react15.default.createElement(Example, {
       title: "Primary Button",
       variant: "disabled",
       code: `<PrimaryButton disabled>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, {
         disabled: true
       }, "Submit")
-    }), /* @__PURE__ */ import_react14.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Example, {
       title: "Link as Button",
       code: `<PrimaryButton
   tag="a"
   href="https://example.com"
   target="_blank"
 >Press</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, {
         tag: "a",
         href: "https://example.com",
         target: "_blank"
       }, "Press")
-    }), /* @__PURE__ */ import_react14.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Example, {
       title: "Large Primary Button",
       code: `<PrimaryButton size="lg">Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, {
         size: "lg"
       }, "Submit")
     }));
   }
 
-  // preview/src/pages/Links.tsx
-  var import_react15 = __toESM(require_react());
+  // preview/pages/Links.tsx
+  var import_react16 = __toESM(require_react());
   function Links() {
-    return /* @__PURE__ */ import_react15.default.createElement("div", {
+    return /* @__PURE__ */ import_react16.default.createElement(ExamplePage, {
+      title: "Links",
       className: "grid grid-cols-1 lg:grid-cols-2 gap-10"
-    }, /* @__PURE__ */ import_react15.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react16.default.createElement(Example, {
       title: "External Link",
       code: `<ExternalLink href="https://example.com">Visit site</ExternalLink>`,
-      example: /* @__PURE__ */ import_react15.default.createElement(ExternalLink, {
+      example: /* @__PURE__ */ import_react16.default.createElement(ExternalLink, {
         href: "https://example.com"
       }, "Visit site")
     }));
   }
 
-  // preview/src/pages/Type.tsx
-  var import_react16 = __toESM(require_react());
+  // preview/pages/Type.tsx
+  var import_react17 = __toESM(require_react());
 
   // node_modules/@fortawesome/free-regular-svg-icons/index.es.js
   var faChartBar = {
@@ -27712,28 +27617,29 @@
   };
   var faBarChart = faChartBar;
 
-  // preview/src/pages/Type.tsx
+  // preview/pages/Type.tsx
   function Type() {
-    return /* @__PURE__ */ import_react16.default.createElement("div", {
+    return /* @__PURE__ */ import_react17.default.createElement(ExamplePage, {
+      title: "Type",
       className: "space-y-10"
-    }, /* @__PURE__ */ import_react16.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Example, {
       title: "Icon Heading",
       code: [
         "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
         "",
         "<IconHeading icon={faBarChart}>Statistics</IconHeading>"
       ].join("\n"),
-      example: /* @__PURE__ */ import_react16.default.createElement(IconHeading, {
+      example: /* @__PURE__ */ import_react17.default.createElement(IconHeading, {
         icon: faBarChart
       }, "Statistics")
-    }), /* @__PURE__ */ import_react16.default.createElement(FooterBaseExample, null), /* @__PURE__ */ import_react16.default.createElement(FooterMultiLineExample, null));
+    }), /* @__PURE__ */ import_react17.default.createElement(FooterBaseExample, null), /* @__PURE__ */ import_react17.default.createElement(FooterMultiLineExample, null));
   }
   function FooterBaseExample() {
     const code = ["<FooterLegal>"].concat([
       "ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved."
     ].map((line) => "	" + line).join("\n")).concat("</FooterLegal>").join("\n");
-    const content = /* @__PURE__ */ import_react16.default.createElement(Legal, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
-    return /* @__PURE__ */ import_react16.default.createElement(Example, {
+    const content = /* @__PURE__ */ import_react17.default.createElement(Legal, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
+    return /* @__PURE__ */ import_react17.default.createElement(Example, {
       title: "Legal",
       code,
       example: content
@@ -27744,13 +27650,13 @@
       "<>ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved.</>",
       "'OCP is a company in Delta City, Michigan.'"
     ].map((line) => `	${line},`).join("\n")).concat("]} />").join("\n");
-    const content = /* @__PURE__ */ import_react16.default.createElement(Legal, {
+    const content = /* @__PURE__ */ import_react17.default.createElement(Legal, {
       lines: [
-        /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
+        /* @__PURE__ */ import_react17.default.createElement(import_react17.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
         "OCP is a company in Delta City, Michigan."
       ]
     });
-    return /* @__PURE__ */ import_react16.default.createElement(Example, {
+    return /* @__PURE__ */ import_react17.default.createElement(Example, {
       title: "Legal",
       variant: "multi-line",
       code,
@@ -27758,64 +27664,59 @@
     });
   }
 
-  // preview/src/components/Preview.tsx
-  function Preview() {
-    const { page } = useParams();
-    const pages = [
-      "Buttons",
-      "Links",
-      "Type"
-    ];
-    function pageComponent(page2) {
-      if (page2 === "buttons")
-        return /* @__PURE__ */ import_react17.default.createElement(Buttons, null);
-      if (page2 === "links")
-        return /* @__PURE__ */ import_react17.default.createElement(Links, null);
-      if (page2 === "type")
-        return /* @__PURE__ */ import_react17.default.createElement(Type, null);
-      return /* @__PURE__ */ import_react17.default.createElement(Buttons, null);
-    }
-    return /* @__PURE__ */ import_react17.default.createElement("div", {
+  // preview/components/LayoutIndicator.tsx
+  var import_react18 = __toESM(require_react());
+  function LayoutIndicator() {
+    return /* @__PURE__ */ import_react18.default.createElement("div", {
+      className: "fixed top-0 left-0 py-1 bg-green-500 h-10"
+    }, "Layout:");
+  }
+
+  // preview/components/Library.tsx
+  function Library2() {
+    return /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "fixed w-screen h-screen overflow-hidden flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
-    }, /* @__PURE__ */ import_react17.default.createElement("header", {
+    }, /* @__PURE__ */ import_react19.default.createElement(LayoutIndicator, null), /* @__PURE__ */ import_react19.default.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
-    }, /* @__PURE__ */ import_react17.default.createElement("div", {
+    }, /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "flex-grow"
-    }, /* @__PURE__ */ import_react17.default.createElement("a", {
+    }, /* @__PURE__ */ import_react19.default.createElement("a", {
       href: "#content",
       className: "overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none"
-    }, "Skip to content"), /* @__PURE__ */ import_react17.default.createElement("div", {
+    }, "Skip to content"), /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "mx-4 py-3 lg:py-6"
-    }, /* @__PURE__ */ import_react17.default.createElement(Nav, {
-      pages
-    })))), /* @__PURE__ */ import_react17.default.createElement("main", {
+    }, /* @__PURE__ */ import_react19.default.createElement(Nav, {
+      pages: ["buttons", "links", "type"]
+    })))), /* @__PURE__ */ import_react19.default.createElement("main", {
       id: "content",
       className: "flex flex-col flex-grow py-6 overflow-scroll"
-    }, /* @__PURE__ */ import_react17.default.createElement("div", {
-      className: "flex-grow px-10 space-y-4"
-    }, /* @__PURE__ */ import_react17.default.createElement("h1", {
-      className: "font-bold text-3xl"
-    }, startCase_default(page)), pageComponent(page)), /* @__PURE__ */ import_react17.default.createElement("footer", {
+    }, /* @__PURE__ */ import_react19.default.createElement(Routes, null, /* @__PURE__ */ import_react19.default.createElement(Route, {
+      path: "/",
+      element: /* @__PURE__ */ import_react19.default.createElement(Buttons, null)
+    }), /* @__PURE__ */ import_react19.default.createElement(Route, {
+      path: "/buttons",
+      element: /* @__PURE__ */ import_react19.default.createElement(Buttons, null)
+    }), /* @__PURE__ */ import_react19.default.createElement(Route, {
+      path: "/links",
+      element: /* @__PURE__ */ import_react19.default.createElement(Links, null)
+    }), /* @__PURE__ */ import_react19.default.createElement(Route, {
+      path: "/type",
+      element: /* @__PURE__ */ import_react19.default.createElement(Type, null)
+    })), /* @__PURE__ */ import_react19.default.createElement("footer", {
       className: "flex-grow-0"
-    }, /* @__PURE__ */ import_react17.default.createElement(Legal, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Legal, {
       className: "px-10 pt-16 pb-6 text-center"
-    }, /* @__PURE__ */ import_react17.default.createElement("span", {
+    }, /* @__PURE__ */ import_react19.default.createElement("span", {
       className: "space-x-1"
-    }, /* @__PURE__ */ import_react17.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react17.default.createElement(ExternalLink, {
+    }, /* @__PURE__ */ import_react19.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react19.default.createElement(ExternalLink, {
       href: "https://fullstackapp.co"
-    }, "Full Stack App Co."), /* @__PURE__ */ import_react17.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react17.default.createElement(ExternalLink, {
+    }, "Full Stack App Co."), /* @__PURE__ */ import_react19.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react19.default.createElement(ExternalLink, {
       href: "https://opensource.org/licenses/MIT"
     }, "MIT License"))))));
   }
 
-  // preview/src/app.tsx
-  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react18.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react18.default.createElement(Routes, null, /* @__PURE__ */ import_react18.default.createElement(Route, {
-    path: "/",
-    element: /* @__PURE__ */ import_react18.default.createElement(Preview, null)
-  }), /* @__PURE__ */ import_react18.default.createElement(Route, {
-    path: "/:page",
-    element: /* @__PURE__ */ import_react18.default.createElement(Preview, null)
-  }))));
+  // preview/app.tsx
+  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react20.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react20.default.createElement(Library2, null)));
 })();
 /*
 object-assign

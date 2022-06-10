@@ -1,10 +1,11 @@
 import React from 'react'
-import {PrimaryButton} from "../../../src";
+import {PrimaryButton} from "../../src";
 import Example from "../components/Example";
+import ExamplePage from "./ExamplePage";
 
 export default function Buttons() {
   return (
-    <div className="space-y-10">
+    <ExamplePage title="Buttons" className="space-y-10">
       <Example
         title="Primary Button"
         code={`<PrimaryButton>Submit</PrimaryButton>`}
@@ -28,6 +29,6 @@ export default function Buttons() {
         code={`<PrimaryButton size="lg">Submit</PrimaryButton>`}
         example={<PrimaryButton size="lg">Submit</PrimaryButton>}
       />
-    </div>
+    </ExamplePage>
   )
 }

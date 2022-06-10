@@ -1,11 +1,12 @@
 import React from 'react'
-import {IconHeading, Legal} from "../../../src";
+import {IconHeading, Legal} from "../../src";
 import Example from "../components/Example";
 import {faBarChart} from '@fortawesome/free-regular-svg-icons'
+import ExamplePage from "./ExamplePage";
 
 export default function Type() {
   return (
-    <div className="space-y-10">
+    <ExamplePage title="Type" className="space-y-10">
       <Example
         title="Icon Heading"
         code={[
@@ -17,7 +18,7 @@ export default function Type() {
       />
       <FooterBaseExample />
       <FooterMultiLineExample />
-    </div>
+    </ExamplePage>
   )
 }
 

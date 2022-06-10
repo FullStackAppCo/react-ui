@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Nav from './Nav'
 import {useParams} from "react-router-dom"
 import {startCase} from 'lodash-es'

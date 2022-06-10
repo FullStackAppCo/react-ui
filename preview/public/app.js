@@ -458,7 +458,7 @@
             }
             return element;
           };
-          function createElement9(type, config2, children) {
+          function createElement4(type, config2, children) {
             var propName;
             var props = {};
             var key = null;
@@ -1531,7 +1531,7 @@
                 error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
               }
             }
-            var element = createElement9.apply(this, arguments);
+            var element = createElement4.apply(this, arguments);
             if (element == null) {
               return element;
             }
@@ -8836,7 +8836,7 @@
               }
             }
           }
-          function createElement9(type, props, rootContainerElement, parentNamespace) {
+          function createElement4(type, props, rootContainerElement, parentNamespace) {
             var isCustomComponentTag;
             var ownerDocument = getOwnerDocumentFromRootContainer(rootContainerElement);
             var domElement;
@@ -9688,7 +9688,7 @@
               }
               parentNamespace = hostContextDev.namespace;
             }
-            var domElement = createElement9(type, props, rootContainerInstance, parentNamespace);
+            var domElement = createElement4(type, props, rootContainerInstance, parentNamespace);
             precacheFiberNode(internalInstanceHandle, domElement);
             updateFiberProps(domElement, props);
             return domElement;
@@ -23326,7 +23326,7 @@
   });
 
   // preview/src/app.tsx
-  var React15 = __toESM(require_react());
+  var import_react18 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/react-router-dom/index.js
@@ -24281,10 +24281,10 @@
   }
 
   // preview/src/components/Preview.tsx
-  var React14 = __toESM(require_react());
+  var import_react17 = __toESM(require_react());
 
   // preview/src/components/Nav.tsx
-  var React = __toESM(require_react());
+  var import_react3 = __toESM(require_react());
 
   // node_modules/lodash-es/_freeGlobal.js
   var freeGlobal = typeof global == "object" && global && global.Object === Object && global;
@@ -24833,22 +24833,22 @@
         "active:bg-black active:text-white"
       ].concat(isActive ? ["text-white bg-black dark:text-black dark:bg-white"] : ["text-primary-500"]).join(" ");
     }
-    return /* @__PURE__ */ React.createElement("nav", null, /* @__PURE__ */ React.createElement("ul", {
+    return /* @__PURE__ */ import_react3.default.createElement("nav", null, /* @__PURE__ */ import_react3.default.createElement("ul", {
       className: "font-semibold flex lg:flex-col items-stretch"
-    }, pages.map((page) => /* @__PURE__ */ React.createElement("li", {
+    }, pages.map((page) => /* @__PURE__ */ import_react3.default.createElement("li", {
       key: page,
       className: "px-2 lg:px-6 py-1"
-    }, /* @__PURE__ */ React.createElement(NavLink, {
+    }, /* @__PURE__ */ import_react3.default.createElement(NavLink, {
       to: `/${kebabCase_default(page)}`,
       className: itemClasses
     }, page)))));
   }
 
   // preview/src/pages/Buttons.tsx
-  var import_react11 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
 
   // src/buttons/PrimaryButton.tsx
-  var import_react3 = __toESM(require_react());
+  var import_react4 = __toESM(require_react());
   function PrimaryButton({ children, className = "", disabled: disabled2 = false, tag = "button", onClick = () => null, size = "base", href = "#", target = "_self" }) {
     className = [
       sizeClasses(size),
@@ -24866,7 +24866,7 @@
         return "px-8 py-3 text-xl";
       return "px-4 py-2 text-lg";
     }
-    return /* @__PURE__ */ import_react3.default.createElement(Tag, __spreadValues({
+    return /* @__PURE__ */ import_react4.default.createElement(Tag, __spreadValues({
       className,
       onClick,
       disabled: disabled2
@@ -24874,23 +24874,23 @@
   }
 
   // src/type/TextClip.tsx
-  var import_react4 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
 
   // src/type/Legal.tsx
-  var import_react5 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   function Legal({ children, className = "", lines = [] }) {
     if (lines.length === 0)
       lines.push(children);
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: `space-y-3 text-gray-700 dark:text-gray-400 ${className}`
-    }, lines.map((line, i) => /* @__PURE__ */ import_react5.default.createElement("small", {
+    }, lines.map((line, i) => /* @__PURE__ */ import_react6.default.createElement("small", {
       key: i,
       className: `block leading-loose`
     }, line)));
   }
 
   // src/type/IconHeading.tsx
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
 
   // node_modules/@fortawesome/fontawesome-svg-core/index.es.js
   function ownKeys(object, enumerableOnly) {
@@ -26194,12 +26194,12 @@
   function createElementNS(tag) {
     return DOCUMENT.createElementNS("http://www.w3.org/2000/svg", tag);
   }
-  function createElement4(tag) {
+  function createElement3(tag) {
     return DOCUMENT.createElement(tag);
   }
   function convertSVG(abstractObj) {
     var params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    var _params$ceFn = params.ceFn, ceFn = _params$ceFn === void 0 ? abstractObj.tag === "svg" ? createElementNS : createElement4 : _params$ceFn;
+    var _params$ceFn = params.ceFn, ceFn = _params$ceFn === void 0 ? abstractObj.tag === "svg" ? createElementNS : createElement3 : _params$ceFn;
     if (typeof abstractObj === "string") {
       return DOCUMENT.createTextNode(abstractObj);
     }
@@ -27262,7 +27262,7 @@
 
   // node_modules/@fortawesome/react-fontawesome/index.es.js
   var import_prop_types = __toESM(require_prop_types());
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
   function ownKeys2(object, enumerableOnly) {
     var keys = Object.keys(object);
     if (Object.getOwnPropertySymbols) {
@@ -27428,13 +27428,13 @@
       return acc;
     }, {});
   }
-  function convert(createElement9, element) {
+  function convert(createElement4, element) {
     var extraProps = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
     if (typeof element === "string") {
       return element;
     }
     var children = (element.children || []).map(function(child) {
-      return convert(createElement9, child);
+      return convert(createElement4, child);
     });
     var mixins = Object.keys(element.attributes || {}).reduce(function(acc, key) {
       var val = element.attributes[key];
@@ -27459,7 +27459,7 @@
     });
     var _extraProps$style = extraProps.style, existingStyle = _extraProps$style === void 0 ? {} : _extraProps$style, remaining = _objectWithoutProperties(extraProps, _excluded$1);
     mixins.attrs["style"] = _objectSpread22(_objectSpread22({}, mixins.attrs["style"]), existingStyle);
-    return createElement9.apply(void 0, [element.tag, _objectSpread22(_objectSpread22({}, mixins.attrs), remaining)].concat(_toConsumableArray2(children)));
+    return createElement4.apply(void 0, [element.tag, _objectSpread22(_objectSpread22({}, mixins.attrs), remaining)].concat(_toConsumableArray2(children)));
   }
   var PRODUCTION2 = false;
   try {
@@ -27585,22 +27585,22 @@
     transform: null,
     swapOpacity: false
   };
-  var convertCurry = convert.bind(null, import_react6.default.createElement);
+  var convertCurry = convert.bind(null, import_react7.default.createElement);
 
   // src/type/IconHeading.tsx
   function IconHeading({ children, icon: icon3 }) {
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "flex items-center space-x-2"
-    }, /* @__PURE__ */ import_react7.default.createElement(FontAwesomeIcon, {
+    }, /* @__PURE__ */ import_react8.default.createElement(FontAwesomeIcon, {
       icon: icon3,
       className: "w-4 h-4 text-gray-400 dark:text-gray-500"
-    }), /* @__PURE__ */ import_react7.default.createElement("h2", {
+    }), /* @__PURE__ */ import_react8.default.createElement("h2", {
       className: "text-gray-800 dark:text-gray-300 text-lg font-display tracking-wide"
     }, children));
   }
 
   // src/links/ExternalLink.tsx
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   function ExternalLink({ children, className = "", href }) {
     className = [
       "p-0.5",
@@ -27608,101 +27608,101 @@
       "focus:outline-none focus:bg-focus-500 focus:text-black focus:no-underline",
       className
     ].join(" ");
-    return /* @__PURE__ */ import_react8.default.createElement("a", {
+    return /* @__PURE__ */ import_react9.default.createElement("a", {
       href,
       className
     }, children);
   }
 
   // src/FathomAnalytics.tsx
-  var import_react9 = __toESM(require_react());
-
-  // src/Container.tsx
   var import_react10 = __toESM(require_react());
 
+  // src/Container.tsx
+  var import_react11 = __toESM(require_react());
+
   // preview/src/components/Example.tsx
-  var React10 = __toESM(require_react());
+  var import_react13 = __toESM(require_react());
 
   // preview/src/components/ExampleCode.tsx
-  var React9 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
   function ExampleCode({ children }) {
     const borderColor = "border-gray-200 dark:border-gray-700";
-    return /* @__PURE__ */ React9.createElement("div", {
+    return /* @__PURE__ */ import_react12.default.createElement("div", {
       className: `overflow-hidden bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded ${borderColor} border text-sm`
-    }, /* @__PURE__ */ React9.createElement("h3", {
+    }, /* @__PURE__ */ import_react12.default.createElement("h3", {
       className: "sr-only"
-    }, "Code examples"), /* @__PURE__ */ React9.createElement("h4", {
+    }, "Code examples"), /* @__PURE__ */ import_react12.default.createElement("h4", {
       className: `font-semibold px-3 p-1 bg-gray-200 dark:bg-gray-700 bg-opacity-50 dark:bg-opacity-25 tracking-wider text-xs ${borderColor} border-b`
-    }, "JSX"), /* @__PURE__ */ React9.createElement("pre", {
+    }, "JSX"), /* @__PURE__ */ import_react12.default.createElement("pre", {
       className: "px-3 py-2 overflow-scroll"
-    }, /* @__PURE__ */ React9.createElement("code", null, children)));
+    }, /* @__PURE__ */ import_react12.default.createElement("code", null, children)));
   }
 
   // preview/src/components/Example.tsx
   function Example({ code, example, variant, title }) {
-    return /* @__PURE__ */ React10.createElement("div", {
+    return /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "space-y-4"
-    }, /* @__PURE__ */ React10.createElement("h2", {
+    }, /* @__PURE__ */ import_react13.default.createElement("h2", {
       className: "font-bold text-lg flex items-center space-x-2"
-    }, /* @__PURE__ */ React10.createElement("span", null, title), variant && /* @__PURE__ */ React10.createElement("span", {
+    }, /* @__PURE__ */ import_react13.default.createElement("span", null, title), variant && /* @__PURE__ */ import_react13.default.createElement("span", {
       className: "translate-y-[1px] bg-primary-500 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
-    }, variant)), /* @__PURE__ */ React10.createElement("div", {
+    }, variant)), /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "border-gray-200 dark:border-gray-600 border p-6 rounded"
-    }, example), /* @__PURE__ */ React10.createElement(ExampleCode, null, code));
+    }, example), /* @__PURE__ */ import_react13.default.createElement(ExampleCode, null, code));
   }
 
   // preview/src/pages/Buttons.tsx
   function Buttons() {
-    return /* @__PURE__ */ import_react11.default.createElement("div", {
+    return /* @__PURE__ */ import_react14.default.createElement("div", {
       className: "space-y-10"
-    }, /* @__PURE__ */ import_react11.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react14.default.createElement(Example, {
       title: "Primary Button",
       code: `<PrimaryButton>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react11.default.createElement(PrimaryButton, null, "Submit")
-    }), /* @__PURE__ */ import_react11.default.createElement(Example, {
+      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, null, "Submit")
+    }), /* @__PURE__ */ import_react14.default.createElement(Example, {
       title: "Primary Button",
       variant: "disabled",
       code: `<PrimaryButton disabled>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react11.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, {
         disabled: true
       }, "Submit")
-    }), /* @__PURE__ */ import_react11.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react14.default.createElement(Example, {
       title: "Link as Button",
       code: `<PrimaryButton
   tag="a"
   href="https://example.com"
   target="_blank"
 >Press</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react11.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, {
         tag: "a",
         href: "https://example.com",
         target: "_blank"
       }, "Press")
-    }), /* @__PURE__ */ import_react11.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react14.default.createElement(Example, {
       title: "Large Primary Button",
       code: `<PrimaryButton size="lg">Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react11.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react14.default.createElement(PrimaryButton, {
         size: "lg"
       }, "Submit")
     }));
   }
 
   // preview/src/pages/Links.tsx
-  var import_react12 = __toESM(require_react());
+  var import_react15 = __toESM(require_react());
   function Links() {
-    return /* @__PURE__ */ import_react12.default.createElement("div", {
+    return /* @__PURE__ */ import_react15.default.createElement("div", {
       className: "grid grid-cols-1 lg:grid-cols-2 gap-10"
-    }, /* @__PURE__ */ import_react12.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react15.default.createElement(Example, {
       title: "External Link",
       code: `<ExternalLink href="https://example.com">Visit site</ExternalLink>`,
-      example: /* @__PURE__ */ import_react12.default.createElement(ExternalLink, {
+      example: /* @__PURE__ */ import_react15.default.createElement(ExternalLink, {
         href: "https://example.com"
       }, "Visit site")
     }));
   }
 
   // preview/src/pages/Type.tsx
-  var import_react13 = __toESM(require_react());
+  var import_react16 = __toESM(require_react());
 
   // node_modules/@fortawesome/free-regular-svg-icons/index.es.js
   var faChartBar = {
@@ -27714,26 +27714,26 @@
 
   // preview/src/pages/Type.tsx
   function Type() {
-    return /* @__PURE__ */ import_react13.default.createElement("div", {
+    return /* @__PURE__ */ import_react16.default.createElement("div", {
       className: "space-y-10"
-    }, /* @__PURE__ */ import_react13.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react16.default.createElement(Example, {
       title: "Icon Heading",
       code: [
         "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
         "",
         "<IconHeading icon={faBarChart}>Statistics</IconHeading>"
       ].join("\n"),
-      example: /* @__PURE__ */ import_react13.default.createElement(IconHeading, {
+      example: /* @__PURE__ */ import_react16.default.createElement(IconHeading, {
         icon: faBarChart
       }, "Statistics")
-    }), /* @__PURE__ */ import_react13.default.createElement(FooterBaseExample, null), /* @__PURE__ */ import_react13.default.createElement(FooterMultiLineExample, null));
+    }), /* @__PURE__ */ import_react16.default.createElement(FooterBaseExample, null), /* @__PURE__ */ import_react16.default.createElement(FooterMultiLineExample, null));
   }
   function FooterBaseExample() {
     const code = ["<FooterLegal>"].concat([
       "ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved."
     ].map((line) => "	" + line).join("\n")).concat("</FooterLegal>").join("\n");
-    const content = /* @__PURE__ */ import_react13.default.createElement(Legal, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
-    return /* @__PURE__ */ import_react13.default.createElement(Example, {
+    const content = /* @__PURE__ */ import_react16.default.createElement(Legal, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
+    return /* @__PURE__ */ import_react16.default.createElement(Example, {
       title: "Legal",
       code,
       example: content
@@ -27744,13 +27744,13 @@
       "<>ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved.</>",
       "'OCP is a company in Delta City, Michigan.'"
     ].map((line) => `	${line},`).join("\n")).concat("]} />").join("\n");
-    const content = /* @__PURE__ */ import_react13.default.createElement(Legal, {
+    const content = /* @__PURE__ */ import_react16.default.createElement(Legal, {
       lines: [
-        /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
+        /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
         "OCP is a company in Delta City, Michigan."
       ]
     });
-    return /* @__PURE__ */ import_react13.default.createElement(Example, {
+    return /* @__PURE__ */ import_react16.default.createElement(Example, {
       title: "Legal",
       variant: "multi-line",
       code,
@@ -27768,53 +27768,53 @@
     ];
     function pageComponent(page2) {
       if (page2 === "buttons")
-        return /* @__PURE__ */ React14.createElement(Buttons, null);
+        return /* @__PURE__ */ import_react17.default.createElement(Buttons, null);
       if (page2 === "links")
-        return /* @__PURE__ */ React14.createElement(Links, null);
+        return /* @__PURE__ */ import_react17.default.createElement(Links, null);
       if (page2 === "type")
-        return /* @__PURE__ */ React14.createElement(Type, null);
-      return /* @__PURE__ */ React14.createElement(Buttons, null);
+        return /* @__PURE__ */ import_react17.default.createElement(Type, null);
+      return /* @__PURE__ */ import_react17.default.createElement(Buttons, null);
     }
-    return /* @__PURE__ */ React14.createElement("div", {
+    return /* @__PURE__ */ import_react17.default.createElement("div", {
       className: "fixed w-screen h-screen overflow-hidden flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
-    }, /* @__PURE__ */ React14.createElement("header", {
+    }, /* @__PURE__ */ import_react17.default.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
-    }, /* @__PURE__ */ React14.createElement("div", {
+    }, /* @__PURE__ */ import_react17.default.createElement("div", {
       className: "flex-grow"
-    }, /* @__PURE__ */ React14.createElement("a", {
+    }, /* @__PURE__ */ import_react17.default.createElement("a", {
       href: "#content",
       className: "overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none"
-    }, "Skip to content"), /* @__PURE__ */ React14.createElement("div", {
+    }, "Skip to content"), /* @__PURE__ */ import_react17.default.createElement("div", {
       className: "mx-4 py-3 lg:py-6"
-    }, /* @__PURE__ */ React14.createElement(Nav, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Nav, {
       pages
-    })))), /* @__PURE__ */ React14.createElement("main", {
+    })))), /* @__PURE__ */ import_react17.default.createElement("main", {
       id: "content",
       className: "flex flex-col flex-grow py-6 overflow-scroll"
-    }, /* @__PURE__ */ React14.createElement("div", {
+    }, /* @__PURE__ */ import_react17.default.createElement("div", {
       className: "flex-grow px-10 space-y-4"
-    }, /* @__PURE__ */ React14.createElement("h1", {
+    }, /* @__PURE__ */ import_react17.default.createElement("h1", {
       className: "font-bold text-3xl"
-    }, startCase_default(page)), pageComponent(page)), /* @__PURE__ */ React14.createElement("footer", {
+    }, startCase_default(page)), pageComponent(page)), /* @__PURE__ */ import_react17.default.createElement("footer", {
       className: "flex-grow-0"
-    }, /* @__PURE__ */ React14.createElement(Legal, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Legal, {
       className: "px-10 pt-16 pb-6 text-center"
-    }, /* @__PURE__ */ React14.createElement("span", {
+    }, /* @__PURE__ */ import_react17.default.createElement("span", {
       className: "space-x-1"
-    }, /* @__PURE__ */ React14.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ React14.createElement(ExternalLink, {
+    }, /* @__PURE__ */ import_react17.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react17.default.createElement(ExternalLink, {
       href: "https://fullstackapp.co"
-    }, "Full Stack App Co."), /* @__PURE__ */ React14.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ React14.createElement(ExternalLink, {
+    }, "Full Stack App Co."), /* @__PURE__ */ import_react17.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react17.default.createElement(ExternalLink, {
       href: "https://opensource.org/licenses/MIT"
     }, "MIT License"))))));
   }
 
   // preview/src/app.tsx
-  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ React15.createElement(BrowserRouter, null, /* @__PURE__ */ React15.createElement(Routes, null, /* @__PURE__ */ React15.createElement(Route, {
+  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react18.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react18.default.createElement(Routes, null, /* @__PURE__ */ import_react18.default.createElement(Route, {
     path: "/",
-    element: /* @__PURE__ */ React15.createElement(Preview, null)
-  }), /* @__PURE__ */ React15.createElement(Route, {
+    element: /* @__PURE__ */ import_react18.default.createElement(Preview, null)
+  }), /* @__PURE__ */ import_react18.default.createElement(Route, {
     path: "/:page",
-    element: /* @__PURE__ */ React15.createElement(Preview, null)
+    element: /* @__PURE__ */ import_react18.default.createElement(Preview, null)
   }))));
 })();
 /*

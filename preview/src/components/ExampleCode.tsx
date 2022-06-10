@@ -1,5 +1,4 @@
-import * as React from "react";
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 interface ExampleCodeProps {
   children: ReactNode,

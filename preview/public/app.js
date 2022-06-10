@@ -27632,7 +27632,7 @@
     }, /* @__PURE__ */ React9.createElement("h3", {
       className: "sr-only"
     }, "Code examples"), /* @__PURE__ */ React9.createElement("h4", {
-      className: `font-semibold px-3 p-1 bg-gray-200 dark:bg-gray-700 bg-opacity-50 tracking-wider text-xs ${borderColor} border-b`
+      className: `font-semibold px-3 p-1 bg-gray-200 dark:bg-gray-700 bg-opacity-50 dark:bg-opacity-25 tracking-wider text-xs ${borderColor} border-b`
     }, "JSX"), /* @__PURE__ */ React9.createElement("pre", {
       className: "px-3 py-2 overflow-scroll"
     }, /* @__PURE__ */ React9.createElement("code", null, children)));

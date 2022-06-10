@@ -3,10 +3,11 @@ import {faInfinity, faMobileScreenButton, faTabletScreenButton, faLaptop, faComp
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface LayoutIndicatorProps {
+  className?: string,
   layoutMap?: Object,
 }
 
-export default function LayoutIndicator({ layoutMap }: LayoutIndicatorProps) {
+export default function LayoutIndicator({ className, layoutMap }: LayoutIndicatorProps) {
   layoutMap = layoutMap ? layoutMap : {
     'all': {
       icon: faInfinity,
@@ -31,13 +32,12 @@ export default function LayoutIndicator({ layoutMap }: LayoutIndicatorProps) {
   }
 
   return (
-    <div aria-hidden="true" className="w-screen flex justify-center items-center py-1 bg-primary-500 dark:bg-primary-900 h-10 uppercase text-xs tracking-wider font-semibold text-white">
+    <div aria-hidden="true" className={`fixed bottom-4 right-6 p-5 w-16 h-16 flex items-center justify-center shadow-xl rounded-full inline-block bg-primary-500 dark:bg-primary-900 uppercase text-xs tracking-wider font-semibold text-white border-primary-800 border ${className}`}>
       {Object.entries(layoutMap).map(entries => {
         const [layout, data] = entries
         return (
-          <div key={layout} className={`space-x-1.5 ${data.classes.join(' ')}`}>
-            <FontAwesomeIcon icon={data.icon} />
-            <span>screen {layout}</span>
+          <div key={layout} className={`flex items-center justify-center ${data.classes.join(' ')}`}>
+            <FontAwesomeIcon icon={data.icon} className="h-5" />
           </div>
         )
       })}

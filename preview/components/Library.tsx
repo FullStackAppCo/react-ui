@@ -11,14 +11,13 @@ export default function Library()
 {
   return (
     <div className="fixed w-screen h-screen flex flex-col">
-      <LayoutIndicator className="flex-grow-0" />
+      <LayoutIndicator className="mx-auto" />
       <div className="overflow-hidden flex-grow flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x">
+
         <header className="flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll">
-          <div className="flex-grow">
-            <a href="#content" className="overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none">Skip to content</a>
-            <div className="mx-4 py-3 lg:py-6">
-              <Nav pages={['buttons', 'links', 'type']} />
-            </div>
+          <a href="#content" className="overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none">Skip to content</a>
+          <div className="mx-4 py-3 lg:py-6">
+            <Nav pages={['buttons', 'links', 'type']} />
           </div>
         </header>
 

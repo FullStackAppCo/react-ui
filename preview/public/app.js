@@ -27695,7 +27695,7 @@
   };
 
   // preview/components/LayoutIndicator.tsx
-  function LayoutIndicator({ layoutMap }) {
+  function LayoutIndicator({ className, layoutMap }) {
     layoutMap = layoutMap ? layoutMap : {
       "all": {
         icon: faInfinity,
@@ -27720,15 +27720,16 @@
     };
     return /* @__PURE__ */ import_react18.default.createElement("div", {
       "aria-hidden": "true",
-      className: "w-screen flex justify-center items-center py-1 bg-primary-500 dark:bg-primary-900 h-10 uppercase text-xs tracking-wider font-semibold text-white"
+      className: `fixed bottom-4 right-6 p-5 w-16 h-16 flex items-center justify-center shadow-xl rounded-full inline-block bg-primary-500 dark:bg-primary-900 uppercase text-xs tracking-wider font-semibold text-white border-primary-800 border ${className}`
     }, Object.entries(layoutMap).map((entries) => {
       const [layout, data] = entries;
       return /* @__PURE__ */ import_react18.default.createElement("div", {
         key: layout,
-        className: `space-x-1.5 ${data.classes.join(" ")}`
+        className: `flex items-center justify-center ${data.classes.join(" ")}`
       }, /* @__PURE__ */ import_react18.default.createElement(FontAwesomeIcon, {
-        icon: data.icon
-      }), /* @__PURE__ */ import_react18.default.createElement("span", null, "screen ", layout));
+        icon: data.icon,
+        className: "h-5"
+      }));
     }));
   }
 
@@ -27737,13 +27738,11 @@
     return /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "fixed w-screen h-screen flex flex-col"
     }, /* @__PURE__ */ import_react19.default.createElement(LayoutIndicator, {
-      className: "flex-grow-0"
+      className: "mx-auto"
     }), /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "overflow-hidden flex-grow flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
     }, /* @__PURE__ */ import_react19.default.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
-    }, /* @__PURE__ */ import_react19.default.createElement("div", {
-      className: "flex-grow"
     }, /* @__PURE__ */ import_react19.default.createElement("a", {
       href: "#content",
       className: "overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none"
@@ -27751,7 +27750,7 @@
       className: "mx-4 py-3 lg:py-6"
     }, /* @__PURE__ */ import_react19.default.createElement(Nav, {
       pages: ["buttons", "links", "type"]
-    })))), /* @__PURE__ */ import_react19.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react19.default.createElement("div", {
       className: "flex flex-col flex-grow py-6 overflow-scroll"
     }, /* @__PURE__ */ import_react19.default.createElement("main", {
       id: "content"

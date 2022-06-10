@@ -4,7 +4,7 @@ import {ExternalLink} from "../../../src";
 
 export default function Links() {
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
       <Example
         title="External Link"
         code={`<ExternalLink href="https://example.com">Visit site</ExternalLink>`}

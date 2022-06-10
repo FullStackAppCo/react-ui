@@ -12,7 +12,7 @@ interface ExampleProps {
 export default function Example({code, example, variant, title}: ExampleProps) {
   return (
     <div className="space-y-4">
-      <h2 className="text-lg flex items-center space-x-2">
+      <h2 className="font-bold text-lg flex items-center space-x-2">
         <span>{title}</span>
         {variant && <span className="translate-y-[1px] bg-primary-500 text-white text-xs rounded-sm px-1 py-0.5 font-semibold">{variant}</span>}
       </h2>

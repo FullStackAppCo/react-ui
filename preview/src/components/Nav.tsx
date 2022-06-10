@@ -21,9 +21,9 @@ export default function Nav({ className = '', pages }: NavProps) {
 
   return (
     <nav>
-      <ul className="font-semibold flex flex-col items-stretch">
+      <ul className="font-semibold flex lg:flex-col items-stretch">
         {pages.map(page => (
-          <li key={page} className="px-6 py-1">
+          <li key={page} className="px-2 lg:px-6 py-1">
             <NavLink to={`/${kebabCase(page)}`} className={itemClasses}>{page}</NavLink>
           </li>
         ))}

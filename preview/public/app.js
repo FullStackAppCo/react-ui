@@ -24834,10 +24834,10 @@
       ].concat(isActive ? ["text-white bg-black dark:text-black dark:bg-white"] : ["text-primary-500"]).join(" ");
     }
     return /* @__PURE__ */ React.createElement("nav", null, /* @__PURE__ */ React.createElement("ul", {
-      className: "font-semibold flex flex-col items-stretch"
+      className: "font-semibold flex lg:flex-col items-stretch"
     }, pages.map((page) => /* @__PURE__ */ React.createElement("li", {
       key: page,
-      className: "px-6 py-1"
+      className: "px-2 lg:px-6 py-1"
     }, /* @__PURE__ */ React.createElement(NavLink, {
       to: `/${kebabCase_default(page)}`,
       className: itemClasses
@@ -27643,7 +27643,7 @@
     return /* @__PURE__ */ React10.createElement("div", {
       className: "space-y-4"
     }, /* @__PURE__ */ React10.createElement("h2", {
-      className: "text-lg flex items-center space-x-2"
+      className: "font-bold text-lg flex items-center space-x-2"
     }, /* @__PURE__ */ React10.createElement("span", null, title), variant && /* @__PURE__ */ React10.createElement("span", {
       className: "translate-y-[1px] bg-primary-500 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
     }, variant)), /* @__PURE__ */ React10.createElement("div", {
@@ -27691,7 +27691,7 @@
   var import_react12 = __toESM(require_react());
   function Links() {
     return /* @__PURE__ */ import_react12.default.createElement("div", {
-      className: "grid grid-cols-2 gap-10"
+      className: "grid grid-cols-1 lg:grid-cols-2 gap-10"
     }, /* @__PURE__ */ import_react12.default.createElement(Example, {
       title: "External Link",
       code: `<ExternalLink href="https://example.com">Visit site</ExternalLink>`,
@@ -27776,16 +27776,16 @@
       return /* @__PURE__ */ React14.createElement(Buttons, null);
     }
     return /* @__PURE__ */ React14.createElement("div", {
-      className: "fixed w-screen h-screen overflow-hidden flex items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-x"
+      className: "fixed w-screen h-screen overflow-hidden flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-x"
     }, /* @__PURE__ */ React14.createElement("header", {
-      className: "flex flex-col flex-grow-0 min-w-[15vw] overflow-scroll"
+      className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
     }, /* @__PURE__ */ React14.createElement("div", {
       className: "flex-grow"
     }, /* @__PURE__ */ React14.createElement("a", {
       href: "#content",
       className: "overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none"
     }, "Skip to content"), /* @__PURE__ */ React14.createElement("div", {
-      className: "py-6"
+      className: "mx-4 py-3 lg:py-6"
     }, /* @__PURE__ */ React14.createElement(Nav, {
       pages
     })))), /* @__PURE__ */ React14.createElement("main", {

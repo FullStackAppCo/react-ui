@@ -25,11 +25,11 @@ export default function Preview()
   }
 
   return (
-    <div className="fixed w-screen h-screen overflow-hidden flex items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-x">
-      <header className="flex flex-col flex-grow-0 min-w-[15vw] overflow-scroll">
+    <div className="fixed w-screen h-screen overflow-hidden flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-x">
+      <header className="flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll">
         <div className="flex-grow">
           <a href="#content" className="overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none">Skip to content</a>
-          <div className="py-6">
+          <div className="mx-4 py-3 lg:py-6">
             <Nav pages={pages} />
           </div>
         </div>

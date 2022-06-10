@@ -13,7 +13,7 @@ const argv = yargs(hideBin(process.argv))
 const express = require('express')
 const app = express()
 app.use(express.static(path.join(baseDir, 'preview/public')))
-const compiledIndex = pug.compileFile(path.join(baseDir, 'preview', 'src', 'index.pug'))
+const compiledIndex = pug.compileFile(path.join(baseDir, 'preview', 'index.pug'))
 
 app.get('*', (requ, res) => res.send(compiledIndex()))
 

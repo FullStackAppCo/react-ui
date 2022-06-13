@@ -1,0 +1,1 @@
+import e from"react";import{TextClip as a}from"type/TextClip";function i({children:r,className:t=""}){return e.createElement(a,{className:`bg-gradient-to-br from-primary-gradient-from to-primary-gradient-to ${t}`},r)}export{i as default};

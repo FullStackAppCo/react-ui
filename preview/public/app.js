@@ -8,16 +8,16 @@
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __propIsEnum = Object.prototype.propertyIsEnumerable;
   var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __spreadValues = (a, b) => {
-    for (var prop in b || (b = {}))
-      if (__hasOwnProp.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
+  var __spreadValues = (a2, b2) => {
+    for (var prop in b2 || (b2 = {}))
+      if (__hasOwnProp.call(b2, prop))
+        __defNormalProp(a2, prop, b2[prop]);
     if (__getOwnPropSymbols)
-      for (var prop of __getOwnPropSymbols(b)) {
-        if (__propIsEnum.call(b, prop))
-          __defNormalProp(a, prop, b[prop]);
+      for (var prop of __getOwnPropSymbols(b2)) {
+        if (__propIsEnum.call(b2, prop))
+          __defNormalProp(a2, prop, b2[prop]);
       }
-    return a;
+    return a2;
   };
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
@@ -247,8 +247,8 @@
             return refObject;
           }
           var isArrayImpl = Array.isArray;
-          function isArray2(a) {
-            return isArrayImpl(a);
+          function isArray2(a2) {
+            return isArrayImpl(a2);
           }
           function typeName(value) {
             {
@@ -262,7 +262,7 @@
               try {
                 testStringCoercion(value);
                 return false;
-              } catch (e) {
+              } catch (e3) {
                 return true;
               }
             }
@@ -1907,9 +1907,9 @@
               }
             }
           }
-          function compare(a, b) {
-            var diff = a.sortIndex - b.sortIndex;
-            return diff !== 0 ? diff : a.id - b.id;
+          function compare(a2, b2) {
+            var diff = a2.sortIndex - b2.sortIndex;
+            return diff !== 0 ? diff : a2.id - b2.id;
           }
           var ImmediatePriority = 1;
           var UserBlockingPriority = 2;
@@ -2304,9 +2304,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React18 = require_react();
+          var React20 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React18.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React20.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -2423,7 +2423,7 @@
               try {
                 testStringCoercion(value);
                 return false;
-              } catch (e) {
+              } catch (e3) {
                 return true;
               }
             }
@@ -3538,7 +3538,7 @@
             }
             try {
               return doc.activeElement || doc.body;
-            } catch (e) {
+            } catch (e3) {
               return doc.body;
             }
           }
@@ -3707,7 +3707,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React18.Children.forEach(props.children, function(child) {
+                  React20.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -3738,8 +3738,8 @@
             }
           }
           var isArrayImpl = Array.isArray;
-          function isArray2(a) {
-            return isArrayImpl(a);
+          function isArray2(a2) {
+            return isArrayImpl(a2);
           }
           var didWarnValueDefaultValue$1;
           {
@@ -5174,13 +5174,13 @@
               restoreStateIfNeeded();
             }
           }
-          function batchedUpdates(fn, a, b) {
+          function batchedUpdates(fn, a2, b2) {
             if (isInsideEventHandler) {
-              return fn(a, b);
+              return fn(a2, b2);
             }
             isInsideEventHandler = true;
             try {
-              return batchedUpdatesImpl(fn, a, b);
+              return batchedUpdatesImpl(fn, a2, b2);
             } finally {
               isInsideEventHandler = false;
               finishEventHandler();
@@ -5240,11 +5240,11 @@
               });
               window.addEventListener("test", options, options);
               window.removeEventListener("test", options, options);
-            } catch (e) {
+            } catch (e3) {
               passiveBrowserEventsSupported = false;
             }
           }
-          function invokeGuardedCallbackProd(name, func, context, a, b, c, d2, e, f) {
+          function invokeGuardedCallbackProd(name, func, context, a2, b2, c, d3, e3, f) {
             var funcArgs = Array.prototype.slice.call(arguments, 3);
             try {
               func.apply(context, funcArgs);
@@ -5256,7 +5256,7 @@
           {
             if (typeof window !== "undefined" && typeof window.dispatchEvent === "function" && typeof document !== "undefined" && typeof document.createEvent === "function") {
               var fakeNode = document.createElement("react");
-              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a, b, c, d2, e, f) {
+              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a2, b2, c, d3, e3, f) {
                 if (typeof document === "undefined" || document === null) {
                   throw new Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
                 }
@@ -5331,12 +5331,12 @@
               caughtError = error2;
             }
           };
-          function invokeGuardedCallback(name, func, context, a, b, c, d2, e, f) {
+          function invokeGuardedCallback(name, func, context, a2, b2, c, d3, e3, f) {
             hasError = false;
             caughtError = null;
             invokeGuardedCallbackImpl$1.apply(reporter, arguments);
           }
-          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d2, e, f) {
+          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a2, b2, c, d3, e3, f) {
             invokeGuardedCallback.apply(this, arguments);
             if (hasError) {
               var error2 = clearCaughtError();
@@ -5486,10 +5486,10 @@
               }
               return fiber;
             }
-            var a = fiber;
-            var b = alternate;
+            var a2 = fiber;
+            var b2 = alternate;
             while (true) {
-              var parentA = a.return;
+              var parentA = a2.return;
               if (parentA === null) {
                 break;
               }
@@ -5497,7 +5497,7 @@
               if (parentB === null) {
                 var nextParent = parentA.return;
                 if (nextParent !== null) {
-                  a = b = nextParent;
+                  a2 = b2 = nextParent;
                   continue;
                 }
                 break;
@@ -5505,11 +5505,11 @@
               if (parentA.child === parentB.child) {
                 var child = parentA.child;
                 while (child) {
-                  if (child === a) {
+                  if (child === a2) {
                     assertIsMounted(parentA);
                     return fiber;
                   }
-                  if (child === b) {
+                  if (child === b2) {
                     assertIsMounted(parentA);
                     return alternate;
                   }
@@ -5517,23 +5517,23 @@
                 }
                 throw new Error("Unable to find node on an unmounted component.");
               }
-              if (a.return !== b.return) {
-                a = parentA;
-                b = parentB;
+              if (a2.return !== b2.return) {
+                a2 = parentA;
+                b2 = parentB;
               } else {
                 var didFindChild = false;
                 var _child = parentA.child;
                 while (_child) {
-                  if (_child === a) {
+                  if (_child === a2) {
                     didFindChild = true;
-                    a = parentA;
-                    b = parentB;
+                    a2 = parentA;
+                    b2 = parentB;
                     break;
                   }
-                  if (_child === b) {
+                  if (_child === b2) {
                     didFindChild = true;
-                    b = parentA;
-                    a = parentB;
+                    b2 = parentA;
+                    a2 = parentB;
                     break;
                   }
                   _child = _child.sibling;
@@ -5541,16 +5541,16 @@
                 if (!didFindChild) {
                   _child = parentB.child;
                   while (_child) {
-                    if (_child === a) {
+                    if (_child === a2) {
                       didFindChild = true;
-                      a = parentB;
-                      b = parentA;
+                      a2 = parentB;
+                      b2 = parentA;
                       break;
                     }
-                    if (_child === b) {
+                    if (_child === b2) {
                       didFindChild = true;
-                      b = parentB;
-                      a = parentA;
+                      b2 = parentB;
+                      a2 = parentA;
                       break;
                     }
                     _child = _child.sibling;
@@ -5560,14 +5560,14 @@
                   }
                 }
               }
-              if (a.alternate !== b) {
+              if (a2.alternate !== b2) {
                 throw new Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.");
               }
             }
-            if (a.tag !== HostRoot) {
+            if (a2.tag !== HostRoot) {
               throw new Error("Unable to find node on an unmounted component.");
             }
-            if (a.stateNode.current === a) {
+            if (a2.stateNode.current === a2) {
               return fiber;
             }
             return alternate;
@@ -6292,26 +6292,26 @@
           function laneToIndex(lane) {
             return pickArbitraryLaneIndex(lane);
           }
-          function includesSomeLane(a, b) {
-            return (a & b) !== NoLanes;
+          function includesSomeLane(a2, b2) {
+            return (a2 & b2) !== NoLanes;
           }
           function isSubsetOfLanes(set2, subset) {
             return (set2 & subset) === subset;
           }
-          function mergeLanes(a, b) {
-            return a | b;
+          function mergeLanes(a2, b2) {
+            return a2 | b2;
           }
           function removeLanes(set2, subset) {
             return set2 & ~subset;
           }
-          function intersectLanes(a, b) {
-            return a & b;
+          function intersectLanes(a2, b2) {
+            return a2 & b2;
           }
           function laneToLanes(lane) {
             return lane;
           }
-          function higherPriorityLane(a, b) {
-            return a !== NoLane && a < b ? a : b;
+          function higherPriorityLane(a2, b2) {
+            return a2 !== NoLane && a2 < b2 ? a2 : b2;
           }
           function createLaneMap(initial2) {
             var laneMap = [];
@@ -6484,14 +6484,14 @@
               currentUpdatePriority = previousPriority;
             }
           }
-          function higherEventPriority(a, b) {
-            return a !== 0 && a < b ? a : b;
+          function higherEventPriority(a2, b2) {
+            return a2 !== 0 && a2 < b2 ? a2 : b2;
           }
-          function lowerEventPriority(a, b) {
-            return a === 0 || a > b ? a : b;
+          function lowerEventPriority(a2, b2) {
+            return a2 === 0 || a2 > b2 ? a2 : b2;
           }
-          function isHigherEventPriority(a, b) {
-            return a !== 0 && a < b;
+          function isHigherEventPriority(a2, b2) {
+            return a2 !== 0 && a2 < b2;
           }
           function lanesToEventPriority(lanes) {
             var lane = getHighestPriorityLane(lanes);
@@ -7904,7 +7904,7 @@
             try {
               anchorNode.nodeType;
               focusNode.nodeType;
-            } catch (e) {
+            } catch (e3) {
               return null;
             }
             return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
@@ -11279,7 +11279,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React18.Component().refs;
+          var emptyRefsObject = new React20.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -15213,9 +15213,9 @@
               } else {
                 console["error"](error2);
               }
-            } catch (e) {
+            } catch (e3) {
               setTimeout(function() {
-                throw e;
+                throw e3;
               });
             }
           }
@@ -19959,11 +19959,11 @@
               }
             }
           }
-          function batchedUpdates$1(fn, a) {
+          function batchedUpdates$1(fn, a2) {
             var prevExecutionContext = executionContext;
             executionContext |= BatchedContext;
             try {
-              return fn(a);
+              return fn(a2);
             } finally {
               executionContext = prevExecutionContext;
               if (executionContext === NoContext && !ReactCurrentActQueue$1.isBatchingLegacy) {
@@ -19972,13 +19972,13 @@
               }
             }
           }
-          function discreteUpdates(fn, a, b, c, d2) {
+          function discreteUpdates(fn, a2, b2, c, d3) {
             var previousPriority = getCurrentUpdatePriority();
             var prevTransition = ReactCurrentBatchConfig$3.transition;
             try {
               ReactCurrentBatchConfig$3.transition = null;
               setCurrentUpdatePriority(DiscreteEventPriority);
-              return fn(a, b, c, d2);
+              return fn(a2, b2, c, d3);
             } finally {
               setCurrentUpdatePriority(previousPriority);
               ReactCurrentBatchConfig$3.transition = prevTransition;
@@ -21221,7 +21221,7 @@
               var nonExtensibleObject = Object.preventExtensions({});
               /* @__PURE__ */ new Map([[nonExtensibleObject, null]]);
               /* @__PURE__ */ new Set([nonExtensibleObject]);
-            } catch (e) {
+            } catch (e3) {
               hasBadMapPolyfill = true;
             }
           }
@@ -22544,24 +22544,24 @@
   var require_client = __commonJS({
     "node_modules/react-dom/client.js"(exports) {
       "use strict";
-      var m = require_react_dom();
+      var m2 = require_react_dom();
       if (false) {
-        exports.createRoot = m.createRoot;
-        exports.hydrateRoot = m.hydrateRoot;
+        exports.createRoot = m2.createRoot;
+        exports.hydrateRoot = m2.hydrateRoot;
       } else {
-        i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-        exports.createRoot = function(c, o) {
+        i = m2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        exports.createRoot = function(c, o2) {
           i.usingClientEntryPoint = true;
           try {
-            return m.createRoot(c, o);
+            return m2.createRoot(c, o2);
           } finally {
             i.usingClientEntryPoint = false;
           }
         };
-        exports.hydrateRoot = function(c, h, o) {
+        exports.hydrateRoot = function(c, h, o2) {
           i.usingClientEntryPoint = true;
           try {
-            return m.hydrateRoot(c, h, o);
+            return m2.hydrateRoot(c, h, o2);
           } finally {
             i.usingClientEntryPoint = false;
           }
@@ -23326,11 +23326,11 @@
   });
 
   // preview/app.tsx
-  var import_react20 = __toESM(require_react());
+  var import_react30 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // preview/components/Library.tsx
-  var import_react19 = __toESM(require_react());
+  var import_react29 = __toESM(require_react());
 
   // preview/components/Nav.tsx
   var import_react3 = __toESM(require_react());
@@ -23372,7 +23372,7 @@
         console.warn(message);
       try {
         throw new Error(message);
-      } catch (e) {
+      } catch (e3) {
       }
     }
   }
@@ -23624,7 +23624,7 @@
         console.warn(message);
       try {
         throw new Error(message);
-      } catch (e) {
+      } catch (e3) {
       }
     }
   }
@@ -23691,7 +23691,7 @@
     return branches;
   }
   function rankRouteBranches(branches) {
-    branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta) => meta.childrenIndex), b.routesMeta.map((meta) => meta.childrenIndex)));
+    branches.sort((a2, b2) => a2.score !== b2.score ? b2.score - a2.score : compareIndexes(a2.routesMeta.map((meta) => meta.childrenIndex), b2.routesMeta.map((meta) => meta.childrenIndex)));
   }
   var paramRe = /^:\w+$/;
   var dynamicSegmentValue = 3;
@@ -23711,9 +23711,9 @@
     }
     return segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
   }
-  function compareIndexes(a, b) {
-    let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
-    return siblings ? a[a.length - 1] - b[b.length - 1] : 0;
+  function compareIndexes(a2, b2) {
+    let siblings = a2.length === b2.length && a2.slice(0, -1).every((n, i) => n === b2[i]);
+    return siblings ? a2[a2.length - 1] - b2[b2.length - 1] : 0;
   }
   function matchRouteBranch(branch, pathname) {
     let {
@@ -24302,7 +24302,7 @@
     try {
       value[symToStringTag] = void 0;
       var unmasked = true;
-    } catch (e) {
+    } catch (e3) {
     }
     var result = nativeObjectToString.call(value);
     if (unmasked) {
@@ -24736,7 +24736,7 @@
   }
 
   // preview/pages/Buttons.tsx
-  var import_react15 = __toESM(require_react());
+  var import_react17 = __toESM(require_react());
 
   // src/buttons/PrimaryButton.tsx
   var import_react4 = __toESM(require_react());
@@ -24764,24 +24764,44 @@
     }, tag === "a" ? { href, target } : {}), children);
   }
 
+  // src/type/GradientText.tsx
+  var import_react6 = __toESM(require_react());
+
   // src/type/TextClip.tsx
   var import_react5 = __toESM(require_react());
+  function TextClip({ children, className = "" }) {
+    return /* @__PURE__ */ import_react5.default.createElement("span", {
+      className: `bg-clip-text text-transparent ${className}`
+    }, children);
+  }
+
+  // src/type/GradientText.tsx
+  function GradientText({ children, className = "" }) {
+    className = [
+      "bg-gradient-to-br from-primary-gradient-start",
+      "to-primary-gradient-end",
+      className
+    ].join(" ");
+    return /* @__PURE__ */ import_react6.default.createElement(TextClip, {
+      className
+    }, children);
+  }
 
   // src/type/Legal.tsx
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
   function Legal({ children, className = "", lines = [] }) {
     if (lines.length === 0)
       lines.push(children);
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: `space-y-3 text-gray-700 dark:text-gray-400 ${className}`
-    }, lines.map((line, i) => /* @__PURE__ */ import_react6.default.createElement("small", {
+    }, lines.map((line, i) => /* @__PURE__ */ import_react7.default.createElement("small", {
       key: i,
       className: `block leading-loose`
     }, line)));
   }
 
   // src/type/IconHeading.tsx
-  var import_react8 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
 
   // node_modules/@fortawesome/fontawesome-svg-core/index.es.js
   function ownKeys(object, enumerableOnly) {
@@ -24897,18 +24917,18 @@
     }
     return _arr;
   }
-  function _unsupportedIterableToArray(o, minLen) {
-    if (!o)
+  function _unsupportedIterableToArray(o2, minLen) {
+    if (!o2)
       return;
-    if (typeof o === "string")
-      return _arrayLikeToArray(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor)
-      n = o.constructor.name;
+    if (typeof o2 === "string")
+      return _arrayLikeToArray(o2, minLen);
+    var n = Object.prototype.toString.call(o2).slice(8, -1);
+    if (n === "Object" && o2.constructor)
+      n = o2.constructor.name;
     if (n === "Map" || n === "Set")
-      return Array.from(o);
+      return Array.from(o2);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-      return _arrayLikeToArray(o, minLen);
+      return _arrayLikeToArray(o2, minLen);
   }
   function _arrayLikeToArray(arr, len) {
     if (len == null || len > arr.length)
@@ -24941,7 +24961,7 @@
       _MUTATION_OBSERVER = MutationObserver;
     if (typeof performance !== "undefined")
       _PERFORMANCE = performance;
-  } catch (e) {
+  } catch (e3) {
   }
   var _ref = _WINDOW.navigator || {};
   var _ref$userAgent = _ref.userAgent;
@@ -24968,7 +24988,7 @@
   var PRODUCTION = function() {
     try {
       return false;
-    } catch (e) {
+    } catch (e3) {
       return false;
     }
   }();
@@ -25299,8 +25319,8 @@
     }
   }
   var bindInternal4 = function bindInternal42(func, thisContext) {
-    return function(a, b, c, d2) {
-      return func.call(thisContext, a, b, c, d2);
+    return function(a2, b2, c, d3) {
+      return func.call(thisContext, a2, b2, c, d3);
     };
   };
   var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
@@ -25404,9 +25424,9 @@
   }
   var build = function build2() {
     var lookup = function lookup2(reducer) {
-      return reduce(styles, function(o, style, prefix) {
-        o[prefix] = reduce(style, reducer, {});
-        return o;
+      return reduce(styles, function(o2, style, prefix) {
+        o2[prefix] = reduce(style, reducer, {});
+        return o2;
       }, {});
     };
     _byUnicode = lookup(function(acc, icon3, iconName) {
@@ -25414,8 +25434,8 @@
         acc[icon3[3]] = iconName;
       }
       if (icon3[2]) {
-        var aliases = icon3[2].filter(function(a) {
-          return typeof a === "number";
+        var aliases = icon3[2].filter(function(a2) {
+          return typeof a2 === "number";
         });
         aliases.forEach(function(alias) {
           acc[alias.toString(16)] = iconName;
@@ -25426,8 +25446,8 @@
     _byLigature = lookup(function(acc, icon3, iconName) {
       acc[iconName] = iconName;
       if (icon3[2]) {
-        var aliases = icon3[2].filter(function(a) {
-          return typeof a === "string";
+        var aliases = icon3[2].filter(function(a2) {
+          return typeof a2 === "string";
         });
         aliases.forEach(function(alias) {
           acc[alias] = iconName;
@@ -25778,8 +25798,8 @@
     });
     Object.defineProperty(val, "html", {
       get: function get() {
-        return val.abstract.map(function(a) {
-          return toHtml(a);
+        return val.abstract.map(function(a2) {
+          return toHtml(a2);
         });
       }
     });
@@ -26153,8 +26173,8 @@
           node.setAttribute("class", splitClasses.toNode.join(" "));
         }
       }
-      var newInnerHTML = abstract.map(function(a) {
-        return toHtml(a);
+      var newInnerHTML = abstract.map(function(a2) {
+        return toHtml(a2);
       }).join("\n");
       node.setAttribute(DATA_FA_I2SVG, "");
       node.innerHTML = newInnerHTML;
@@ -26373,7 +26393,7 @@
     var candidates = [];
     try {
       candidates = toArray(root2.querySelectorAll(prefixesDomQuery));
-    } catch (e) {
+    } catch (e3) {
     }
     if (candidates.length > 0) {
       hclAdd("pending");
@@ -26388,10 +26408,10 @@
         if (mutation) {
           acc.push(mutation);
         }
-      } catch (e) {
+      } catch (e3) {
         if (!PRODUCTION) {
-          if (e.name === "MissingIcon") {
-            console.error(e);
+          if (e3.name === "MissingIcon") {
+            console.error(e3);
           }
         }
       }
@@ -26408,9 +26428,9 @@
           mark();
           resolve();
         });
-      }).catch(function(e) {
+      }).catch(function(e3) {
         mark();
-        reject(e);
+        reject(e3);
       });
     });
   }
@@ -26568,8 +26588,8 @@
             });
             var children = [];
             assembler(function(args) {
-              Array.isArray(args) ? args.map(function(a) {
-                children = children.concat(a.abstract);
+              Array.isArray(args) ? args.map(function(a2) {
+                children = children.concat(a2.abstract);
               }) : children = children.concat(args.abstract);
             });
             return [{
@@ -26734,8 +26754,8 @@
             } else {
               node.appendChild(element);
             }
-            element.outerHTML = abstract.map(function(a) {
-              return toHtml(a);
+            element.outerHTML = abstract.map(function(a2) {
+              return toHtml(a2);
             }).join("\n");
             node.removeAttribute(pendingAttribute);
             resolve();
@@ -27153,7 +27173,7 @@
 
   // node_modules/@fortawesome/react-fontawesome/index.es.js
   var import_prop_types = __toESM(require_prop_types());
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   function ownKeys2(object, enumerableOnly) {
     var keys = Object.keys(object);
     if (Object.getOwnPropertySymbols) {
@@ -27239,18 +27259,18 @@
     if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null)
       return Array.from(iter);
   }
-  function _unsupportedIterableToArray2(o, minLen) {
-    if (!o)
+  function _unsupportedIterableToArray2(o2, minLen) {
+    if (!o2)
       return;
-    if (typeof o === "string")
-      return _arrayLikeToArray2(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor)
-      n = o.constructor.name;
+    if (typeof o2 === "string")
+      return _arrayLikeToArray2(o2, minLen);
+    var n = Object.prototype.toString.call(o2).slice(8, -1);
+    if (n === "Object" && o2.constructor)
+      n = o2.constructor.name;
     if (n === "Map" || n === "Set")
-      return Array.from(o);
+      return Array.from(o2);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-      return _arrayLikeToArray2(o, minLen);
+      return _arrayLikeToArray2(o2, minLen);
   }
   function _arrayLikeToArray2(arr, len) {
     if (len == null || len > arr.length)
@@ -27355,7 +27375,7 @@
   var PRODUCTION2 = false;
   try {
     PRODUCTION2 = false;
-  } catch (e) {
+  } catch (e3) {
   }
   function log() {
     if (!PRODUCTION2 && console && typeof console.error === "function") {
@@ -27476,22 +27496,20 @@
     transform: null,
     swapOpacity: false
   };
-  var convertCurry = convert.bind(null, import_react7.default.createElement);
+  var convertCurry = convert.bind(null, import_react8.default.createElement);
 
-  // src/type/IconHeading.tsx
-  function IconHeading({ children, icon: icon3 }) {
-    return /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "flex items-center space-x-2"
-    }, /* @__PURE__ */ import_react8.default.createElement(FontAwesomeIcon, {
-      icon: icon3,
-      className: "w-4 h-4 text-gray-400 dark:text-gray-500"
-    }), /* @__PURE__ */ import_react8.default.createElement("h2", {
-      className: "text-gray-800 dark:text-gray-300 text-lg font-display tracking-wide"
-    }, children));
+  // src/type/Heading.tsx
+  var import_react9 = __toESM(require_react());
+  function Heading({ children, className = "", level = 2 }) {
+    const Tag = `h${level}`;
+    className = `text-gray-800 dark:text-gray-300 font-display tracking-wide ${className}`;
+    return /* @__PURE__ */ import_react9.default.createElement(Tag, {
+      className
+    }, children);
   }
 
   // src/links/ExternalLink.tsx
-  var import_react9 = __toESM(require_react());
+  var import_react11 = __toESM(require_react());
   function ExternalLink({ children, className = "", href }) {
     className = [
       "p-0.5",
@@ -27499,115 +27517,145 @@
       "focus:outline-none focus:bg-focus-500 focus:text-black focus:no-underline",
       className
     ].join(" ");
-    return /* @__PURE__ */ import_react9.default.createElement("a", {
+    return /* @__PURE__ */ import_react11.default.createElement("a", {
       href,
       className
     }, children);
   }
 
   // src/FathomAnalytics.tsx
-  var import_react10 = __toESM(require_react());
+  var import_react12 = __toESM(require_react());
 
   // src/Container.tsx
-  var import_react11 = __toESM(require_react());
-
-  // preview/components/Example.tsx
   var import_react13 = __toESM(require_react());
 
+  // preview/components/Example.tsx
+  var import_react15 = __toESM(require_react());
+
   // preview/components/ExampleCode.tsx
-  var import_react12 = __toESM(require_react());
+  var import_react14 = __toESM(require_react());
   function ExampleCode({ children }) {
     const borderColor = "border-gray-200 dark:border-gray-700";
-    return /* @__PURE__ */ import_react12.default.createElement("div", {
+    return /* @__PURE__ */ import_react14.default.createElement("div", {
       className: `overflow-hidden bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded ${borderColor} border text-sm`
-    }, /* @__PURE__ */ import_react12.default.createElement("h3", {
+    }, /* @__PURE__ */ import_react14.default.createElement("h3", {
       className: "sr-only"
-    }, "Code examples"), /* @__PURE__ */ import_react12.default.createElement("h4", {
+    }, "Code examples"), /* @__PURE__ */ import_react14.default.createElement("h4", {
       className: `font-semibold px-3 p-1 bg-gray-200 dark:bg-gray-700 bg-opacity-50 dark:bg-opacity-25 tracking-wider text-xs ${borderColor} border-b`
-    }, "JSX"), /* @__PURE__ */ import_react12.default.createElement("pre", {
+    }, "JSX"), /* @__PURE__ */ import_react14.default.createElement("pre", {
       className: "px-3 py-2 overflow-scroll"
-    }, /* @__PURE__ */ import_react12.default.createElement("code", null, children)));
+    }, /* @__PURE__ */ import_react14.default.createElement("code", null, children)));
   }
 
   // preview/components/Example.tsx
-  function Example({ code, example, variant, title }) {
-    return /* @__PURE__ */ import_react13.default.createElement("div", {
+  function Example({ code, description, example, variant, title }) {
+    return /* @__PURE__ */ import_react15.default.createElement("div", {
       className: "space-y-4"
-    }, /* @__PURE__ */ import_react13.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react15.default.createElement("h2", {
       className: "font-bold text-lg flex items-center space-x-2"
-    }, /* @__PURE__ */ import_react13.default.createElement("span", null, title), variant && /* @__PURE__ */ import_react13.default.createElement("span", {
+    }, /* @__PURE__ */ import_react15.default.createElement("span", null, title), variant && /* @__PURE__ */ import_react15.default.createElement("span", {
       className: "translate-y-[1px] bg-primary-500 dark:bg-primary-800 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
-    }, variant)), /* @__PURE__ */ import_react13.default.createElement("div", {
+    }, variant)), description && /* @__PURE__ */ import_react15.default.createElement("p", null, description), /* @__PURE__ */ import_react15.default.createElement("div", {
       className: "border-gray-200 dark:border-gray-600 border p-6 rounded"
-    }, example), /* @__PURE__ */ import_react13.default.createElement(ExampleCode, null, code));
+    }, example), /* @__PURE__ */ import_react15.default.createElement(ExampleCode, null, code));
   }
 
   // preview/pages/ExamplePage.tsx
-  var import_react14 = __toESM(require_react());
+  var import_react16 = __toESM(require_react());
   function ExamplePage({ title, className = "", children }) {
-    return /* @__PURE__ */ import_react14.default.createElement("div", {
+    return /* @__PURE__ */ import_react16.default.createElement("div", {
       className: "flex-grow px-10 space-y-4"
-    }, /* @__PURE__ */ import_react14.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react16.default.createElement("h1", {
       className: "font-bold text-3xl"
-    }, title), /* @__PURE__ */ import_react14.default.createElement("div", {
+    }, title), /* @__PURE__ */ import_react16.default.createElement("div", {
       className
     }, children));
   }
 
   // preview/pages/Buttons.tsx
   function Buttons() {
-    return /* @__PURE__ */ import_react15.default.createElement(ExamplePage, {
+    return /* @__PURE__ */ import_react17.default.createElement(ExamplePage, {
       title: "Buttons",
       className: "space-y-10"
-    }, /* @__PURE__ */ import_react15.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Example, {
       title: "Primary Button",
       code: `<PrimaryButton>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, null, "Submit")
-    }), /* @__PURE__ */ import_react15.default.createElement(Example, {
+      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, null, "Submit")
+    }), /* @__PURE__ */ import_react17.default.createElement(Example, {
       title: "Primary Button",
       variant: "disabled",
       code: `<PrimaryButton disabled>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, {
         disabled: true
       }, "Submit")
-    }), /* @__PURE__ */ import_react15.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react17.default.createElement(Example, {
       title: "Link as Button",
       code: `<PrimaryButton
   tag="a"
   href="https://example.com"
   target="_blank"
 >Press</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, {
         tag: "a",
         href: "https://example.com",
         target: "_blank"
       }, "Press")
-    }), /* @__PURE__ */ import_react15.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react17.default.createElement(Example, {
       title: "Large Primary Button",
       code: `<PrimaryButton size="lg">Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react15.default.createElement(PrimaryButton, {
+      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, {
         size: "lg"
       }, "Submit")
     }));
   }
 
   // preview/pages/Links.tsx
-  var import_react16 = __toESM(require_react());
+  var import_react18 = __toESM(require_react());
   function Links() {
-    return /* @__PURE__ */ import_react16.default.createElement(ExamplePage, {
+    return /* @__PURE__ */ import_react18.default.createElement(ExamplePage, {
       title: "Links",
       className: "grid grid-cols-1 lg:grid-cols-2 gap-10"
-    }, /* @__PURE__ */ import_react16.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react18.default.createElement(Example, {
       title: "External Link",
       code: `<ExternalLink href="https://example.com">Visit site</ExternalLink>`,
-      example: /* @__PURE__ */ import_react16.default.createElement(ExternalLink, {
+      example: /* @__PURE__ */ import_react18.default.createElement(ExternalLink, {
         href: "https://example.com"
       }, "Visit site")
     }));
   }
 
   // preview/pages/Type.tsx
-  var import_react17 = __toESM(require_react());
+  var import_react27 = __toESM(require_react());
+
+  // dist/buttons/PrimaryButton.js
+  var import_react19 = __toESM(require_react());
+
+  // dist/type/GradientText.js
+  var import_react20 = __toESM(require_react());
+
+  // dist/type/TextClip.js
+  var import_react21 = __toESM(require_react());
+
+  // dist/type/Legal.js
+  var import_react22 = __toESM(require_react());
+  function d2({ children: r2, className: o2 = "", lines: e3 = [] }) {
+    return e3.length === 0 && e3.push(r2), import_react22.default.createElement("div", { className: `space-y-3 text-gray-700 dark:text-gray-400 ${o2}` }, e3.map((t3, l) => import_react22.default.createElement("small", { key: l, className: "block leading-loose" }, t3)));
+  }
+
+  // dist/type/IconHeading.js
+  var import_react23 = __toESM(require_react());
+  function m({ children: o2, icon: r2 }) {
+    return import_react23.default.createElement("div", { className: "flex items-center space-x-2" }, import_react23.default.createElement(FontAwesomeIcon, { icon: r2, className: "w-4 h-4 text-gray-400 dark:text-gray-500" }), import_react23.default.createElement("h2", { className: "text-gray-800 dark:text-gray-300 text-lg font-display tracking-wide" }, o2));
+  }
+
+  // dist/links/ExternalLink.js
+  var import_react24 = __toESM(require_react());
+
+  // dist/FathomAnalytics.js
+  var import_react25 = __toESM(require_react());
+
+  // dist/Container.js
+  var import_react26 = __toESM(require_react());
 
   // node_modules/@fortawesome/free-regular-svg-icons/index.es.js
   var faChartBar = {
@@ -27619,44 +27667,61 @@
 
   // preview/pages/Type.tsx
   function Type() {
-    return /* @__PURE__ */ import_react17.default.createElement(ExamplePage, {
+    return /* @__PURE__ */ import_react27.default.createElement(ExamplePage, {
       title: "Type",
       className: "space-y-10"
-    }, /* @__PURE__ */ import_react17.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Example, {
+      title: "Heading",
+      description: "Heading Rendered in the display font. No text sizing class is applied so that you may abstract your own specific heading types if you wish. Defaults to <h2> use the level prop to override the semantic level.",
+      code: [
+        `<Heading>Heading Text</Heading>`,
+        `<Heading level={3}>Heading Text</Heading>`
+      ].join("\n"),
+      example: /* @__PURE__ */ import_react27.default.createElement(import_react27.default.Fragment, null, /* @__PURE__ */ import_react27.default.createElement(Heading, null, "Default Heading"), /* @__PURE__ */ import_react27.default.createElement(Heading, {
+        level: 3
+      }, "Default Heading"))
+    }), /* @__PURE__ */ import_react27.default.createElement(Example, {
       title: "Icon Heading",
+      description: "Heading with an icon at the leading edge making it easier to scan when there are a number of headings in succession. For example page footer.",
       code: [
         "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
         "",
         "<IconHeading icon={faBarChart}>Statistics</IconHeading>"
       ].join("\n"),
-      example: /* @__PURE__ */ import_react17.default.createElement(IconHeading, {
+      example: /* @__PURE__ */ import_react27.default.createElement(m, {
         icon: faBarChart
       }, "Statistics")
-    }), /* @__PURE__ */ import_react17.default.createElement(FooterBaseExample, null), /* @__PURE__ */ import_react17.default.createElement(FooterMultiLineExample, null));
+    }), /* @__PURE__ */ import_react27.default.createElement(Example, {
+      title: "Gradient Text",
+      code: `<GradientText className="text-2xl font-bold">I'm text styled with a gradient</GradientText>`,
+      example: /* @__PURE__ */ import_react27.default.createElement(GradientText, {
+        className: "text-2xl font-bold"
+      }, "I'm text styled with a gradient")
+    }), /* @__PURE__ */ import_react27.default.createElement(LegalBaseExample, null), /* @__PURE__ */ import_react27.default.createElement(LegalMultiLineExample, null));
   }
-  function FooterBaseExample() {
+  function LegalBaseExample() {
     const code = ["<FooterLegal>"].concat([
       "ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved."
     ].map((line) => "	" + line).join("\n")).concat("</FooterLegal>").join("\n");
-    const content = /* @__PURE__ */ import_react17.default.createElement(Legal, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
-    return /* @__PURE__ */ import_react17.default.createElement(Example, {
+    const content = /* @__PURE__ */ import_react27.default.createElement(d2, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
+    return /* @__PURE__ */ import_react27.default.createElement(Example, {
       title: "Legal",
       code,
       example: content
     });
   }
-  function FooterMultiLineExample() {
+  function LegalMultiLineExample() {
     const code = ["<FooterLegal lines={["].concat([
       "<>ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved.</>",
       "'OCP is a company in Delta City, Michigan.'"
     ].map((line) => `	${line},`).join("\n")).concat("]} />").join("\n");
-    const content = /* @__PURE__ */ import_react17.default.createElement(Legal, {
+    const content = /* @__PURE__ */ import_react27.default.createElement(d2, {
       lines: [
-        /* @__PURE__ */ import_react17.default.createElement(import_react17.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
+        /* @__PURE__ */ import_react27.default.createElement(import_react27.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
         "OCP is a company in Delta City, Michigan."
       ]
     });
-    return /* @__PURE__ */ import_react17.default.createElement(Example, {
+    return /* @__PURE__ */ import_react27.default.createElement(Example, {
       title: "Legal",
       variant: "multi-line",
       code,
@@ -27665,7 +27730,7 @@
   }
 
   // preview/components/LayoutIndicator.tsx
-  var import_react18 = __toESM(require_react());
+  var import_react28 = __toESM(require_react());
 
   // node_modules/@fortawesome/free-solid-svg-icons/index.es.js
   var faComputer = {
@@ -27718,15 +27783,15 @@
         classes: ["hidden", "xl:block", "2xl:hidden"]
       }
     };
-    return /* @__PURE__ */ import_react18.default.createElement("div", {
+    return /* @__PURE__ */ import_react28.default.createElement("div", {
       "aria-hidden": "true",
       className: `fixed bottom-4 right-6 p-5 w-16 h-16 flex items-center justify-center shadow-xl rounded-full inline-block bg-primary-500 dark:bg-primary-900 uppercase text-xs tracking-wider font-semibold text-white border-primary-800 border ${className}`
     }, Object.entries(layoutMap).map((entries) => {
       const [layout, data] = entries;
-      return /* @__PURE__ */ import_react18.default.createElement("div", {
+      return /* @__PURE__ */ import_react28.default.createElement("div", {
         key: layout,
         className: `flex items-center justify-center ${data.classes.join(" ")}`
-      }, /* @__PURE__ */ import_react18.default.createElement(FontAwesomeIcon, {
+      }, /* @__PURE__ */ import_react28.default.createElement(FontAwesomeIcon, {
         icon: data.icon,
         className: "h-5"
       }));
@@ -27735,52 +27800,52 @@
 
   // preview/components/Library.tsx
   function Library2() {
-    return /* @__PURE__ */ import_react19.default.createElement("div", {
+    return /* @__PURE__ */ import_react29.default.createElement("div", {
       className: "fixed w-screen h-screen flex flex-col"
-    }, /* @__PURE__ */ import_react19.default.createElement(LayoutIndicator, {
+    }, /* @__PURE__ */ import_react29.default.createElement(LayoutIndicator, {
       className: "mx-auto"
-    }), /* @__PURE__ */ import_react19.default.createElement("div", {
+    }), /* @__PURE__ */ import_react29.default.createElement("div", {
       className: "overflow-hidden flex-grow flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
-    }, /* @__PURE__ */ import_react19.default.createElement("header", {
+    }, /* @__PURE__ */ import_react29.default.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
-    }, /* @__PURE__ */ import_react19.default.createElement("a", {
+    }, /* @__PURE__ */ import_react29.default.createElement("a", {
       href: "#content",
       className: "overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none"
-    }, "Skip to content"), /* @__PURE__ */ import_react19.default.createElement("div", {
+    }, "Skip to content"), /* @__PURE__ */ import_react29.default.createElement("div", {
       className: "mx-4 py-3 lg:py-6"
-    }, /* @__PURE__ */ import_react19.default.createElement(Nav, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Nav, {
       pages: ["buttons", "links", "type"]
-    }))), /* @__PURE__ */ import_react19.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react29.default.createElement("div", {
       className: "flex flex-col flex-grow py-6 overflow-scroll"
-    }, /* @__PURE__ */ import_react19.default.createElement("main", {
+    }, /* @__PURE__ */ import_react29.default.createElement("main", {
       id: "content"
-    }, /* @__PURE__ */ import_react19.default.createElement(Routes, null, /* @__PURE__ */ import_react19.default.createElement(Route, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Routes, null, /* @__PURE__ */ import_react29.default.createElement(Route, {
       path: "/",
-      element: /* @__PURE__ */ import_react19.default.createElement(Buttons, null)
-    }), /* @__PURE__ */ import_react19.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react29.default.createElement(Buttons, null)
+    }), /* @__PURE__ */ import_react29.default.createElement(Route, {
       path: "/buttons",
-      element: /* @__PURE__ */ import_react19.default.createElement(Buttons, null)
-    }), /* @__PURE__ */ import_react19.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react29.default.createElement(Buttons, null)
+    }), /* @__PURE__ */ import_react29.default.createElement(Route, {
       path: "/links",
-      element: /* @__PURE__ */ import_react19.default.createElement(Links, null)
-    }), /* @__PURE__ */ import_react19.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react29.default.createElement(Links, null)
+    }), /* @__PURE__ */ import_react29.default.createElement(Route, {
       path: "/type",
-      element: /* @__PURE__ */ import_react19.default.createElement(Type, null)
-    }))), /* @__PURE__ */ import_react19.default.createElement("footer", {
+      element: /* @__PURE__ */ import_react29.default.createElement(Type, null)
+    }))), /* @__PURE__ */ import_react29.default.createElement("footer", {
       className: "flex-grow-0"
-    }, /* @__PURE__ */ import_react19.default.createElement(Legal, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Legal, {
       className: "px-10 pt-16 pb-6 text-center"
-    }, /* @__PURE__ */ import_react19.default.createElement("span", {
+    }, /* @__PURE__ */ import_react29.default.createElement("span", {
       className: "space-x-1"
-    }, /* @__PURE__ */ import_react19.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react19.default.createElement(ExternalLink, {
+    }, /* @__PURE__ */ import_react29.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react29.default.createElement(ExternalLink, {
       href: "https://fullstackapp.co"
-    }, "Full Stack App Co."), /* @__PURE__ */ import_react19.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react19.default.createElement(ExternalLink, {
+    }, "Full Stack App Co."), /* @__PURE__ */ import_react29.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react29.default.createElement(ExternalLink, {
       href: "https://opensource.org/licenses/MIT"
     }, "MIT License")))))));
   }
 
   // preview/app.tsx
-  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react20.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react20.default.createElement(Library2, null)));
+  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react30.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react30.default.createElement(Library2, null)));
 })();
 /*
 object-assign

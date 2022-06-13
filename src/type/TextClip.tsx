@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react'
 
 interface TextClipProps {
   children: ReactNode,
-  className: string,
+  className?: string,
 }
 
 export function TextClip({ children, className = '' }: TextClipProps) {

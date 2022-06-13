@@ -1,4 +1,5 @@
 export * from './buttons/PrimaryButton'
+export * from './type/GradientText'
 export * from './type/TextClip'
 export * from './type/Legal'
 export * from './type/IconHeading'

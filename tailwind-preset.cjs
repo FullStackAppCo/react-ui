@@ -15,13 +15,17 @@ module.exports = {
     }, {}),
     extend: {
       colors: {
-        primary: colors.violet,
+        primary: {
+          ...colors.violet,
+          'gradient-start': colors.violet[500],
+          'gradient-end': colors.fuchsia[500],
+        },
         focus: colors.amber,
         success: colors.green,
         danger: colors.red,
       },
       fontFamily: {
-        display: ["'Roboto Slab'", ...defaultTheme.fontFamily.sans]
+        display: defaultTheme.fontFamily.sans,
       },
       spacing: {
         ...([5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90].reduce((acc, curr) => {

@@ -1,4 +1,4 @@
-import React, {HTMLProps, ReactNode} from 'react'
+import React, {ReactNode} from 'react'
 
 interface FooterLegalProps {
   children?: ReactNode,
@@ -6,7 +6,7 @@ interface FooterLegalProps {
   lines?: Array<ReactNode>,
 }
 
-export function Legal({ children, className = '', lines = [] }: FooterLegalProps): HTMLProps<Element> {
+export function Legal({ children, className = '', lines = [] }: FooterLegalProps) {
   if (lines.length === 0) lines.push(children)
 
   return (

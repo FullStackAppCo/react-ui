@@ -4,13 +4,13 @@ type buttonSize = 'base' | 'lg'
 
 interface PrimaryButtonProps extends HTMLAttributes<HTMLButtonElement>{
   children: ReactNode,
-  className: string,
-  disabled: boolean,
-  onClick: (event: React.MouseEvent<HTMLElement>) => any
-  tag: ElementType,
-  size: buttonSize,
-  href: string,
-  target: string,
+  className?: string,
+  disabled?: boolean,
+  onClick?: (event: React.MouseEvent<HTMLElement>) => any
+  tag?: ElementType,
+  size?: buttonSize,
+  href?: string,
+  target?: string,
 }
 
 export function PrimaryButton({children, className = '', disabled = false, tag = 'button', onClick = () => null, size = 'base', href = '#', target = '_self'}: PrimaryButtonProps) {

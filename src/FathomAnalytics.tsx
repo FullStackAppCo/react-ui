@@ -31,7 +31,7 @@ export function FathomAnalytics({ domains, siteId, enabled, addListener, removeL
     return () => {
       removeListener(handleRouteChangeComplete)
     }
-  }, [])
+  }, [null])
 
   return null
 }

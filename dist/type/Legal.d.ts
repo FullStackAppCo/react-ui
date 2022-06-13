@@ -1,8 +1,8 @@
-import { HTMLProps, ReactNode } from 'react';
+import { ReactNode } from 'react';
 interface FooterLegalProps {
     children?: ReactNode;
     className?: string;
     lines?: Array<ReactNode>;
 }
-export declare function Legal({ children, className, lines }: FooterLegalProps): HTMLProps<Element>;
+export declare function Legal({ children, className, lines }: FooterLegalProps): JSX.Element;
 export {};

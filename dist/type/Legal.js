@@ -1,1 +1,1 @@
-import a from"react";function p({children:r,className:o="",lines:e=[]}){return e.length===0&&e.push(r),a.createElement("div",{className:`space-y-3 text-gray-700 dark:text-gray-400 ${o}`},e.map((t,l)=>a.createElement("small",{key:l,className:"block leading-loose"},t)))}export{p as Legal};
+import a from"react";function d({children:r,className:o="",lines:e=[]}){return e.length===0&&e.push(r),a.createElement("div",{className:`space-y-3 text-gray-700 dark:text-gray-400 ${o}`},e.map((t,l)=>a.createElement("small",{key:l,className:"block leading-loose"},t)))}export{d as Legal};

@@ -1,6 +1,6 @@
 {
   "name": "@fsac/react-ui",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Reusable React UI components",
   "typings": "dist/index.d.ts",
   "files": [

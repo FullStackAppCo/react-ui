@@ -4,5 +4,5 @@ interface HeadingProps {
     className?: string;
     level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
-export default function Heading({ children, className, level }: HeadingProps): JSX.Element;
+export declare function Heading({ children, className, level }: HeadingProps): JSX.Element;
 export {};

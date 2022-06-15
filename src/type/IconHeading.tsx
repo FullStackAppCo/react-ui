@@ -1,7 +1,7 @@
 import React, {HTMLProps, ReactNode} from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import Heading from "type/Heading";
+import {Heading} from './Heading'
 
 interface FooterHeadingProps extends HTMLProps<Element> {
   children: ReactNode,

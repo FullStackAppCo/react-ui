@@ -1,1 +1,1 @@
-import r from"react";function i({children:t,className:e="",level:a=2}){const n=`h${a}`;return e=`text-gray-800 dark:text-gray-300 font-display tracking-wide ${e}`,r.createElement(n,{className:e},t)}export{i as default};
+import r from"react";function g({children:t,className:e="",level:a=2}){const n=`h${a}`;return e=`text-gray-800 dark:text-gray-300 font-display tracking-wide ${e}`,r.createElement(n,{className:e},t)}export{g as Heading};

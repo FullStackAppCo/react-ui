@@ -6,7 +6,7 @@ interface GradientTextProps {
   className?: string,
 }
 
-export default function GradientText({ children, className = '' }: GradientTextProps) {
+export function GradientText({ children, className = '' }: GradientTextProps) {
   className = [
     'bg-gradient-to-br from-primary-gradient-start',
     'to-primary-gradient-end',

@@ -3,5 +3,5 @@ interface GradientTextProps {
     children: ReactNode;
     className?: string;
 }
-export default function GradientText({ children, className }: GradientTextProps): JSX.Element;
+export declare function GradientText({ children, className }: GradientTextProps): JSX.Element;
 export {};

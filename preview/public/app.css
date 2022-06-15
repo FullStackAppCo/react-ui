@@ -1001,10 +1001,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2;
 }
 
-.tracking-wide {
-  letter-spacing: 0.025em;
-}
-
 .tracking-wider {
   letter-spacing: 0.05em;
 }

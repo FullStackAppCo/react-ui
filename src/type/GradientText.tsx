@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react'
-import {TextClip} from "type/TextClip";
+import {TextClip} from "./TextClip";
 
 interface GradientTextProps {
   children: ReactNode,

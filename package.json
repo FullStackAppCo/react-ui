@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "bin/build.sh",
-    "preview:serve": "nodemon --watch ./preview --ext js,ts,tsx,pug ./bin/server.js --host 192.168.0.86",
+    "preview:serve": "nodemon --watch ./preview --ext js,ts,tsx,pug ./bin/server.js",
     "preview:styles": "tailwindcss -i preview/app.css -o preview/public/app.css --watch",
     "preview:tsc": "esbuild ./preview/app.tsx --platform=browser --target=es2015 --bundle --outfile=./preview/public/app.js --pure:React.createElement --watch",
     "test": "echo \"Error: no test specified\" && exit 1",

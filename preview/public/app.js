@@ -700,11 +700,11 @@
             return result;
           }
           function countChildren(children) {
-            var n = 0;
+            var n2 = 0;
             mapChildren(children, function() {
-              n++;
+              n2++;
             });
-            return n;
+            return n2;
           }
           function forEachChildren(children, forEachFunc, forEachContext) {
             mapChildren(children, function() {
@@ -5244,7 +5244,7 @@
               passiveBrowserEventsSupported = false;
             }
           }
-          function invokeGuardedCallbackProd(name, func, context, a2, b2, c, d3, e3, f) {
+          function invokeGuardedCallbackProd(name, func, context, a2, b2, c, d4, e3, f) {
             var funcArgs = Array.prototype.slice.call(arguments, 3);
             try {
               func.apply(context, funcArgs);
@@ -5256,7 +5256,7 @@
           {
             if (typeof window !== "undefined" && typeof window.dispatchEvent === "function" && typeof document !== "undefined" && typeof document.createEvent === "function") {
               var fakeNode = document.createElement("react");
-              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a2, b2, c, d3, e3, f) {
+              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a2, b2, c, d4, e3, f) {
                 if (typeof document === "undefined" || document === null) {
                   throw new Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
                 }
@@ -5331,12 +5331,12 @@
               caughtError = error2;
             }
           };
-          function invokeGuardedCallback(name, func, context, a2, b2, c, d3, e3, f) {
+          function invokeGuardedCallback(name, func, context, a2, b2, c, d4, e3, f) {
             hasError = false;
             caughtError = null;
             invokeGuardedCallbackImpl$1.apply(reporter, arguments);
           }
-          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a2, b2, c, d3, e3, f) {
+          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a2, b2, c, d4, e3, f) {
             invokeGuardedCallback.apply(this, arguments);
             if (hasError) {
               var error2 = clearCaughtError();
@@ -19972,13 +19972,13 @@
               }
             }
           }
-          function discreteUpdates(fn, a2, b2, c, d3) {
+          function discreteUpdates(fn, a2, b2, c, d4) {
             var previousPriority = getCurrentUpdatePriority();
             var prevTransition = ReactCurrentBatchConfig$3.transition;
             try {
               ReactCurrentBatchConfig$3.transition = null;
               setCurrentUpdatePriority(DiscreteEventPriority);
-              return fn(a2, b2, c, d3);
+              return fn(a2, b2, c, d4);
             } finally {
               setCurrentUpdatePriority(previousPriority);
               ReactCurrentBatchConfig$3.transition = prevTransition;
@@ -22544,16 +22544,16 @@
   var require_client = __commonJS({
     "node_modules/react-dom/client.js"(exports) {
       "use strict";
-      var m2 = require_react_dom();
+      var m = require_react_dom();
       if (false) {
-        exports.createRoot = m2.createRoot;
-        exports.hydrateRoot = m2.hydrateRoot;
+        exports.createRoot = m.createRoot;
+        exports.hydrateRoot = m.hydrateRoot;
       } else {
-        i = m2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         exports.createRoot = function(c, o2) {
           i.usingClientEntryPoint = true;
           try {
-            return m2.createRoot(c, o2);
+            return m.createRoot(c, o2);
           } finally {
             i.usingClientEntryPoint = false;
           }
@@ -22561,7 +22561,7 @@
         exports.hydrateRoot = function(c, h, o2) {
           i.usingClientEntryPoint = true;
           try {
-            return m2.hydrateRoot(c, h, o2);
+            return m.hydrateRoot(c, h, o2);
           } finally {
             i.usingClientEntryPoint = false;
           }
@@ -22764,8 +22764,8 @@
           for (var i = 0; i < 10; i++) {
             test2["_" + String.fromCharCode(i)] = i;
           }
-          var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
-            return test2[n];
+          var order2 = Object.getOwnPropertyNames(test2).map(function(n2) {
+            return test2[n2];
           });
           if (order2.join("") !== "0123456789") {
             return false;
@@ -23326,11 +23326,11 @@
   });
 
   // preview/app.tsx
-  var import_react30 = __toESM(require_react());
+  var import_react31 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // preview/components/Library.tsx
-  var import_react29 = __toESM(require_react());
+  var import_react30 = __toESM(require_react());
 
   // preview/components/Nav.tsx
   var import_react3 = __toESM(require_react());
@@ -23712,7 +23712,7 @@
     return segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
   }
   function compareIndexes(a2, b2) {
-    let siblings = a2.length === b2.length && a2.slice(0, -1).every((n, i) => n === b2[i]);
+    let siblings = a2.length === b2.length && a2.slice(0, -1).every((n2, i) => n2 === b2[i]);
     return siblings ? a2[a2.length - 1] - b2[b2.length - 1] : 0;
   }
   function matchRouteBranch(branch, pathname) {
@@ -24769,32 +24769,18 @@
 
   // src/type/TextClip.tsx
   var import_react5 = __toESM(require_react());
-  function TextClip({ children, className = "" }) {
-    return /* @__PURE__ */ import_react5.default.createElement("span", {
-      className: `bg-clip-text text-transparent ${className}`
-    }, children);
-  }
 
-  // src/type/GradientText.tsx
-  function GradientText({ children, className = "" }) {
-    className = [
-      "bg-gradient-to-br from-primary-gradient-start",
-      "to-primary-gradient-end",
-      className
-    ].join(" ");
-    return /* @__PURE__ */ import_react6.default.createElement(TextClip, {
-      className
-    }, children);
-  }
+  // src/type/Heading.tsx
+  var import_react7 = __toESM(require_react());
 
   // src/type/Legal.tsx
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   function Legal({ children, className = "", lines = [] }) {
     if (lines.length === 0)
       lines.push(children);
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
       className: `space-y-3 text-gray-700 dark:text-gray-400 ${className}`
-    }, lines.map((line, i) => /* @__PURE__ */ import_react7.default.createElement("small", {
+    }, lines.map((line, i) => /* @__PURE__ */ import_react8.default.createElement("small", {
       key: i,
       className: `block leading-loose`
     }, line)));
@@ -24922,12 +24908,12 @@
       return;
     if (typeof o2 === "string")
       return _arrayLikeToArray(o2, minLen);
-    var n = Object.prototype.toString.call(o2).slice(8, -1);
-    if (n === "Object" && o2.constructor)
-      n = o2.constructor.name;
-    if (n === "Map" || n === "Set")
+    var n2 = Object.prototype.toString.call(o2).slice(8, -1);
+    if (n2 === "Object" && o2.constructor)
+      n2 = o2.constructor.name;
+    if (n2 === "Map" || n2 === "Set")
       return Array.from(o2);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+    if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
       return _arrayLikeToArray(o2, minLen);
   }
   function _arrayLikeToArray(arr, len) {
@@ -25055,10 +25041,10 @@
     PRIMARY: "primary",
     SECONDARY: "secondary"
   };
-  var RESERVED_CLASSES = [].concat(_toConsumableArray(Object.keys(STYLE_TO_PREFIX)), ["2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "border", "fade", "beat-fade", "bounce", "flip-both", "flip-horizontal", "flip-vertical", "flip", "fw", "inverse", "layers-counter", "layers-text", "layers", "li", "pull-left", "pull-right", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "stack-1x", "stack-2x", "stack", "ul", DUOTONE_CLASSES.GROUP, DUOTONE_CLASSES.SWAP_OPACITY, DUOTONE_CLASSES.PRIMARY, DUOTONE_CLASSES.SECONDARY]).concat(oneToTen.map(function(n) {
-    return "".concat(n, "x");
-  })).concat(oneToTwenty.map(function(n) {
-    return "w-".concat(n);
+  var RESERVED_CLASSES = [].concat(_toConsumableArray(Object.keys(STYLE_TO_PREFIX)), ["2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "border", "fade", "beat-fade", "bounce", "flip-both", "flip-horizontal", "flip-vertical", "flip", "fw", "inverse", "layers-counter", "layers-text", "layers", "li", "pull-left", "pull-right", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "stack-1x", "stack-2x", "stack", "ul", DUOTONE_CLASSES.GROUP, DUOTONE_CLASSES.SWAP_OPACITY, DUOTONE_CLASSES.PRIMARY, DUOTONE_CLASSES.SECONDARY]).concat(oneToTen.map(function(n2) {
+    return "".concat(n2, "x");
+  })).concat(oneToTwenty.map(function(n2) {
+    return "w-".concat(n2);
   }));
   var initial = WINDOW.FontAwesomeConfig || {};
   function getAttrConfig(attr) {
@@ -25319,8 +25305,8 @@
     }
   }
   var bindInternal4 = function bindInternal42(func, thisContext) {
-    return function(a2, b2, c, d3) {
-      return func.call(thisContext, a2, b2, c, d3);
+    return function(a2, b2, c, d4) {
+      return func.call(thisContext, a2, b2, c, d4);
     };
   };
   var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
@@ -26852,8 +26838,8 @@
       flipY: false,
       rotate: 0
     };
-    return transformString.toLowerCase().split(" ").reduce(function(acc, n) {
-      var parts = n.toLowerCase().split("-");
+    return transformString.toLowerCase().split(" ").reduce(function(acc, n2) {
+      var parts = n2.toLowerCase().split("-");
       var first = parts[0];
       var rest = parts.slice(1).join("-");
       if (first && rest === "h") {
@@ -27173,7 +27159,7 @@
 
   // node_modules/@fortawesome/react-fontawesome/index.es.js
   var import_prop_types = __toESM(require_prop_types());
-  var import_react8 = __toESM(require_react());
+  var import_react9 = __toESM(require_react());
   function ownKeys2(object, enumerableOnly) {
     var keys = Object.keys(object);
     if (Object.getOwnPropertySymbols) {
@@ -27264,12 +27250,12 @@
       return;
     if (typeof o2 === "string")
       return _arrayLikeToArray2(o2, minLen);
-    var n = Object.prototype.toString.call(o2).slice(8, -1);
-    if (n === "Object" && o2.constructor)
-      n = o2.constructor.name;
-    if (n === "Map" || n === "Set")
+    var n2 = Object.prototype.toString.call(o2).slice(8, -1);
+    if (n2 === "Object" && o2.constructor)
+      n2 = o2.constructor.name;
+    if (n2 === "Map" || n2 === "Set")
       return Array.from(o2);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+    if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
       return _arrayLikeToArray2(o2, minLen);
   }
   function _arrayLikeToArray2(arr, len) {
@@ -27496,17 +27482,7 @@
     transform: null,
     swapOpacity: false
   };
-  var convertCurry = convert.bind(null, import_react8.default.createElement);
-
-  // src/type/Heading.tsx
-  var import_react9 = __toESM(require_react());
-  function Heading({ children, className = "", level = 2 }) {
-    const Tag = `h${level}`;
-    className = `text-gray-800 dark:text-gray-300 font-display tracking-wide ${className}`;
-    return /* @__PURE__ */ import_react9.default.createElement(Tag, {
-      className
-    }, children);
-  }
+  var convertCurry = convert.bind(null, import_react9.default.createElement);
 
   // src/links/ExternalLink.tsx
   var import_react11 = __toESM(require_react());
@@ -27625,37 +27601,53 @@
   }
 
   // preview/pages/Type.tsx
-  var import_react27 = __toESM(require_react());
+  var import_react28 = __toESM(require_react());
 
   // dist/buttons/PrimaryButton.js
   var import_react19 = __toESM(require_react());
 
   // dist/type/GradientText.js
-  var import_react20 = __toESM(require_react());
-
-  // dist/type/TextClip.js
   var import_react21 = __toESM(require_react());
 
-  // dist/type/Legal.js
+  // dist/type/TextClip.js
+  var import_react20 = __toESM(require_react());
+  function n({ children: e3, className: t3 = "" }) {
+    return import_react20.default.createElement("span", { className: `bg-clip-text text-transparent ${t3}` }, e3);
+  }
+
+  // dist/type/GradientText.js
+  function d2({ children: t3, className: r3 = "" }) {
+    return r3 = ["bg-gradient-to-br from-primary-gradient-start", "to-primary-gradient-end", r3].join(" "), import_react21.default.createElement(n, { className: r3 }, t3);
+  }
+
+  // dist/type/Heading.js
   var import_react22 = __toESM(require_react());
-  function d2({ children: r2, className: o2 = "", lines: e3 = [] }) {
-    return e3.length === 0 && e3.push(r2), import_react22.default.createElement("div", { className: `space-y-3 text-gray-700 dark:text-gray-400 ${o2}` }, e3.map((t3, l) => import_react22.default.createElement("small", { key: l, className: "block leading-loose" }, t3)));
+  function g({ children: t3, className: e3 = "", level: a2 = 2 }) {
+    const n2 = `h${a2}`;
+    return e3 = `text-gray-800 dark:text-gray-300 font-display tracking-wide ${e3}`, import_react22.default.createElement(n2, { className: e3 }, t3);
+  }
+
+  // dist/type/Legal.js
+  var import_react23 = __toESM(require_react());
+  function d3({ children: r3, className: o2 = "", lines: e3 = [] }) {
+    return e3.length === 0 && e3.push(r3), import_react23.default.createElement("div", { className: `space-y-3 text-gray-700 dark:text-gray-400 ${o2}` }, e3.map((t3, l2) => import_react23.default.createElement("small", { key: l2, className: "block leading-loose" }, t3)));
   }
 
   // dist/type/IconHeading.js
-  var import_react23 = __toESM(require_react());
-  function m({ children: o2, icon: r2 }) {
-    return import_react23.default.createElement("div", { className: "flex items-center space-x-2" }, import_react23.default.createElement(FontAwesomeIcon, { icon: r2, className: "w-4 h-4 text-gray-400 dark:text-gray-500" }), import_react23.default.createElement("h2", { className: "text-gray-800 dark:text-gray-300 text-lg font-display tracking-wide" }, o2));
+  var import_react24 = __toESM(require_react());
+  function l({ children: o2, className: n2 = "", icon: r3, iconSize: i = 4 }) {
+    const s = { [1]: "w-1 h-1", [2]: "w-2 h-2", [3]: "w-3 h-3", [4]: "w-4 h-4", [5]: "w-5 h-5", [6]: "w-6 h-6", [7]: "w-7 h-7", [8]: "w-8 h-8", [9]: "w-9 h-9", [10]: "w-10 h-10" }[i];
+    return import_react24.default.createElement("div", { className: "flex items-center space-x-2" }, import_react24.default.createElement(FontAwesomeIcon, { icon: r3, className: `${s} text-gray-400 dark:text-gray-500` }), import_react24.default.createElement(g, { className: n2 }, o2));
   }
 
   // dist/links/ExternalLink.js
-  var import_react24 = __toESM(require_react());
-
-  // dist/FathomAnalytics.js
   var import_react25 = __toESM(require_react());
 
-  // dist/Container.js
+  // dist/FathomAnalytics.js
   var import_react26 = __toESM(require_react());
+
+  // dist/Container.js
+  var import_react27 = __toESM(require_react());
 
   // node_modules/@fortawesome/free-regular-svg-icons/index.es.js
   var faChartBar = {
@@ -27667,20 +27659,20 @@
 
   // preview/pages/Type.tsx
   function Type() {
-    return /* @__PURE__ */ import_react27.default.createElement(ExamplePage, {
+    return /* @__PURE__ */ import_react28.default.createElement(ExamplePage, {
       title: "Type",
       className: "space-y-10"
-    }, /* @__PURE__ */ import_react27.default.createElement(Example, {
+    }, /* @__PURE__ */ import_react28.default.createElement(Example, {
       title: "Heading",
       description: "Heading Rendered in the display font. No text sizing class is applied so that you may abstract your own specific heading types if you wish. Defaults to <h2> use the level prop to override the semantic level.",
       code: [
         `<Heading>Heading Text</Heading>`,
         `<Heading level={3}>Heading Text</Heading>`
       ].join("\n"),
-      example: /* @__PURE__ */ import_react27.default.createElement(import_react27.default.Fragment, null, /* @__PURE__ */ import_react27.default.createElement(Heading, null, "Default Heading"), /* @__PURE__ */ import_react27.default.createElement(Heading, {
+      example: /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, /* @__PURE__ */ import_react28.default.createElement(g, null, "Default Heading"), /* @__PURE__ */ import_react28.default.createElement(g, {
         level: 3
       }, "Default Heading"))
-    }), /* @__PURE__ */ import_react27.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react28.default.createElement(Example, {
       title: "Icon Heading",
       description: "Heading with an icon at the leading edge making it easier to scan when there are a number of headings in succession. For example in the page footer.",
       code: [
@@ -27688,23 +27680,37 @@
         "",
         "<IconHeading icon={faBarChart}>Statistics</IconHeading>"
       ].join("\n"),
-      example: /* @__PURE__ */ import_react27.default.createElement(m, {
+      example: /* @__PURE__ */ import_react28.default.createElement(l, {
         icon: faBarChart
       }, "Statistics")
-    }), /* @__PURE__ */ import_react27.default.createElement(Example, {
+    }), /* @__PURE__ */ import_react28.default.createElement(Example, {
+      title: "Icon Heading",
+      variant: "icon size",
+      description: "Specify icon size as a number between 1 and 10 corresponding with TailwindCSS width and height scale",
+      code: [
+        "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
+        "",
+        '<IconHeading icon={faBarChart} iconSize={6} className="text-2xl">Statistics</IconHeading>'
+      ].join("\n"),
+      example: /* @__PURE__ */ import_react28.default.createElement(l, {
+        icon: faBarChart,
+        iconSize: 6,
+        className: "text-2xl"
+      }, "Statistics")
+    }), /* @__PURE__ */ import_react28.default.createElement(Example, {
       title: "Gradient Text",
       code: `<GradientText className="text-2xl font-bold">I'm text styled with a gradient</GradientText>`,
-      example: /* @__PURE__ */ import_react27.default.createElement(GradientText, {
+      example: /* @__PURE__ */ import_react28.default.createElement(d2, {
         className: "text-2xl font-bold"
       }, "I'm text styled with a gradient")
-    }), /* @__PURE__ */ import_react27.default.createElement(LegalBaseExample, null), /* @__PURE__ */ import_react27.default.createElement(LegalMultiLineExample, null));
+    }), /* @__PURE__ */ import_react28.default.createElement(LegalBaseExample, null), /* @__PURE__ */ import_react28.default.createElement(LegalMultiLineExample, null));
   }
   function LegalBaseExample() {
     const code = ["<FooterLegal>"].concat([
       "ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved."
     ].map((line) => "	" + line).join("\n")).concat("</FooterLegal>").join("\n");
-    const content = /* @__PURE__ */ import_react27.default.createElement(d2, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
-    return /* @__PURE__ */ import_react27.default.createElement(Example, {
+    const content = /* @__PURE__ */ import_react28.default.createElement(d3, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
+    return /* @__PURE__ */ import_react28.default.createElement(Example, {
       title: "Legal",
       code,
       example: content
@@ -27715,13 +27721,13 @@
       "<>ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved.</>",
       "'OCP is a company in Delta City, Michigan.'"
     ].map((line) => `	${line},`).join("\n")).concat("]} />").join("\n");
-    const content = /* @__PURE__ */ import_react27.default.createElement(d2, {
+    const content = /* @__PURE__ */ import_react28.default.createElement(d3, {
       lines: [
-        /* @__PURE__ */ import_react27.default.createElement(import_react27.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
+        /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
         "OCP is a company in Delta City, Michigan."
       ]
     });
-    return /* @__PURE__ */ import_react27.default.createElement(Example, {
+    return /* @__PURE__ */ import_react28.default.createElement(Example, {
       title: "Legal",
       variant: "multi-line",
       code,
@@ -27730,7 +27736,7 @@
   }
 
   // preview/components/LayoutIndicator.tsx
-  var import_react28 = __toESM(require_react());
+  var import_react29 = __toESM(require_react());
 
   // node_modules/@fortawesome/free-solid-svg-icons/index.es.js
   var faComputer = {
@@ -27783,15 +27789,15 @@
         classes: ["hidden", "xl:block", "2xl:hidden"]
       }
     };
-    return /* @__PURE__ */ import_react28.default.createElement("div", {
+    return /* @__PURE__ */ import_react29.default.createElement("div", {
       "aria-hidden": "true",
       className: `fixed bottom-4 right-6 p-5 w-16 h-16 flex items-center justify-center shadow-xl rounded-full inline-block bg-primary-500 dark:bg-primary-900 uppercase text-xs tracking-wider font-semibold text-white border-primary-800 border ${className}`
     }, Object.entries(layoutMap).map((entries) => {
       const [layout, data] = entries;
-      return /* @__PURE__ */ import_react28.default.createElement("div", {
+      return /* @__PURE__ */ import_react29.default.createElement("div", {
         key: layout,
         className: `flex items-center justify-center ${data.classes.join(" ")}`
-      }, /* @__PURE__ */ import_react28.default.createElement(FontAwesomeIcon, {
+      }, /* @__PURE__ */ import_react29.default.createElement(FontAwesomeIcon, {
         icon: data.icon,
         className: "h-5"
       }));
@@ -27800,52 +27806,52 @@
 
   // preview/components/Library.tsx
   function Library2() {
-    return /* @__PURE__ */ import_react29.default.createElement("div", {
+    return /* @__PURE__ */ import_react30.default.createElement("div", {
       className: "fixed w-screen h-screen flex flex-col"
-    }, /* @__PURE__ */ import_react29.default.createElement(LayoutIndicator, {
+    }, /* @__PURE__ */ import_react30.default.createElement(LayoutIndicator, {
       className: "mx-auto"
-    }), /* @__PURE__ */ import_react29.default.createElement("div", {
+    }), /* @__PURE__ */ import_react30.default.createElement("div", {
       className: "overflow-hidden flex-grow flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
-    }, /* @__PURE__ */ import_react29.default.createElement("header", {
+    }, /* @__PURE__ */ import_react30.default.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
-    }, /* @__PURE__ */ import_react29.default.createElement("a", {
+    }, /* @__PURE__ */ import_react30.default.createElement("a", {
       href: "#content",
       className: "overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none"
-    }, "Skip to content"), /* @__PURE__ */ import_react29.default.createElement("div", {
+    }, "Skip to content"), /* @__PURE__ */ import_react30.default.createElement("div", {
       className: "mx-4 py-3 lg:py-6"
-    }, /* @__PURE__ */ import_react29.default.createElement(Nav, {
+    }, /* @__PURE__ */ import_react30.default.createElement(Nav, {
       pages: ["buttons", "links", "type"]
-    }))), /* @__PURE__ */ import_react29.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react30.default.createElement("div", {
       className: "flex flex-col flex-grow py-6 overflow-scroll"
-    }, /* @__PURE__ */ import_react29.default.createElement("main", {
+    }, /* @__PURE__ */ import_react30.default.createElement("main", {
       id: "content"
-    }, /* @__PURE__ */ import_react29.default.createElement(Routes, null, /* @__PURE__ */ import_react29.default.createElement(Route, {
+    }, /* @__PURE__ */ import_react30.default.createElement(Routes, null, /* @__PURE__ */ import_react30.default.createElement(Route, {
       path: "/",
-      element: /* @__PURE__ */ import_react29.default.createElement(Buttons, null)
-    }), /* @__PURE__ */ import_react29.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react30.default.createElement(Buttons, null)
+    }), /* @__PURE__ */ import_react30.default.createElement(Route, {
       path: "/buttons",
-      element: /* @__PURE__ */ import_react29.default.createElement(Buttons, null)
-    }), /* @__PURE__ */ import_react29.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react30.default.createElement(Buttons, null)
+    }), /* @__PURE__ */ import_react30.default.createElement(Route, {
       path: "/links",
-      element: /* @__PURE__ */ import_react29.default.createElement(Links, null)
-    }), /* @__PURE__ */ import_react29.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react30.default.createElement(Links, null)
+    }), /* @__PURE__ */ import_react30.default.createElement(Route, {
       path: "/type",
-      element: /* @__PURE__ */ import_react29.default.createElement(Type, null)
-    }))), /* @__PURE__ */ import_react29.default.createElement("footer", {
+      element: /* @__PURE__ */ import_react30.default.createElement(Type, null)
+    }))), /* @__PURE__ */ import_react30.default.createElement("footer", {
       className: "flex-grow-0"
-    }, /* @__PURE__ */ import_react29.default.createElement(Legal, {
+    }, /* @__PURE__ */ import_react30.default.createElement(Legal, {
       className: "px-10 pt-16 pb-6 text-center"
-    }, /* @__PURE__ */ import_react29.default.createElement("span", {
+    }, /* @__PURE__ */ import_react30.default.createElement("span", {
       className: "space-x-1"
-    }, /* @__PURE__ */ import_react29.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react29.default.createElement(ExternalLink, {
+    }, /* @__PURE__ */ import_react30.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react30.default.createElement(ExternalLink, {
       href: "https://fullstackapp.co"
-    }, "Full Stack App Co."), /* @__PURE__ */ import_react29.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react29.default.createElement(ExternalLink, {
+    }, "Full Stack App Co."), /* @__PURE__ */ import_react30.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react30.default.createElement(ExternalLink, {
       href: "https://opensource.org/licenses/MIT"
     }, "MIT License")))))));
   }
 
   // preview/app.tsx
-  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react30.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react30.default.createElement(Library2, null)));
+  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react31.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react31.default.createElement(Library2, null)));
 })();
 /*
 object-assign

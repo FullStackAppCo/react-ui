@@ -1,10 +1,8 @@
 import React from 'react'
-import {IconHeading, Legal} from "../../dist";
+import {GradientText, Heading, IconHeading, Legal} from "../../dist";
 import Example from "../components/Example";
 import {faBarChart} from '@fortawesome/free-regular-svg-icons'
 import ExamplePage from "./ExamplePage";
-import GradientText from "../../src/type/GradientText";
-import Heading from "../../src/type/Heading";
 
 export default function Type() {
   return (
@@ -32,6 +30,17 @@ export default function Type() {
           '<IconHeading icon={faBarChart}>Statistics</IconHeading>'
         ].join('\n')}
         example={<IconHeading icon={faBarChart}>Statistics</IconHeading>}
+      />
+      <Example
+        title="Icon Heading"
+        variant="icon size"
+        description="Specify icon size as a number between 1 and 10 corresponding with TailwindCSS width and height scale"
+        code={[
+          "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
+          '',
+          '<IconHeading icon={faBarChart} iconSize={6} className="text-2xl">Statistics</IconHeading>'
+        ].join('\n')}
+        example={<IconHeading icon={faBarChart} iconSize={6} className="text-2xl">Statistics</IconHeading>}
       />
       <Example
         title="Gradient Text"

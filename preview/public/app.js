@@ -27682,7 +27682,7 @@
       }, "Default Heading"))
     }), /* @__PURE__ */ import_react27.default.createElement(Example, {
       title: "Icon Heading",
-      description: "Heading with an icon at the leading edge making it easier to scan when there are a number of headings in succession. For example page footer.",
+      description: "Heading with an icon at the leading edge making it easier to scan when there are a number of headings in succession. For example in the page footer.",
       code: [
         "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
         "",

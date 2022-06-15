@@ -1,1 +1,1 @@
-import e from"react";import{TextClip as a}from"type/TextClip";function i({children:r,className:t=""}){return e.createElement(a,{className:`bg-gradient-to-br from-primary-gradient-from to-primary-gradient-to ${t}`},r)}export{i as default};
+import e from"react";import{TextClip as i}from"type/TextClip";function n({children:t,className:r=""}){return r=["bg-gradient-to-br from-primary-gradient-start","to-primary-gradient-end",r].join(" "),e.createElement(i,{className:r},t)}export{n as default};

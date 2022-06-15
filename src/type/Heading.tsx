@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react'
+import React, {ElementType, ReactNode} from 'react'
 
 interface HeadingProps {
   children: ReactNode,
@@ -7,7 +7,7 @@ interface HeadingProps {
 }
 
 export default function Heading({ children, className = '', level = 2 }: HeadingProps) {
-  const Tag = `h${level}`
+  const Tag = `h${level}` as ElementType
   className = `text-gray-800 dark:text-gray-300 font-display tracking-wide ${className}`
 
   return <Tag className={className}>{ children }</Tag>

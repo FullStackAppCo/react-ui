@@ -20,8 +20,11 @@
   },
   "scripts": {
     "build": "bin/build.sh",
-    "watch": "npx nodemon --watch ./src --exec bash --ext ts,tsx ./bin/build.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preview:serve": "nodemon --watch ./preview --ext js,ts,tsx,pug ./bin/server.js --host 192.168.0.86",
+    "preview:styles": "tailwindcss -i preview/app.css -o preview/public/app.css --watch",
+    "preview:tsc": "esbuild ./preview/app.tsx --platform=browser --target=es2015 --bundle --outfile=./preview/public/app.js --pure:React.createElement --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview:watch": "npm-run-all --parallel preview:serve preview:styles preview:tsc"
   },
   "repository": {
     "type": "git",
@@ -48,6 +51,7 @@
     "fathom-client": "^3.4.1",
     "lodash-es": "^4.17.21",
     "nodemon": "^2.0.16",
+    "npm-run-all": "^4.1.5",
     "pug": "^3.0.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

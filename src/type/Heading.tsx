@@ -8,7 +8,7 @@ interface HeadingProps {
 
 export function Heading({ children, className = '', level = 2 }: HeadingProps) {
   const Tag = `h${level}` as ElementType
-  className = `text-gray-800 dark:text-gray-300 font-display ${className}`
+  className = `font-display ${className}`
 
   return <Tag className={className}>{ children }</Tag>
 }

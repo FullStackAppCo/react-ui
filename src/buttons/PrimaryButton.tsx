@@ -17,7 +17,7 @@ export function PrimaryButton({children, className = '', disabled = false, tag =
   className = [
     sizeClasses(size),
     'inline-block text-center text-black cursor-pointer',
-    'bg-primary-500 text-black font-bold bg-gradient-to-br from-violet-500 to-fuchsia-500',
+    'bg-primary-500 text-black font-medium bg-gradient-to-br from-violet-500 to-fuchsia-500',
     'rounded-lg',
     'active:scale-95',
     'focus:outline-none focus:bg-focus-500 focus:from-transparent focus:to-transparent',

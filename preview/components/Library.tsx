@@ -6,9 +6,17 @@ import Links from '../pages/Links'
 import Type from '../pages/Type'
 import {ExternalLink, Legal} from "../../src";
 import LayoutIndicator from "./LayoutIndicator";
+import Color from "../pages/Color";
 
 export default function Library()
 {
+  const pages = {
+    'color': <Color />,
+    'buttons': <Buttons />,
+    'links': <Links />,
+    'type': <Type />
+  }
+
   return (
     <div className="fixed w-screen h-screen flex flex-col">
       <LayoutIndicator className="mx-auto" />
@@ -17,7 +25,7 @@ export default function Library()
         <header className="flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll">
           <a href="#content" className="overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none">Skip to content</a>
           <div className="mx-4 py-3 lg:py-6">
-            <Nav pages={['buttons', 'links', 'type']} />
+            <Nav pages={Object.keys(pages)} />
           </div>
         </header>
 
@@ -25,9 +33,10 @@ export default function Library()
           <main id="content">
             <Routes>
               <Route path="/" element={<Buttons />}/>
-              <Route path="/buttons" element={<Buttons />}/>
-              <Route path="/links" element={<Links />}/>
-              <Route path="/type" element={<Type />}/>
+              {Object.entries(pages).map(entry => {
+                const [path, component] = entry
+                return <Route key={path} path={`/${path}`} element={component}/>
+              })}
             </Routes>
           </main>
           <footer className="flex-grow-0">

@@ -2304,9 +2304,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React20 = require_react();
+          var React22 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React20.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React22.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3707,7 +3707,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React20.Children.forEach(props.children, function(child) {
+                  React22.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -11279,7 +11279,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React20.Component().refs;
+          var emptyRefsObject = new React22.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -22550,18 +22550,18 @@
         exports.hydrateRoot = m.hydrateRoot;
       } else {
         i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-        exports.createRoot = function(c, o2) {
+        exports.createRoot = function(c, o3) {
           i.usingClientEntryPoint = true;
           try {
-            return m.createRoot(c, o2);
+            return m.createRoot(c, o3);
           } finally {
             i.usingClientEntryPoint = false;
           }
         };
-        exports.hydrateRoot = function(c, h, o2) {
+        exports.hydrateRoot = function(c, h, o3) {
           i.usingClientEntryPoint = true;
           try {
-            return m.hydrateRoot(c, h, o2);
+            return m.hydrateRoot(c, h, o3);
           } finally {
             i.usingClientEntryPoint = false;
           }
@@ -23326,11 +23326,11 @@
   });
 
   // preview/app.tsx
-  var import_react31 = __toESM(require_react());
+  var import_react34 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // preview/components/Library.tsx
-  var import_react30 = __toESM(require_react());
+  var import_react33 = __toESM(require_react());
 
   // preview/components/Nav.tsx
   var import_react3 = __toESM(require_react());
@@ -24736,7 +24736,7 @@
   }
 
   // preview/pages/Buttons.tsx
-  var import_react17 = __toESM(require_react());
+  var import_react18 = __toESM(require_react());
 
   // src/buttons/PrimaryButton.tsx
   var import_react4 = __toESM(require_react());
@@ -24744,7 +24744,7 @@
     className = [
       sizeClasses(size),
       "inline-block text-center text-black cursor-pointer",
-      "bg-primary-500 text-black font-bold bg-gradient-to-br from-violet-500 to-fuchsia-500",
+      "bg-primary-500 text-black font-medium bg-gradient-to-br from-violet-500 to-fuchsia-500",
       "rounded-lg",
       "active:scale-95",
       "focus:outline-none focus:bg-focus-500 focus:from-transparent focus:to-transparent",
@@ -24903,18 +24903,18 @@
     }
     return _arr;
   }
-  function _unsupportedIterableToArray(o2, minLen) {
-    if (!o2)
+  function _unsupportedIterableToArray(o3, minLen) {
+    if (!o3)
       return;
-    if (typeof o2 === "string")
-      return _arrayLikeToArray(o2, minLen);
-    var n2 = Object.prototype.toString.call(o2).slice(8, -1);
-    if (n2 === "Object" && o2.constructor)
-      n2 = o2.constructor.name;
+    if (typeof o3 === "string")
+      return _arrayLikeToArray(o3, minLen);
+    var n2 = Object.prototype.toString.call(o3).slice(8, -1);
+    if (n2 === "Object" && o3.constructor)
+      n2 = o3.constructor.name;
     if (n2 === "Map" || n2 === "Set")
-      return Array.from(o2);
+      return Array.from(o3);
     if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return _arrayLikeToArray(o2, minLen);
+      return _arrayLikeToArray(o3, minLen);
   }
   function _arrayLikeToArray(arr, len) {
     if (len == null || len > arr.length)
@@ -25410,9 +25410,9 @@
   }
   var build = function build2() {
     var lookup = function lookup2(reducer) {
-      return reduce(styles, function(o2, style, prefix) {
-        o2[prefix] = reduce(style, reducer, {});
-        return o2;
+      return reduce(styles, function(o3, style, prefix) {
+        o3[prefix] = reduce(style, reducer, {});
+        return o3;
       }, {});
     };
     _byUnicode = lookup(function(acc, icon3, iconName) {
@@ -26370,8 +26370,8 @@
       return htmlClassList.remove("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
     };
     var prefixes = config.autoFetchSvg ? Object.keys(PREFIX_TO_STYLE) : Object.keys(styles$2);
-    var prefixesDomQuery = [".".concat(LAYERS_TEXT_CLASSNAME, ":not([").concat(DATA_FA_I2SVG, "])")].concat(prefixes.map(function(p2) {
-      return ".".concat(p2, ":not([").concat(DATA_FA_I2SVG, "])");
+    var prefixesDomQuery = [".".concat(LAYERS_TEXT_CLASSNAME, ":not([").concat(DATA_FA_I2SVG, "])")].concat(prefixes.map(function(p3) {
+      return ".".concat(p3, ":not([").concat(DATA_FA_I2SVG, "])");
     })).join(", ");
     if (prefixesDomQuery.length === 0) {
       return Promise.resolve();
@@ -27245,18 +27245,18 @@
     if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null)
       return Array.from(iter);
   }
-  function _unsupportedIterableToArray2(o2, minLen) {
-    if (!o2)
+  function _unsupportedIterableToArray2(o3, minLen) {
+    if (!o3)
       return;
-    if (typeof o2 === "string")
-      return _arrayLikeToArray2(o2, minLen);
-    var n2 = Object.prototype.toString.call(o2).slice(8, -1);
-    if (n2 === "Object" && o2.constructor)
-      n2 = o2.constructor.name;
+    if (typeof o3 === "string")
+      return _arrayLikeToArray2(o3, minLen);
+    var n2 = Object.prototype.toString.call(o3).slice(8, -1);
+    if (n2 === "Object" && o3.constructor)
+      n2 = o3.constructor.name;
     if (n2 === "Map" || n2 === "Set")
-      return Array.from(o2);
+      return Array.from(o3);
     if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-      return _arrayLikeToArray2(o2, minLen);
+      return _arrayLikeToArray2(o3, minLen);
   }
   function _arrayLikeToArray2(arr, len) {
     if (len == null || len > arr.length)
@@ -27499,244 +27499,8 @@
     }, children);
   }
 
-  // src/FathomAnalytics.tsx
+  // src/links/BackLink.tsx
   var import_react12 = __toESM(require_react());
-
-  // src/Container.tsx
-  var import_react13 = __toESM(require_react());
-
-  // preview/components/Example.tsx
-  var import_react15 = __toESM(require_react());
-
-  // preview/components/ExampleCode.tsx
-  var import_react14 = __toESM(require_react());
-  function ExampleCode({ children }) {
-    const borderColor = "border-gray-200 dark:border-gray-700";
-    return /* @__PURE__ */ import_react14.default.createElement("div", {
-      className: `overflow-hidden bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded ${borderColor} border text-sm`
-    }, /* @__PURE__ */ import_react14.default.createElement("h3", {
-      className: "sr-only"
-    }, "Code examples"), /* @__PURE__ */ import_react14.default.createElement("h4", {
-      className: `font-semibold px-3 p-1 bg-gray-200 dark:bg-gray-700 bg-opacity-50 dark:bg-opacity-25 tracking-wider text-xs ${borderColor} border-b`
-    }, "JSX"), /* @__PURE__ */ import_react14.default.createElement("pre", {
-      className: "px-3 py-2 overflow-scroll"
-    }, /* @__PURE__ */ import_react14.default.createElement("code", null, children)));
-  }
-
-  // preview/components/Example.tsx
-  function Example({ code, description, example, variant, title }) {
-    return /* @__PURE__ */ import_react15.default.createElement("div", {
-      className: "space-y-4"
-    }, /* @__PURE__ */ import_react15.default.createElement("h2", {
-      className: "font-bold text-lg flex items-center space-x-2"
-    }, /* @__PURE__ */ import_react15.default.createElement("span", null, title), variant && /* @__PURE__ */ import_react15.default.createElement("span", {
-      className: "translate-y-[1px] bg-primary-500 dark:bg-primary-800 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
-    }, variant)), description && /* @__PURE__ */ import_react15.default.createElement("p", null, description), /* @__PURE__ */ import_react15.default.createElement("div", {
-      className: "border-gray-200 dark:border-gray-600 border p-6 rounded"
-    }, example), /* @__PURE__ */ import_react15.default.createElement(ExampleCode, null, code));
-  }
-
-  // preview/pages/ExamplePage.tsx
-  var import_react16 = __toESM(require_react());
-  function ExamplePage({ title, className = "", children }) {
-    return /* @__PURE__ */ import_react16.default.createElement("div", {
-      className: "flex-grow px-10 space-y-4"
-    }, /* @__PURE__ */ import_react16.default.createElement("h1", {
-      className: "font-bold text-3xl"
-    }, title), /* @__PURE__ */ import_react16.default.createElement("div", {
-      className
-    }, children));
-  }
-
-  // preview/pages/Buttons.tsx
-  function Buttons() {
-    return /* @__PURE__ */ import_react17.default.createElement(ExamplePage, {
-      title: "Buttons",
-      className: "space-y-10"
-    }, /* @__PURE__ */ import_react17.default.createElement(Example, {
-      title: "Primary Button",
-      code: `<PrimaryButton>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, null, "Submit")
-    }), /* @__PURE__ */ import_react17.default.createElement(Example, {
-      title: "Primary Button",
-      variant: "disabled",
-      code: `<PrimaryButton disabled>Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, {
-        disabled: true
-      }, "Submit")
-    }), /* @__PURE__ */ import_react17.default.createElement(Example, {
-      title: "Link as Button",
-      code: `<PrimaryButton
-  tag="a"
-  href="https://example.com"
-  target="_blank"
->Press</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, {
-        tag: "a",
-        href: "https://example.com",
-        target: "_blank"
-      }, "Press")
-    }), /* @__PURE__ */ import_react17.default.createElement(Example, {
-      title: "Large Primary Button",
-      code: `<PrimaryButton size="lg">Submit</PrimaryButton>`,
-      example: /* @__PURE__ */ import_react17.default.createElement(PrimaryButton, {
-        size: "lg"
-      }, "Submit")
-    }));
-  }
-
-  // preview/pages/Links.tsx
-  var import_react18 = __toESM(require_react());
-  function Links() {
-    return /* @__PURE__ */ import_react18.default.createElement(ExamplePage, {
-      title: "Links",
-      className: "grid grid-cols-1 lg:grid-cols-2 gap-10"
-    }, /* @__PURE__ */ import_react18.default.createElement(Example, {
-      title: "External Link",
-      code: `<ExternalLink href="https://example.com">Visit site</ExternalLink>`,
-      example: /* @__PURE__ */ import_react18.default.createElement(ExternalLink, {
-        href: "https://example.com"
-      }, "Visit site")
-    }));
-  }
-
-  // preview/pages/Type.tsx
-  var import_react28 = __toESM(require_react());
-
-  // dist/buttons/PrimaryButton.js
-  var import_react19 = __toESM(require_react());
-
-  // dist/type/GradientText.js
-  var import_react21 = __toESM(require_react());
-
-  // dist/type/TextClip.js
-  var import_react20 = __toESM(require_react());
-  function n({ children: e3, className: t3 = "" }) {
-    return import_react20.default.createElement("span", { className: `bg-clip-text text-transparent ${t3}` }, e3);
-  }
-
-  // dist/type/GradientText.js
-  function d2({ children: t3, className: r3 = "" }) {
-    return r3 = ["bg-gradient-to-br from-primary-gradient-start", "to-primary-gradient-end", r3].join(" "), import_react21.default.createElement(n, { className: r3 }, t3);
-  }
-
-  // dist/type/Heading.js
-  var import_react22 = __toESM(require_react());
-  function g({ children: t3, className: e3 = "", level: a2 = 2 }) {
-    const n2 = `h${a2}`;
-    return e3 = `text-gray-800 dark:text-gray-300 font-display tracking-wide ${e3}`, import_react22.default.createElement(n2, { className: e3 }, t3);
-  }
-
-  // dist/type/Legal.js
-  var import_react23 = __toESM(require_react());
-  function d3({ children: r3, className: o2 = "", lines: e3 = [] }) {
-    return e3.length === 0 && e3.push(r3), import_react23.default.createElement("div", { className: `space-y-3 text-gray-700 dark:text-gray-400 ${o2}` }, e3.map((t3, l2) => import_react23.default.createElement("small", { key: l2, className: "block leading-loose" }, t3)));
-  }
-
-  // dist/type/IconHeading.js
-  var import_react24 = __toESM(require_react());
-  function l({ children: o2, className: n2 = "", icon: r3, iconSize: i = 4 }) {
-    const s = { [1]: "w-1 h-1", [2]: "w-2 h-2", [3]: "w-3 h-3", [4]: "w-4 h-4", [5]: "w-5 h-5", [6]: "w-6 h-6", [7]: "w-7 h-7", [8]: "w-8 h-8", [9]: "w-9 h-9", [10]: "w-10 h-10" }[i];
-    return import_react24.default.createElement("div", { className: "flex items-center space-x-2" }, import_react24.default.createElement(FontAwesomeIcon, { icon: r3, className: `${s} text-gray-400 dark:text-gray-500` }), import_react24.default.createElement(g, { className: n2 }, o2));
-  }
-
-  // dist/links/ExternalLink.js
-  var import_react25 = __toESM(require_react());
-
-  // dist/FathomAnalytics.js
-  var import_react26 = __toESM(require_react());
-
-  // dist/Container.js
-  var import_react27 = __toESM(require_react());
-
-  // node_modules/@fortawesome/free-regular-svg-icons/index.es.js
-  var faChartBar = {
-    prefix: "far",
-    iconName: "chart-bar",
-    icon: [512, 512, ["bar-chart"], "f080", "M24 32C37.25 32 48 42.75 48 56V408C48 421.3 58.75 432 72 432H488C501.3 432 512 442.7 512 456C512 469.3 501.3 480 488 480H72C32.24 480 0 447.8 0 408V56C0 42.75 10.75 32 24 32zM128 136C128 122.7 138.7 112 152 112H360C373.3 112 384 122.7 384 136C384 149.3 373.3 160 360 160H152C138.7 160 128 149.3 128 136zM296 208C309.3 208 320 218.7 320 232C320 245.3 309.3 256 296 256H152C138.7 256 128 245.3 128 232C128 218.7 138.7 208 152 208H296zM424 304C437.3 304 448 314.7 448 328C448 341.3 437.3 352 424 352H152C138.7 352 128 341.3 128 328C128 314.7 138.7 304 152 304H424z"]
-  };
-  var faBarChart = faChartBar;
-
-  // preview/pages/Type.tsx
-  function Type() {
-    return /* @__PURE__ */ import_react28.default.createElement(ExamplePage, {
-      title: "Type",
-      className: "space-y-10"
-    }, /* @__PURE__ */ import_react28.default.createElement(Example, {
-      title: "Heading",
-      description: "Heading Rendered in the display font. No text sizing class is applied so that you may abstract your own specific heading types if you wish. Defaults to <h2> use the level prop to override the semantic level.",
-      code: [
-        `<Heading>Heading Text</Heading>`,
-        `<Heading level={3}>Heading Text</Heading>`
-      ].join("\n"),
-      example: /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, /* @__PURE__ */ import_react28.default.createElement(g, null, "Default Heading"), /* @__PURE__ */ import_react28.default.createElement(g, {
-        level: 3
-      }, "Default Heading"))
-    }), /* @__PURE__ */ import_react28.default.createElement(Example, {
-      title: "Icon Heading",
-      description: "Heading with an icon at the leading edge making it easier to scan when there are a number of headings in succession. For example in the page footer.",
-      code: [
-        "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
-        "",
-        "<IconHeading icon={faBarChart}>Statistics</IconHeading>"
-      ].join("\n"),
-      example: /* @__PURE__ */ import_react28.default.createElement(l, {
-        icon: faBarChart
-      }, "Statistics")
-    }), /* @__PURE__ */ import_react28.default.createElement(Example, {
-      title: "Icon Heading",
-      variant: "icon size",
-      description: "Specify icon size as a number between 1 and 10 corresponding with TailwindCSS width and height scale",
-      code: [
-        "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
-        "",
-        '<IconHeading icon={faBarChart} iconSize={6} className="text-2xl">Statistics</IconHeading>'
-      ].join("\n"),
-      example: /* @__PURE__ */ import_react28.default.createElement(l, {
-        icon: faBarChart,
-        iconSize: 6,
-        className: "text-2xl"
-      }, "Statistics")
-    }), /* @__PURE__ */ import_react28.default.createElement(Example, {
-      title: "Gradient Text",
-      code: `<GradientText className="text-2xl font-bold">I'm text styled with a gradient</GradientText>`,
-      example: /* @__PURE__ */ import_react28.default.createElement(d2, {
-        className: "text-2xl font-bold"
-      }, "I'm text styled with a gradient")
-    }), /* @__PURE__ */ import_react28.default.createElement(LegalBaseExample, null), /* @__PURE__ */ import_react28.default.createElement(LegalMultiLineExample, null));
-  }
-  function LegalBaseExample() {
-    const code = ["<FooterLegal>"].concat([
-      "ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved."
-    ].map((line) => "	" + line).join("\n")).concat("</FooterLegal>").join("\n");
-    const content = /* @__PURE__ */ import_react28.default.createElement(d3, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
-    return /* @__PURE__ */ import_react28.default.createElement(Example, {
-      title: "Legal",
-      code,
-      example: content
-    });
-  }
-  function LegalMultiLineExample() {
-    const code = ["<FooterLegal lines={["].concat([
-      "<>ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved.</>",
-      "'OCP is a company in Delta City, Michigan.'"
-    ].map((line) => `	${line},`).join("\n")).concat("]} />").join("\n");
-    const content = /* @__PURE__ */ import_react28.default.createElement(d3, {
-      lines: [
-        /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
-        "OCP is a company in Delta City, Michigan."
-      ]
-    });
-    return /* @__PURE__ */ import_react28.default.createElement(Example, {
-      title: "Legal",
-      variant: "multi-line",
-      code,
-      example: content
-    });
-  }
-
-  // preview/components/LayoutIndicator.tsx
-  var import_react29 = __toESM(require_react());
 
   // node_modules/@fortawesome/free-solid-svg-icons/index.es.js
   var faComputer = {
@@ -27765,7 +27529,251 @@
     icon: [448, 512, ["tablet-alt"], "f3fa", "M384 .0001H64c-35.35 0-64 28.65-64 64v384c0 35.35 28.65 63.1 64 63.1h320c35.35 0 64-28.65 64-63.1v-384C448 28.65 419.3 .0001 384 .0001zM224 480c-17.75 0-32-14.25-32-32s14.25-32 32-32s32 14.25 32 32S241.8 480 224 480zM384 384H64v-320h320V384z"]
   };
 
+  // src/FathomAnalytics.tsx
+  var import_react13 = __toESM(require_react());
+
+  // src/Container.tsx
+  var import_react14 = __toESM(require_react());
+
+  // preview/components/Example.tsx
+  var import_react16 = __toESM(require_react());
+
+  // preview/components/ExampleCode.tsx
+  var import_react15 = __toESM(require_react());
+  function ExampleCode({ children }) {
+    const borderColor = "border-gray-200 dark:border-gray-700";
+    return /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: `overflow-hidden bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded ${borderColor} border text-sm`
+    }, /* @__PURE__ */ import_react15.default.createElement("h3", {
+      className: "sr-only"
+    }, "Code examples"), /* @__PURE__ */ import_react15.default.createElement("h4", {
+      className: `font-semibold px-3 p-1 bg-gray-200 dark:bg-gray-700 bg-opacity-50 dark:bg-opacity-25 tracking-wider text-xs ${borderColor} border-b`
+    }, "JSX"), /* @__PURE__ */ import_react15.default.createElement("pre", {
+      className: "px-3 py-2 overflow-scroll"
+    }, /* @__PURE__ */ import_react15.default.createElement("code", null, children)));
+  }
+
+  // preview/components/Example.tsx
+  function Example({ code, description, example, variant, title }) {
+    return /* @__PURE__ */ import_react16.default.createElement("div", {
+      className: "space-y-4"
+    }, /* @__PURE__ */ import_react16.default.createElement("h2", {
+      className: "font-bold text-lg flex items-center space-x-2"
+    }, /* @__PURE__ */ import_react16.default.createElement("span", null, title), variant && /* @__PURE__ */ import_react16.default.createElement("span", {
+      className: "translate-y-[1px] bg-primary-500 dark:bg-primary-800 text-white text-xs rounded-sm px-1 py-0.5 font-semibold"
+    }, variant)), description && /* @__PURE__ */ import_react16.default.createElement("p", null, description), /* @__PURE__ */ import_react16.default.createElement("div", {
+      className: "border-gray-200 dark:border-gray-600 border p-6 rounded"
+    }, example), /* @__PURE__ */ import_react16.default.createElement(ExampleCode, null, code));
+  }
+
+  // preview/pages/ExamplePage.tsx
+  var import_react17 = __toESM(require_react());
+  function ExamplePage({ title, className = "", children }) {
+    return /* @__PURE__ */ import_react17.default.createElement("div", {
+      className: "flex-grow px-10 space-y-4"
+    }, /* @__PURE__ */ import_react17.default.createElement("h1", {
+      className: "font-bold text-3xl"
+    }, title), /* @__PURE__ */ import_react17.default.createElement("div", {
+      className
+    }, children));
+  }
+
+  // preview/pages/Buttons.tsx
+  function Buttons() {
+    return /* @__PURE__ */ import_react18.default.createElement(ExamplePage, {
+      title: "Buttons",
+      className: "space-y-10"
+    }, /* @__PURE__ */ import_react18.default.createElement(Example, {
+      title: "Primary Button",
+      code: `<PrimaryButton>Submit</PrimaryButton>`,
+      example: /* @__PURE__ */ import_react18.default.createElement(PrimaryButton, null, "Submit")
+    }), /* @__PURE__ */ import_react18.default.createElement(Example, {
+      title: "Primary Button",
+      variant: "disabled",
+      code: `<PrimaryButton disabled>Submit</PrimaryButton>`,
+      example: /* @__PURE__ */ import_react18.default.createElement(PrimaryButton, {
+        disabled: true
+      }, "Submit")
+    }), /* @__PURE__ */ import_react18.default.createElement(Example, {
+      title: "Link as Button",
+      code: `<PrimaryButton
+  tag="a"
+  href="https://example.com"
+  target="_blank"
+>Press</PrimaryButton>`,
+      example: /* @__PURE__ */ import_react18.default.createElement(PrimaryButton, {
+        tag: "a",
+        href: "https://example.com",
+        target: "_blank"
+      }, "Press")
+    }), /* @__PURE__ */ import_react18.default.createElement(Example, {
+      title: "Large Primary Button",
+      code: `<PrimaryButton size="lg">Submit</PrimaryButton>`,
+      example: /* @__PURE__ */ import_react18.default.createElement(PrimaryButton, {
+        size: "lg"
+      }, "Submit")
+    }));
+  }
+
+  // preview/pages/Links.tsx
+  var import_react19 = __toESM(require_react());
+  function Links() {
+    return /* @__PURE__ */ import_react19.default.createElement(ExamplePage, {
+      title: "Links",
+      className: "grid grid-cols-1 lg:grid-cols-2 gap-10"
+    }, /* @__PURE__ */ import_react19.default.createElement(Example, {
+      title: "External Link",
+      code: `<ExternalLink href="https://example.com">Visit site</ExternalLink>`,
+      example: /* @__PURE__ */ import_react19.default.createElement(ExternalLink, {
+        href: "https://example.com"
+      }, "Visit site")
+    }), /* @__PURE__ */ import_react19.default.createElement(Example, {
+      title: "Back Link",
+      code: ``,
+      example: ``
+    }));
+  }
+
+  // preview/pages/Type.tsx
+  var import_react30 = __toESM(require_react());
+
+  // dist/buttons/PrimaryButton.js
+  var import_react20 = __toESM(require_react());
+
+  // dist/type/GradientText.js
+  var import_react22 = __toESM(require_react());
+
+  // dist/type/TextClip.js
+  var import_react21 = __toESM(require_react());
+  function n({ children: e3, className: t3 = "" }) {
+    return import_react21.default.createElement("span", { className: `bg-clip-text text-transparent ${t3}` }, e3);
+  }
+
+  // dist/type/GradientText.js
+  function d2({ children: t3, className: r3 = "" }) {
+    return r3 = ["bg-gradient-to-br from-primary-gradient-start", "to-primary-gradient-end", r3].join(" "), import_react22.default.createElement(n, { className: r3 }, t3);
+  }
+
+  // dist/type/Heading.js
+  var import_react23 = __toESM(require_react());
+  function p2({ children: n2, className: e3 = "", level: t3 = 2 }) {
+    const a2 = `h${t3}`;
+    return e3 = `font-display ${e3}`, import_react23.default.createElement(a2, { className: e3 }, n2);
+  }
+
+  // dist/type/Legal.js
+  var import_react24 = __toESM(require_react());
+  function d3({ children: r3, className: o3 = "", lines: e3 = [] }) {
+    return e3.length === 0 && e3.push(r3), import_react24.default.createElement("div", { className: `space-y-3 text-gray-700 dark:text-gray-400 ${o3}` }, e3.map((t3, l2) => import_react24.default.createElement("small", { key: l2, className: "block leading-loose" }, t3)));
+  }
+
+  // dist/type/IconHeading.js
+  var import_react25 = __toESM(require_react());
+  function l({ children: o3, className: n2 = "", icon: r3, iconSize: i = 4 }) {
+    const s = { [1]: "w-1 h-1", [2]: "w-2 h-2", [3]: "w-3 h-3", [4]: "w-4 h-4", [5]: "w-5 h-5", [6]: "w-6 h-6", [7]: "w-7 h-7", [8]: "w-8 h-8", [9]: "w-9 h-9", [10]: "w-10 h-10" }[i];
+    return import_react25.default.createElement("div", { className: "flex items-center space-x-2" }, import_react25.default.createElement(FontAwesomeIcon, { icon: r3, className: `${s} text-gray-400 dark:text-gray-500` }), import_react25.default.createElement(p2, { className: n2 }, o3));
+  }
+
+  // dist/links/ExternalLink.js
+  var import_react26 = __toESM(require_react());
+
+  // dist/links/BackLink.js
+  var import_react27 = __toESM(require_react());
+
+  // dist/FathomAnalytics.js
+  var import_react28 = __toESM(require_react());
+
+  // dist/Container.js
+  var import_react29 = __toESM(require_react());
+
+  // node_modules/@fortawesome/free-regular-svg-icons/index.es.js
+  var faChartBar = {
+    prefix: "far",
+    iconName: "chart-bar",
+    icon: [512, 512, ["bar-chart"], "f080", "M24 32C37.25 32 48 42.75 48 56V408C48 421.3 58.75 432 72 432H488C501.3 432 512 442.7 512 456C512 469.3 501.3 480 488 480H72C32.24 480 0 447.8 0 408V56C0 42.75 10.75 32 24 32zM128 136C128 122.7 138.7 112 152 112H360C373.3 112 384 122.7 384 136C384 149.3 373.3 160 360 160H152C138.7 160 128 149.3 128 136zM296 208C309.3 208 320 218.7 320 232C320 245.3 309.3 256 296 256H152C138.7 256 128 245.3 128 232C128 218.7 138.7 208 152 208H296zM424 304C437.3 304 448 314.7 448 328C448 341.3 437.3 352 424 352H152C138.7 352 128 341.3 128 328C128 314.7 138.7 304 152 304H424z"]
+  };
+  var faBarChart = faChartBar;
+
+  // preview/pages/Type.tsx
+  function Type() {
+    return /* @__PURE__ */ import_react30.default.createElement(ExamplePage, {
+      title: "Type",
+      className: "space-y-10"
+    }, /* @__PURE__ */ import_react30.default.createElement(Example, {
+      title: "Heading",
+      description: "Heading Rendered in the display font. No text sizing class is applied so that you may abstract your own specific heading types if you wish. Defaults to <h2> use the level prop to override the semantic level.",
+      code: [
+        `<Heading>Heading Text</Heading>`,
+        `<Heading level={3}>Heading Text</Heading>`
+      ].join("\n"),
+      example: /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, /* @__PURE__ */ import_react30.default.createElement(p2, null, "Default Heading"), /* @__PURE__ */ import_react30.default.createElement(p2, {
+        level: 3
+      }, "Default Heading"))
+    }), /* @__PURE__ */ import_react30.default.createElement(Example, {
+      title: "Icon Heading",
+      description: "Heading with an icon at the leading edge making it easier to scan when there are a number of headings in succession. For example in the page footer.",
+      code: [
+        "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
+        "",
+        "<IconHeading icon={faBarChart}>Statistics</IconHeading>"
+      ].join("\n"),
+      example: /* @__PURE__ */ import_react30.default.createElement(l, {
+        icon: faBarChart
+      }, "Statistics")
+    }), /* @__PURE__ */ import_react30.default.createElement(Example, {
+      title: "Icon Heading",
+      variant: "icon size",
+      description: "Specify icon size as a number between 1 and 10 corresponding with TailwindCSS width and height scale",
+      code: [
+        "import { faBarChart } from '@fortawesome/free-regular-svg-icons'",
+        "",
+        '<IconHeading icon={faBarChart} iconSize={6} className="text-2xl">Statistics</IconHeading>'
+      ].join("\n"),
+      example: /* @__PURE__ */ import_react30.default.createElement(l, {
+        icon: faBarChart,
+        iconSize: 6,
+        className: "text-2xl"
+      }, "Statistics")
+    }), /* @__PURE__ */ import_react30.default.createElement(Example, {
+      title: "Gradient Text",
+      code: `<GradientText className="text-2xl font-bold">I'm text styled with a gradient</GradientText>`,
+      example: /* @__PURE__ */ import_react30.default.createElement(d2, {
+        className: "text-2xl font-bold"
+      }, "I'm text styled with a gradient")
+    }), /* @__PURE__ */ import_react30.default.createElement(LegalBaseExample, null), /* @__PURE__ */ import_react30.default.createElement(LegalMultiLineExample, null));
+  }
+  function LegalBaseExample() {
+    const code = ["<FooterLegal>"].concat([
+      "ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved."
+    ].map((line) => "	" + line).join("\n")).concat("</FooterLegal>").join("\n");
+    const content = /* @__PURE__ */ import_react30.default.createElement(d3, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved. 'OCP is a company in Delta City, Michigan.'");
+    return /* @__PURE__ */ import_react30.default.createElement(Example, {
+      title: "Legal",
+      code,
+      example: content
+    });
+  }
+  function LegalMultiLineExample() {
+    const code = ["<FooterLegal lines={["].concat([
+      "<>ED209 copyright &copy; Omni Consumer Products {new Date().getFullYear()} all rights reserved.</>",
+      "'OCP is a company in Delta City, Michigan.'"
+    ].map((line) => `	${line},`).join("\n")).concat("]} />").join("\n");
+    const content = /* @__PURE__ */ import_react30.default.createElement(d3, {
+      lines: [
+        /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, "ED209 copyright \xA9 Omni Consumer Products ", new Date().getFullYear(), " all rights reserved."),
+        "OCP is a company in Delta City, Michigan."
+      ]
+    });
+    return /* @__PURE__ */ import_react30.default.createElement(Example, {
+      title: "Legal",
+      variant: "multi-line",
+      code,
+      example: content
+    });
+  }
+
   // preview/components/LayoutIndicator.tsx
+  var import_react31 = __toESM(require_react());
   function LayoutIndicator({ className, layoutMap }) {
     layoutMap = layoutMap ? layoutMap : {
       "all": {
@@ -27789,69 +27797,105 @@
         classes: ["hidden", "xl:block", "2xl:hidden"]
       }
     };
-    return /* @__PURE__ */ import_react29.default.createElement("div", {
+    return /* @__PURE__ */ import_react31.default.createElement("div", {
       "aria-hidden": "true",
       className: `fixed bottom-4 right-6 p-5 w-16 h-16 flex items-center justify-center shadow-xl rounded-full inline-block bg-primary-500 dark:bg-primary-900 uppercase text-xs tracking-wider font-semibold text-white border-primary-800 border ${className}`
     }, Object.entries(layoutMap).map((entries) => {
       const [layout, data] = entries;
-      return /* @__PURE__ */ import_react29.default.createElement("div", {
+      return /* @__PURE__ */ import_react31.default.createElement("div", {
         key: layout,
         className: `flex items-center justify-center ${data.classes.join(" ")}`
-      }, /* @__PURE__ */ import_react29.default.createElement(FontAwesomeIcon, {
+      }, /* @__PURE__ */ import_react31.default.createElement(FontAwesomeIcon, {
         icon: data.icon,
         className: "h-5"
       }));
     }));
   }
 
+  // preview/pages/Color.tsx
+  var import_react32 = __toESM(require_react());
+  function Color() {
+    const primary = [
+      "bg-primary-100",
+      "bg-primary-200",
+      "bg-primary-300",
+      "bg-primary-400",
+      "bg-primary-500",
+      "bg-primary-600",
+      "bg-primary-700",
+      "bg-primary-800",
+      "bg-primary-900"
+    ];
+    return /* @__PURE__ */ import_react32.default.createElement(ExamplePage, {
+      title: "Color",
+      className: "space-y-10"
+    }, /* @__PURE__ */ import_react32.default.createElement("h2", null, "Primary"), /* @__PURE__ */ import_react32.default.createElement("p", null, "Add "), /* @__PURE__ */ import_react32.default.createElement("div", {
+      className: "flex items-center gap-3"
+    }, primary.map((color) => /* @__PURE__ */ import_react32.default.createElement(Swatch, {
+      color,
+      name: color.split("-")[2]
+    }))));
+  }
+  function Swatch({ color, name }) {
+    return /* @__PURE__ */ import_react32.default.createElement("div", {
+      className: `${color} w-20 h-20 shadow flex items-center justify-center`
+    }, /* @__PURE__ */ import_react32.default.createElement("span", {
+      className: "font-mono text-black"
+    }, name));
+  }
+
   // preview/components/Library.tsx
   function Library2() {
-    return /* @__PURE__ */ import_react30.default.createElement("div", {
+    const pages = {
+      "color": /* @__PURE__ */ import_react33.default.createElement(Color, null),
+      "buttons": /* @__PURE__ */ import_react33.default.createElement(Buttons, null),
+      "links": /* @__PURE__ */ import_react33.default.createElement(Links, null),
+      "type": /* @__PURE__ */ import_react33.default.createElement(Type, null)
+    };
+    return /* @__PURE__ */ import_react33.default.createElement("div", {
       className: "fixed w-screen h-screen flex flex-col"
-    }, /* @__PURE__ */ import_react30.default.createElement(LayoutIndicator, {
+    }, /* @__PURE__ */ import_react33.default.createElement(LayoutIndicator, {
       className: "mx-auto"
-    }), /* @__PURE__ */ import_react30.default.createElement("div", {
+    }), /* @__PURE__ */ import_react33.default.createElement("div", {
       className: "overflow-hidden flex-grow flex flex-col lg:flex-row items-stretch justify-start divide-gray-100 dark:divide-gray-700 divide-y lg:divide-y-0 lg:divide-x"
-    }, /* @__PURE__ */ import_react30.default.createElement("header", {
+    }, /* @__PURE__ */ import_react33.default.createElement("header", {
       className: "flex flex-col flex-grow-0 flex-shrink-0 min-w-[15vw] overflow-scroll"
-    }, /* @__PURE__ */ import_react30.default.createElement("a", {
+    }, /* @__PURE__ */ import_react33.default.createElement("a", {
       href: "#content",
       className: "overflow-hidden h-0 py-0 focus:py-1 focus:h-auto block text-center bg-focus-500 text-black font-bold focus:outline-none"
-    }, "Skip to content"), /* @__PURE__ */ import_react30.default.createElement("div", {
+    }, "Skip to content"), /* @__PURE__ */ import_react33.default.createElement("div", {
       className: "mx-4 py-3 lg:py-6"
-    }, /* @__PURE__ */ import_react30.default.createElement(Nav, {
-      pages: ["buttons", "links", "type"]
-    }))), /* @__PURE__ */ import_react30.default.createElement("div", {
+    }, /* @__PURE__ */ import_react33.default.createElement(Nav, {
+      pages: Object.keys(pages)
+    }))), /* @__PURE__ */ import_react33.default.createElement("div", {
       className: "flex flex-col flex-grow py-6 overflow-scroll"
-    }, /* @__PURE__ */ import_react30.default.createElement("main", {
+    }, /* @__PURE__ */ import_react33.default.createElement("main", {
       id: "content"
-    }, /* @__PURE__ */ import_react30.default.createElement(Routes, null, /* @__PURE__ */ import_react30.default.createElement(Route, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Routes, null, /* @__PURE__ */ import_react33.default.createElement(Route, {
       path: "/",
-      element: /* @__PURE__ */ import_react30.default.createElement(Buttons, null)
-    }), /* @__PURE__ */ import_react30.default.createElement(Route, {
-      path: "/buttons",
-      element: /* @__PURE__ */ import_react30.default.createElement(Buttons, null)
-    }), /* @__PURE__ */ import_react30.default.createElement(Route, {
-      path: "/links",
-      element: /* @__PURE__ */ import_react30.default.createElement(Links, null)
-    }), /* @__PURE__ */ import_react30.default.createElement(Route, {
-      path: "/type",
-      element: /* @__PURE__ */ import_react30.default.createElement(Type, null)
-    }))), /* @__PURE__ */ import_react30.default.createElement("footer", {
+      element: /* @__PURE__ */ import_react33.default.createElement(Buttons, null)
+    }), Object.entries(pages).map((entry) => {
+      const [path, component] = entry;
+      return /* @__PURE__ */ import_react33.default.createElement(Route, {
+        key: path,
+        path: `/${path}`,
+        element: component
+      });
+    }))), /* @__PURE__ */ import_react33.default.createElement("footer", {
       className: "flex-grow-0"
-    }, /* @__PURE__ */ import_react30.default.createElement(Legal, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Legal, {
       className: "px-10 pt-16 pb-6 text-center"
-    }, /* @__PURE__ */ import_react30.default.createElement("span", {
+    }, /* @__PURE__ */ import_react33.default.createElement("span", {
       className: "space-x-1"
-    }, /* @__PURE__ */ import_react30.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react30.default.createElement(ExternalLink, {
+    }, /* @__PURE__ */ import_react33.default.createElement("span", null, "Copyright \xA9 ", new Date().getFullYear()), /* @__PURE__ */ import_react33.default.createElement(ExternalLink, {
       href: "https://fullstackapp.co"
-    }, "Full Stack App Co."), /* @__PURE__ */ import_react30.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react30.default.createElement(ExternalLink, {
+    }, "Full Stack App Co."), /* @__PURE__ */ import_react33.default.createElement("span", null, "Open sourced under the"), /* @__PURE__ */ import_react33.default.createElement(ExternalLink, {
       href: "https://opensource.org/licenses/MIT"
     }, "MIT License")))))));
   }
 
   // preview/app.tsx
-  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react31.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react31.default.createElement(Library2, null)));
+  (0, import_client.createRoot)(document.querySelector("#app")).render(/* @__PURE__ */ import_react34.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react34.default.createElement(Library2, null)));
 })();
 /*
 object-assign

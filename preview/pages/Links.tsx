@@ -11,6 +11,11 @@ export default function Links() {
         code={`<ExternalLink href="https://example.com">Visit site</ExternalLink>`}
         example={<ExternalLink href="https://example.com">Visit site</ExternalLink>}
       />
+      <Example
+        title="Back Link"
+        code={``}
+        example={``}
+      />
     </ExamplePage>
   )
 }

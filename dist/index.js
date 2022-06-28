@@ -1,1 +1,1 @@
-export*from"./buttons/PrimaryButton";export*from"./type/GradientText";export*from"./type/TextClip";export*from"./type/Heading";export*from"./type/Legal";export*from"./type/IconHeading";export*from"./links/ExternalLink";export*from"./FathomAnalytics";export*from"./Container";
+export*from"./buttons/PrimaryButton";export*from"./type/GradientText";export*from"./type/TextClip";export*from"./type/Heading";export*from"./type/Legal";export*from"./type/IconHeading";export*from"./links/ExternalLink";export*from"./links/BackLink";export*from"./FathomAnalytics";export*from"./Container";

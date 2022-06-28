@@ -5,6 +5,5 @@ export * from './type/Heading';
 export * from './type/Legal';
 export * from './type/IconHeading';
 export * from './links/ExternalLink';
-export * from './links/BackLink';
 export * from './FathomAnalytics';
 export * from './Container';
